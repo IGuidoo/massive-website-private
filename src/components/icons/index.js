@@ -6,7 +6,7 @@ import Allinone1 from "./allinone1.svg"
 import Allinone2 from "./allinone2.svg"
 import Allinone3 from "./allinone3.svg"
 import PurpleCheckmark from "./purpleCheckmark.svg"
-import HomeMobileBackgroundPNG from "./HomeMobileBackgroundPNG.png"
+import HomeMobileBackgroundPNG from "./homeMobileBackgroundPNG.png"
 
 
 export {
