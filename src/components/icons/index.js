@@ -1,10 +1,10 @@
-import test from "../../../public/svgs/test.svg"
-import OutlineMail from "../../../public/svgs/outlineMail.svg"
-import MenuLogo from "../../../public/svgs/menuLogo.svg"
-import LogoSmall from "../../../public/svgs/logoSmall.svg"
-import Allinone1 from "../../../public/svgs/Allinone1.svg"
-import Allinone2 from "../../../public/svgs/Allinone2.svg"
-import Allinone3 from "../../../public/svgs/Allinone3.svg"
+import test from "./test.svg"
+import OutlineMail from "./outlineMail.svg"
+import MenuLogo from "./menuLogo.svg"
+import LogoSmall from "./logoSmall.svg"
+import Allinone1 from "./Allinone1.svg"
+import Allinone2 from "./Allinone2.svg"
+import Allinone3 from "./Allinone3.svg"
 
 
 export {
