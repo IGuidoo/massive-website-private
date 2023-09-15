@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { Icon } from '@/app/docs/_components/Icon'
+import { Icon } from '@/app/docs/_components/icon'
 
 const styles = {
   note: {
