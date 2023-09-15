@@ -2,9 +2,9 @@ import test from "./test.svg"
 import OutlineMail from "./outlineMail.svg"
 import MenuLogo from "./menuLogo.svg"
 import LogoSmall from "./logoSmall.svg"
-import Allinone1 from "./Allinone1.svg"
-import Allinone2 from "./Allinone2.svg"
-import Allinone3 from "./Allinone3.svg"
+import Allinone1 from "./allinone1.svg"
+import Allinone2 from "./allinone2.svg"
+import Allinone3 from "./allinone3.svg"
 
 
 export {
