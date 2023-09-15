@@ -21,7 +21,7 @@ const nextConfig = {
     // Add a new rule for SVG files using @svgr/webpack
     config.module.rules.push({
       test: /\.svg$/,
-      use: [{ loader: '@svgr/webpack', options: { icon: true} }],
+      use: [{ loader: '@svgr/webpack' }],
     })
 
     return config
