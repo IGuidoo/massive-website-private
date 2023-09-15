@@ -15,8 +15,8 @@ const LatestDevelopments = ({ data = []}) => {
           <RenderText content={data[0].text} />
         </p>
         <div className={`grid grid-cols-7 gap-2 sm:gap-6 md:gap-10 lg:gap-14 px-6 py-4 bg-gray-200 rounded-2xl w-fit outline-1 outline-white shadow-inner ${styles.horizontalCenter}`} >
-          {data.map((data, dataIndex) =>
-            data.icons.map((icon, iconIndex) => (
+          {data.map((data) =>
+            data.icons.map((icon) => (
                 <figure> 
                     { icon.icon }
                 </figure>

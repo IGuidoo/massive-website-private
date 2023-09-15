@@ -1,6 +1,6 @@
-import { Callout } from '@/app/docs/_components/Callout'
-import { QuickLink, QuickLinks } from '@/app/docs/_components/tags/QuickLinks'
-import { OrangeBox } from '@/app/docs/_components/tags/OrangeBox'
+import { Callout } from '@/app/docs/_components/Callout.jsx'
+import { QuickLink, QuickLinks } from '@/app/docs/_components/tags/QuickLinks.jsx'
+import { OrangeBox } from '@/app/docs/_components/tags/OrangeBox.jsx'
 
 const tags = {
   callout: {
