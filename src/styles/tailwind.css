@@ -7,4 +7,91 @@
   [inert] ::-webkit-scrollbar {
     display: none;
   }
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    src: url(../fonts/Inter-Regular.ttf) format('trueType');
+  }
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 500;
+    src: url(../fonts/Inter-Medium.ttf) format('trueType');
+  }
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 600;
+    src: url(../fonts/Inter-SemiBold.ttf) format('trueType');
+  }
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 700;
+    src: url(../fonts/Inter-Bold.ttf) format('trueType');
+  }
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 800;
+    src: url(../fonts/Inter-ExtraBold.ttf) format('trueType');
+  }
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 900;
+    src: url(../fonts/Inter-Black.ttf) format('trueType');
+  }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: Inter;
+  overflow-x: hidden;
+  background-color: #f9fafb;
+}
+
+/* Gradients */
+.custom-bg-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(139, 92, 246, 0.2) 11.46%,
+    rgba(66, 241, 241, 0.2) 36.98%,
+    rgba(82, 56, 239, 0.2) 70.31%,
+    rgba(139, 92, 246, 0.2) 94.27%
+  );
+  filter: blur(32px);
+}
+
+/* .radial-img-gradient{
+  background: radial-gradient(53.8% 46.4% at 50% 50%, rgba(249, 250, 251, 0.00) 48.98%, #F9FAFB 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+} */
+
+/* overflow hidden */
+.overfolw-hidden {
+  overflow-x: hidden;
+}
+
+/* Flip grid row to first row */
+@media (min-width: 1280px) {
+  .grid-pos-row-1 {
+    grid-row: 1;
+  }
+}
+
+/* homeBG mobile img */
+/* .homeBG{
+  background: url("/src/MassiveWebsite/assets/img/homeMobileBackgroundPNG.png") left/cover;
+} */
+
+.contact-home {
+  border-radius: 6px;
+  border: 1px solid var(--Gradient-test, #8b5cf6);
+  background: var(
+    --Purple-blauw,
+    linear-gradient(180deg, #0bc4fc -40.38%, #626efe 48.94%, #af1ffb 131.13%)
+  );
+  display: flex;
+  padding: 10px 24px 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
