@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { Icon } from '@/app/docs/_components/icon'
+import { Icon } from '@/app/docs/_components/Icon.jsx'
 
 export function QuickLinks({ children }) {
   return (
