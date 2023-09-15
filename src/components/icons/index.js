@@ -8,6 +8,13 @@ import Allinone3 from "./allinone3.svg"
 import PurpleCheckmark from "./purpleCheckmark.svg"
 import HomeMobileBackgroundPNG from "./homeMobileBackgroundPNG.png"
 
+import GoogleGray from "./google-gray.svg"
+import WordpressGray from "./wordpress-gray.svg"
+import ShopifyGray from "./shopify-gray.svg"
+import OpenaiGray from "./openai-gray.svg"
+import ReactGray from "./react-gray.svg"
+import GoogleAnalyticsGray from "./google-analytics-gray.svg"
+import AdobeGray from "./adobe-gray.svg"
 
 export {
     // test,
@@ -18,5 +25,13 @@ export {
     Allinone2,
     Allinone3,
     PurpleCheckmark,
-    HomeMobileBackgroundPNG
+    HomeMobileBackgroundPNG,
+
+    GoogleGray,
+    WordpressGray,
+    ShopifyGray,
+    OpenaiGray,
+    ReactGray,
+    GoogleAnalyticsGray,
+    AdobeGray
 }

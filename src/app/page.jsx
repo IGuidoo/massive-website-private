@@ -12,14 +12,24 @@ import { ThemeSelector } from "@/app/docs/_components/ThemeSelector"
 import Navbar from "@/components/Aids.jsx"
 import CatagoriesServices from "@/components/CatagorieServices"
 
+
 import {
     Allinone1,
     Allinone2,
     Allinone3,
     LogoSmall,
     PurpleCheckmark,
-    HomeMobileBackgroundPNG
+    HomeMobileBackgroundPNG,
+
+    GoogleGray,
+    WordpressGray,
+    ShopifyGray,
+    OpenaiGray,
+    ReactGray,
+    GoogleAnalyticsGray,
+    AdobeGray
 } from "../components/icons"
+import LatestDevelopments from "@/components/LatestDevelopments"
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
 
@@ -38,12 +48,18 @@ export default function page() {
                 <CatagoriesServices data={CatagoriesServecesData} />
             </Suspense>
 
+            <div className="relative">
+
+            <LatestDevelopments data={LatestDevelopmentsData} />
+            </div>
+
+            {/* { testData.test  */}
+
 
             <p className="text-green-800 dark:text-blue-600">hoi</p>
         </div>
     )
 }
-
 
 
 const AllInOne = ({ data }) => {
@@ -143,7 +159,6 @@ const OverOns = ({ data = [] }) => {
         </section>
     )
 }
-
 
 
 
@@ -342,3 +357,69 @@ const CatagoriesServecesData = [
     }
 ]
 
+const LatestDevelopmentsData = [
+    {
+        heading: ["Altijd op de hoogte van de laatste ontwikkelingen"],
+        text: [
+            "Bij Massive zijn wij voortdurend bezig ",
+            {
+                type: 'link',
+                href: '/cms',
+                content: '(cms) ',
+                className: 'testClass'
+            },
+            "met de laatste trends en innovaties in de marketingwereld. Hierdoor kunnen we ondernemers voorzien van strategieën die hen een voorsprong geven op hun concurrentie. Het stelt onze klanten in staat om altijd een stap voor te zijn en zich te onderscheiden in hun branche.",
+        ],
+        icons: [
+            {
+                id: "google icon",
+                icon: <GoogleGray className="w-12 sm:w-16 md:w-22 lg:w-28 aspect-square" />,
+                alt: "google icon",
+                // tooltip: ["This is a tooltip with a ", {type: 'link',href: '/some-link',content: 'link inside'}," for demonstration."],
+                // iconColor: ShopifyGray,
+            },
+            {
+                id: "wordpress icon",
+                icon: <WordpressGray className="w-12 sm:w-16  md:w-22 lg:w-28 aspect-square" />,
+                alt: "wordpress icon",
+                // tooltip: ["WordPress is een Content Management Systeem (CMS) waarmee je een website en webshops kunt bouwen en onderhouden."],
+                // iconColor: wordpressGray,
+            },
+            {
+                id: "shopify icon",
+                icon: <ShopifyGray className="w-12 sm:w-16 md:w-22 lg:w-28 aspect-square" />,
+                alt: "shopify icon",
+                // tooltip: ["WordPress is een Content Management Systeem (CMS) waarmee je een website en webshops kunt bouwen en onderhouden."],
+                // iconColor: wordpressGray,
+            },
+            {
+                id: "vector icon",
+                icon: <OpenaiGray className="w-12 sm:w-16 md:w-22 lg:w-28 aspect-square" />,
+                alt: "vector icon",
+                // tooltip: ["WordPress is een Content Management Systeem (CMS) waarmee je een website en webshops kunt bouwen en onderhouden."],
+                // iconColor: wordpressGray,
+            },
+            {
+                id: "react icon",
+                icon: <ReactGray className="w-12 sm:w-16 md:w-22 lg:w-28 aspect-square" />,
+                alt: "react icon",
+                // tooltip: ["WordPress is een Content Management Systeem (CMS) waarmee je een website en webshops kunt bouwen en onderhouden."],
+                // iconColor: wordpressGray,
+            },
+            {
+                id: "googe analytics icon",
+                icon: <GoogleAnalyticsGray className="w-12 sm:w-16 md:w-22 lg:w-28 aspect-square" />,
+                alt: "googe analytics icon",
+                // tooltip: ["WordPress is een Content Management Systeem (CMS) waarmee je een website en webshops kunt bouwen en onderhouden."],
+                // iconColor: wordpressGray,
+            },
+            {
+                id: ["adobe icon"],
+                icon: <AdobeGray className="w-12 sm:w-16 md:w-22 lg:w-28 aspect-square" />,
+                alt: ["adobe icon"],
+                // tooltip: ["WordPress is een Content Management Systeem (CMS) waarmee je een website en webshops kunt bouwen en onderhouden."],
+                // iconColor: wordpressGray,
+            },
+        ]
+    }
+]
