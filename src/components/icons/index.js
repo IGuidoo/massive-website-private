@@ -1,13 +1,14 @@
-import test from "@/components/icons/test.svg"
-import OutlineMail from "@/components/icons/outlineMail.svg"
-import MenuLogo from "@/components/icons/menuLogo.svg"
-import LogoSmall from "@/components/icons/logoSmall.svg"
-import Allinone1 from "@/components/icons/Allinone1.svg"
-import Allinone2 from "@/components/icons/Allinone2.svg"
-import Allinone3 from "@/components/icons/Allinone3.svg"
+import test from "../../../public/svgs/test.svg"
+import OutlineMail from "../../../public/svgs/outlineMail.svg"
+import MenuLogo from "../../../public/svgs/menuLogo.svg"
+import LogoSmall from "../../../public/svgs/logoSmall.svg"
+import Allinone1 from "../../../public/svgs/Allinone1.svg"
+import Allinone2 from "../../../public/svgs/Allinone2.svg"
+import Allinone3 from "../../../public/svgs/Allinone3.svg"
+
 
 export {
-    test,
+    // test,
     OutlineMail,
     MenuLogo,
     LogoSmall,
