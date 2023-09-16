@@ -5,7 +5,6 @@ import { Providers } from '@/app/providers'
 
 export const metadata = {
   title: {
-    template: 'test',
     default: 'Massive Online Marketing',
   },
   description:

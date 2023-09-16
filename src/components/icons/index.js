@@ -16,6 +16,13 @@ import ReactGray from "./react-gray.svg"
 import GoogleAnalyticsGray from "./google-analytics-gray.svg"
 import AdobeGray from "./adobe-gray.svg"
 
+import FacebookGray from "./facebookGray.svg"
+import InstagramGray from "./instagramGray.svg"
+import LinkedinGray from "./linkedinGray.svg"
+import TwitterGray from "./twitterGray.svg"
+
+
+
 export {
     // test,
     OutlineMail,
@@ -33,5 +40,10 @@ export {
     OpenaiGray,
     ReactGray,
     GoogleAnalyticsGray,
-    AdobeGray
+    AdobeGray,
+
+    FacebookGray,
+    InstagramGray,
+    LinkedinGray,
+    TwitterGray,
 }

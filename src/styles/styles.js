@@ -29,11 +29,13 @@ const styles = {
 
 
 
-
+    
     heading1: "",
     heading2: "text-3xl leading-9 font-bold text-secondary-700 md:text-5xl md:leading-none",
     heading3: "text-2xl leading-8 font-semibold text-secondary-800 md:text-5xl md:leading-none",
-
+    // Footer 
+    // heading4: "text-xl leading-7 font-semibold text-gray-700",
+    
     subHeading: "text-xs leading-4 font-semibold text-primary-500 md:text-sm md:leading-5",
 
     text: "text-base leading-6 font-medium text-secondary-700 md:text-lg md:leading-7",

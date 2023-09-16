@@ -21,7 +21,7 @@ import '@/styles/tailwind.css'
 import styles from "@/styles/styles.js";
 
 const products = [
-    { name: 'SEO', description: 'Stijg uit boven je concurenten', href: '#', icon: ChartBarIcon },
+    { name: 'SEO', description: 'Stijg uit boven je concurenten', href: '/seo', icon: ChartBarIcon },
     { name: 'SEA', description: 'Effective SEA-Campanges', href: '#', icon: CursorArrowRaysIcon },
     { name: 'Website', description: 'Creative, datagedreven websites', href: '#', icon: ComputerDesktopIcon },
     { name: 'eCommerce', description: 'Online web-winkeloplossingen', href: '#', icon: ShoppingCartIcon },

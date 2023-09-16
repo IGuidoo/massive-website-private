@@ -30,13 +30,22 @@ import {
     AdobeGray
 } from "../components/icons"
 import LatestDevelopments from "@/components/LatestDevelopments"
+import Footer from "@/components/Footer"
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
 
+export const metadata = {
+    title: {
+      template: 'hoi',
+      default: 'Home Massive Online Marketing',
+    },
+    description:
+      'Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.',
+  }
 
 export default function page() {
     return (
-        <div>
+        <div className="">
             <Navbar />
             Hello Home page
             <AllInOne data={allinoneData} />
@@ -54,9 +63,11 @@ export default function page() {
             </div>
 
             {/* { testData.test  */}
+            <div className=" h-[200px]">
 
+            </div>
 
-            <p className="text-green-800 dark:text-blue-600">hoi</p>
+            <Footer />
         </div>
     )
 }
