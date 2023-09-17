@@ -21,16 +21,18 @@ const styles = {
 
     borderInsetWhite: " border-solid border-white border-1.5",
     borderInsetWhite2: "border-solid border-white border-2",
+    borderInsetWhite3: "border-solid border-white border-3",
 
 
 
 
     gutter: 'px-6 md:max-w-[1536px]',
+    gutterPadding: 'px-6',
 
 
 
     
-    heading1: "",
+    heading1: "text-3xl leading-9 font-bold text-secondary-800 md:text-4xl md:leading-10   ",
     heading2: "text-3xl leading-9 font-bold text-secondary-700 md:text-5xl md:leading-none",
     heading3: "text-2xl leading-8 font-semibold text-secondary-800 md:text-5xl md:leading-none",
     // Footer 

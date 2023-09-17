@@ -120,14 +120,12 @@ const CatagoriesServices = ({ data = [] }) => {
                 >
                   <Link
                     href={`${dienst.cta2Slug}`}
-                    exact
                     className={`${styles.secondaryCTA}`}
                   >
                     {dienst.cta1Text}
                   </Link>
                   <Link
                     href={`${dienst.cta2Slug}`}
-                    exact
                     className={`${styles.primaryCTA}`}
                   >
                     {dienst.cta2Text}

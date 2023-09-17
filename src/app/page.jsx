@@ -9,7 +9,7 @@ import styles from "@/styles/styles.js"
 
 import { ThemeSelector } from "@/app/docs/_components/ThemeSelector"
 
-import Navbar from "@/components/Aids.jsx"
+import Navbar from "@/components/Navbar.jsx"
 import CatagoriesServices from "@/components/CatagorieServices"
 
 
@@ -27,47 +27,60 @@ import {
     OpenaiGray,
     ReactGray,
     GoogleAnalyticsGray,
-    AdobeGray
+    AdobeGray,
+
+    FacebookGray,
+    InstagramGray,
+    LinkedinGray,
+    TwitterGray,
 } from "../components/icons"
 import LatestDevelopments from "@/components/LatestDevelopments"
 import Footer from "@/components/Footer"
+import Carousel from "@/components/Carousel"
+import Hero from "../components/Hero"
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
 
 export const metadata = {
     title: {
-      template: 'hoi',
-      default: 'Home Massive Online Marketing',
+        template: 'hoi',
+        default: 'Home Massive Online Marketing',
     },
     description:
-      'Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.',
-  }
+        'Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.',
+}
 
 export default function page() {
     return (
         <div className="">
-            <Navbar />
-            Hello Home page
-            <AllInOne data={allinoneData} />
-            <div className="md:relative overflow-x-clip">
-                <OverOns data={OverOnsData} />
+            <div className="relative bg-white rounded-b-4xl md:bg-transparent">
+                <Navbar />
+                <Hero data={HeroData} />
+                <div className="absolute md:w-[93%] left-[3.5%] top-0 -z-10 md:h-full bg-white rounded-b-4xl border-solid border-white border-3 shadow-lg"></div>
+                <div className="absolute bottom-[-16px] w-full h-[50%] -z-20 rounded-b-4xl custom-bg-gradient md:w-[90%] md:left-[5%] md:h-[130%]"></div>
+                <div className={`absolute bottom-[-34px] w-full h-full -z-30 bg-secondary-100 rounded-b-4xl md:bottom-[-49px] md:w-[97%] md:left-[1.5%]  md:h-[230%] md:border-solid md:border-white md:border-3`}></div>
             </div>
+            <main>
+                <AllInOne data={allinoneData} />
+                <div className="md:relative overflow-x-clip">
+                    <OverOns data={OverOnsData} />
+                </div>
 
-            <Suspense>
-                <CatagoriesServices data={CatagoriesServecesData} />
-            </Suspense>
+                <Suspense>
+                    <CatagoriesServices data={CatagoriesServecesData} />
+                </Suspense>
 
-            <div className="relative">
+                <div className="relative">
+                    <LatestDevelopments data={LatestDevelopmentsData} />
+                </div>
 
-            <LatestDevelopments data={LatestDevelopmentsData} />
-            </div>
+                {/* { testData.test  */}
+                <div className=" h-[200px]"></div>
 
-            {/* { testData.test  */}
-            <div className=" h-[200px]">
+                <Carousel data={blogCardsData} />
 
-            </div>
-
-            <Footer />
+                <Footer />
+            </main>
         </div>
     )
 }
@@ -172,7 +185,47 @@ const OverOns = ({ data = [] }) => {
 }
 
 
-
+const HeroData = [
+    {
+        subHeading: ["Massive"],
+        heading: ["Online", "Marketing"],
+        text: ["Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren"],
+        cta1: {
+            text: ["Ontdek onze Diensten"],
+            link: ["/#"]
+        },
+        cta2: {
+            text: ["Start uw Groeireis"],
+            link: ["/#"]
+        },
+        cta3: {
+            text: ["Of neem contact op -->"],
+            link: ["/#"]
+        },
+        social: [
+            {
+                name: 'Facebook',
+                href: '#',
+                icon: <FacebookGray />
+            },
+            {
+                name: 'Twitter',
+                href: '#',
+                icon: <TwitterGray />
+            },
+            {
+                name: 'Instagram',
+                href: '#',
+                icon: <InstagramGray />
+            },
+            {
+                name: 'LinkedIn',
+                href: '#',
+                icon: <LinkedinGray />
+            }
+        ],
+    }
+]
 
 const allinoneData = {
     topText: [
@@ -262,7 +315,7 @@ const CatagoriesServecesData = [
                 cta1Slug: ["hoi"],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg", 
+                img: "/images/dienstenWebshop.svg",
             },
             {
                 id: ["webshop"],
@@ -287,7 +340,7 @@ const CatagoriesServecesData = [
                 cta1Slug: ["oke"],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg", 
+                img: "/images/dienstenWebshop.svg",
             },
             {
                 id: ["seo"],
@@ -312,7 +365,7 @@ const CatagoriesServecesData = [
                 cta1Slug: [""],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg", 
+                img: "/images/dienstenWebshop.svg",
             },
             {
                 id: ["sea"],
@@ -337,7 +390,7 @@ const CatagoriesServecesData = [
                 cta1Slug: [""],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg", 
+                img: "/images/dienstenWebshop.svg",
             },
             {
                 id: ["strategie"],
@@ -362,7 +415,7 @@ const CatagoriesServecesData = [
                 cta1Slug: [""],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg", 
+                img: "/images/dienstenWebshop.svg",
             },
         ]
     }
@@ -434,3 +487,70 @@ const LatestDevelopmentsData = [
         ]
     }
 ]
+
+
+const blogCardsData = {
+    topText: [
+        {
+            content: "Blogs",
+            className: "text-gray-800 font-semibold whitespace-nowrap self-center ml-3"
+        },
+        {
+            content: " | ",
+            className: "text-purple-300 font-medium whitespace-nowrap self-center ml-3"
+        },
+        {
+            content: "Online Marketing",
+            className: "text-gray-600 font-medium ml-3"
+        }
+    ],
+    heading: ["Freebies om uw kennis binnen de Online Marketing te vergroten "],
+    cards: [
+        {
+            img: "asdf",
+            title: "Massive Website gaat Live!",
+            subtite: "Dit is een subtitle",
+            text: "Subtitle teksten met kleiner lettertype, Subtitle met kleiner lettertype, Subtitle teksten met kleiner lettertype teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, Subtitle ",
+            tags: [
+                { name: "Search Engine Optimalization", slug: "seo-slug" },
+                { name: "website", slug: "website-slug" },
+                { name: "Webdevelopment", slug: "dev-slug" },
+                { name: "On-page SEO", slug: "dev-slug" }
+            ]
+        },
+        {
+            img: "asdf",
+            title: "Kijk deze kekke code",
+            subtite: "Dit is een subtitle",
+            text: "Subtitle teksten met kleiner lettertype, Subtitle met kleiner lettertype, Subtitle teksten met kleiner lettertype teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, Subtitle ",
+            tags: [
+                { name: "SEO", slug: "seo-slug" },
+                { name: "website", slug: "website-slug" },
+                { name: "dev", slug: "dev-slug" }
+            ]
+        },
+        {
+            img: "asdf",
+            title: "Waarom zijn userflows zo belangrijk?",
+            subtite: "Dit is een subtitle",
+            text: "Subtitle teksten met kleiner lettertype, Subtitle met kleiner lettertype, Subtitle teksten met kleiner lettertype teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, Subtitle ",
+            tags: [
+                { name: "SEO", slug: "seo-slug" },
+                { name: "website", slug: "website-slug" },
+                { name: "dev", slug: "dev-slug" }
+            ]
+        },
+        {
+            img: "asdf",
+            title: "Test",
+            subtite: "Dit is een Test subtitle",
+            text: "Subtitle teksten met kleiner lettertype, Subtitle met kleiner lettertype, Subtitle teksten met kleiner lettertype teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, Subtitle ",
+            tags: [
+                { name: "SEO", slug: "seo-slug" },
+                { name: "website", slug: "website-slug" },
+                { name: "dev", slug: "dev-slug" }
+            ]
+        },
+    ]
+
+}

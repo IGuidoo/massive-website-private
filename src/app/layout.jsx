@@ -1,7 +1,5 @@
 import clsx from 'clsx'
-
 import { Providers } from '@/app/providers'
-
 
 export const metadata = {
   title: {
@@ -19,11 +17,9 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="min-h-full bg-white dark:bg-slate-900">
-        <main>
           <Providers>
             {children}
           </Providers>
-        </main>
       </body>
     </html>
   )

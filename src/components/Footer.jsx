@@ -33,7 +33,7 @@ const Footer = () => {
                     Footer
                 </h2>
                 {/* <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">  ${styles.boxWidth} ${styles.horizontalCenter}*/}
-                <div className={`relative pt-[52px] px-4 md:px-[50px] lg:px-[104px] lg:pt-24 bg-secondary-50 rounded-t-4xl`}>
+                <div className={`relative pt-[52px] px-6 md:px-[50px] lg:px-[104px] lg:pt-24 bg-secondary-50 rounded-t-4xl`}>
                     <div className="grid gap-12 grid-flow-row xl:grid-cols-3 xl:gap-8">
                         <div className="gap-x-4 gap-y-10 gap grid grid-cols-2 md:grid-cols-4 xl:gap-8 xl:col-span-2 xl:mt-0 xl:order-1">
 
