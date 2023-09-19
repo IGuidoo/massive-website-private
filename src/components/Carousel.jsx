@@ -78,10 +78,10 @@ const Carousel = ({ data }) => {
                 {/* <div className="absolute bg-gray-100 w-[95%] h-full"></div> */}
 
                 <div
-                    className={`relative p-4 lg:p-12 2xl:p-16 ${styles.gutter} bg-gray-50 rounded-3xl ${styles.borderInsetWhite3} w-full`}
+                    className={`relative p-4 lg:p-12 2xl:p-16 ${styles.gutter} bg-gray-50 shadow-md rounded-3xl ${styles.borderInsetWhite3} w-full`}
                 >
 
-                    <div className="relative">
+                    <div className="relative ">
 
                         {/* Desktop */}
                         {/* Next and Prev button as SVG */}

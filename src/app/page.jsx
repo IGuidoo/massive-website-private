@@ -73,7 +73,9 @@ export default function page() {
                 {/* { testData.test  */}
                 <div className=" h-[200px]"></div>
 
-                <Carousel data={blogCardsData} />
+                <Carousel data={blogCardsData} className={`${styles.borderInsetWhite3}`}/>
+
+                <div className="h-[300px]"></div>
 
             </main>
             <Footer />

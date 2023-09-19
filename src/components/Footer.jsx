@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { MenuLogo, OutlineMail } from "./icons"
 
@@ -13,21 +14,38 @@ import {
 // import { footerData } from "../../constants/footerData";
 import styles from "@/styles/styles";
 import RenderText from "@/lib/RenderText";
+import SimpleForm from "@/components/SimpleForm";
 
 
 
 const Footer = () => {
     return (
-        <div id="footer" className={` relative }`}> {/*${styles.paddingX*/}
-            <div className=" h-[700px]">
-                {/* <RenderText content={newsletterSignUpText[0].heading} />
-                <RenderText content={newsletterSignUpText[0].text} /> */}
-                test
-                <div>
-                    ADD EMAIL TEMPLATE
+        <div id="footer" className={` relative `}> {/*${styles.paddingX}*/}
+            <div className="py-[75px] lg:py-[130px]">
+                <div className="flex flex-col gap-12 "> 
+                    <div className="max-w-[560px] mx-auto text-center flex flex-col gap-8">
+                        <h2
+                            className={`${styles.heading1} text-center`}
+                        >
+                            {signUpData.heading}
+                        </h2>
+                        <p className="text-secondary-500 max-w-[363px] mx-auto">
+                            {signUpData.text}
+                        </p>
+                    </div>
+                    <div className={`max-w-[750px] w-full mx-auto px-6 md:px-8 py-4 shadow-sm bg-secondary-50 rounded-2xl border border-white`}>
+                        <SimpleForm data={signUpData.cta1}  />
+                    </div>
+
                 </div>
             </div>
-
+            <Image
+              className="absolute top-10 right-[10%] -z-10 hidden xl:block"
+              src={"/images/rocket.png"}
+              alt=""
+              width={342}
+              height={455}
+            />
             <footer className={`relative lg:w-[93%] ${styles.horizontalCenter} `} aria-labelledby="footer-heading">
                 <h2 id="footer-heading" className="sr-only">
                     Footer
@@ -146,7 +164,7 @@ const Footer = () => {
                                 </React.Fragment>
                             ))}
                         </div>
-                        
+
                         <div className="w-full h-[1px] bg-secondary-300 md:-order-1 md:col-span-2"></div>
 
                         <p className="">
@@ -160,7 +178,7 @@ const Footer = () => {
             </footer>
 
 
-            <div className={`absolute w-[97%] h-full bg-secondary-100 top-0 -z-20 left-[1.5%]`}></div>
+            <div className={`absolute w-[97%] h-full bg-secondary-100 top-0 -z-20 left-[1.5%] shadow-inner rounded-t-4xl ${styles.borderInsetWhite3}`}></div>
 
         </div>
     );
@@ -169,6 +187,12 @@ const Footer = () => {
 export default Footer;
 
 
+const signUpData = {
+    heading: ["Kijken wat wij voor u kunnen betekenen?"],
+    text: ["Subtitle teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, "],
+    cta1: ["Verstuur"],
+    cta2: ["kijk hier voor meer info"]
+}
 
 const footerData = {
     slogan: ['Onze visie is om de grenzen van traditionele marketing te verleggen om samen met onze partners nieuwe hoogtes te bereiken.'],

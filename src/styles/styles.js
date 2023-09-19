@@ -23,7 +23,11 @@ const styles = {
     borderInsetWhite2: "border-solid border-white border-2",
     borderInsetWhite3: "border-solid border-white border-3",
 
+    buttonP4: "px-8 py-[14px]",
 
+    buttonT2: "text-base leading-6 font-semibold",
+
+    buttonS3: "rounded-lg button-gradient-purple text-secondary-50",
 
 
     gutter: 'px-6 md:max-w-[1536px]',

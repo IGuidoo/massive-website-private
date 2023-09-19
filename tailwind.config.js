@@ -37,7 +37,8 @@ module.exports = {
         "4xl" : "32px"
       },
       borderWidth: {
-        "1.5" : "1.5px"
+        "1.5" : "1.5px",
+        "3" : "3px"
       },
       gap:{
         "1.4" : "6px"

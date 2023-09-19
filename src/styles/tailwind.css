@@ -95,3 +95,7 @@ body {
   align-items: center;
   gap: 8px;
 }
+
+.button-gradient-purple{
+  background: var(--Gradient, linear-gradient(180deg, #9869E9 21.45%, #5238EF 199.04%));
+}
