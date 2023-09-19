@@ -15,6 +15,7 @@ import {
 import styles from "@/styles/styles";
 import RenderText from "@/lib/RenderText";
 import SimpleForm from "@/components/SimpleForm";
+import SplineRaket from "@/animations/Raket";
 
 
 
@@ -39,13 +40,16 @@ const Footer = () => {
 
                 </div>
             </div>
-            <Image
+            <SplineRaket
+                className=" top-10 right-[10%] -z-10 hidden xl:block"
+             />
+            {/* <Image
               className="absolute top-10 right-[10%] -z-10 hidden xl:block"
               src={"/images/rocket.png"}
               alt=""
               width={342}
               height={455}
-            />
+            /> */}
             <footer className={`relative lg:w-[93%] ${styles.horizontalCenter} `} aria-labelledby="footer-heading">
                 <h2 id="footer-heading" className="sr-only">
                     Footer
