@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 
 import React from "react"
 import { Suspense } from "react"
@@ -7,11 +7,12 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "@/styles/styles.js"
 
-import { ThemeSelector } from "@/app/docs/_components/ThemeSelector"
-
+import LatestDevelopments from "@/components/LatestDevelopments"
+import Footer from "@/components/Footer"
+import Carousel from "@/components/Carousel"
+import Hero from "../components/Hero"
 import Navbar from "@/components/Navbar.jsx"
 import CatagoriesServices from "@/components/CatagorieServices"
-
 
 import {
     Allinone1,
@@ -34,10 +35,7 @@ import {
     LinkedinGray,
     TwitterGray,
 } from "../components/icons"
-import LatestDevelopments from "@/components/LatestDevelopments"
-import Footer from "@/components/Footer"
-import Carousel from "@/components/Carousel"
-import Hero from "../components/Hero"
+
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
 
@@ -79,8 +77,8 @@ export default function page() {
 
                 <Carousel data={blogCardsData} />
 
-                <Footer />
             </main>
+            <Footer />
         </div>
     )
 }

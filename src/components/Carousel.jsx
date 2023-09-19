@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import Link from "next/link";
 import styles from "@/styles/styles";
-// import { Card } from "@/components/Card.jsx";
+// import Card from "@/components/Card.jsx";
 
 import { LogoSmall } from "./icons";
 

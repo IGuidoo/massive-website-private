@@ -16,7 +16,7 @@ import {
 import { MenuLogo, OutlineMail } from "./icons"
 
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid';
-import { ThemeSelector } from "@/app/docs/_components/ThemeSelector";
+// import { ThemeSelector } from "@/app/docs/_components/ThemeSelector";
 import '@/styles/tailwind.css'
 import styles from "@/styles/styles.js";
 
@@ -159,7 +159,7 @@ export default function Navbar() {
                     </Popover>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-16">
-                    <ThemeSelector className="relative z-10 place-self-center" />
+                    {/* <ThemeSelector className="relative z-10 place-self-center" /> */}
                     <Link href="/docs" className="text-secondary-900 text-base place-self-center">
                         Blog
                     </Link>

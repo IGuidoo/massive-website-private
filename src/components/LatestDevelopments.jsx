@@ -14,7 +14,7 @@ const LatestDevelopments = ({ data = []}) => {
         <p className={`${styles.paragraafSmall} ${styles.horizontalCenter} max-w-3xl text-center mb-10`} >
           <RenderText content={data[0].text} />
         </p>
-        <div className={`grid grid-cols-7 gap-2 sm:gap-6 md:gap-10 lg:gap-14 px-2 py-4 bg-gray-200 rounded-2xl w-fit outline-1 outline-white shadow-inner ${styles.horizontalCenter}`} >
+        <div className={`grid grid-cols-7 gap-2 sm:gap-6 md:gap-10 lg:gap-14 px-6 py-4 bg-gray-200 rounded-2xl w-fit outline-1 outline-white shadow-inner ${styles.horizontalCenter}`} >
           {data.map((data) =>
             data.icons.map((icon) => (
                 <figure key={icon.id}> 
