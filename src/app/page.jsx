@@ -66,19 +66,24 @@ export default function page() {
                     <CatagoriesServices data={CatagoriesServecesData} />
                 </Suspense>
 
+                <Suspense>
                 <div className="relative">
                     <LatestDevelopments data={LatestDevelopmentsData} />
                 </div>
-
+                </Suspense>
+                <Suspense>
                 {/* { testData.test  */}
                 <div className=" h-[200px]"></div>
-
+                </Suspense>
+                <Suspense>
                 <Carousel data={blogCardsData} className={`${styles.borderInsetWhite3}`}/>
-
+                </Suspense>
                 <div className="h-[300px]"></div>
 
             </main>
+            <Suspense>
             <Footer />
+            </Suspense>
         </div>
     )
 }
