@@ -11,45 +11,19 @@ import {
     TwitterGray,
 } from "./icons"
 
+
+
 // import { footerData } from "../../constants/footerData";
 import styles from "@/styles/styles";
 import RenderText from "@/lib/RenderText";
-import SimpleForm from "@/components/SimpleForm";
-import SplineRaket from "@/animations/Raket";
+import Test from "./FooterSignUp";
 
 
 
 const Footer = () => {
     return (
         <div id="footer" className={` relative `}> {/*${styles.paddingX}*/}
-            <div className="py-[75px] lg:py-[130px]">
-                <div className="flex flex-col gap-12 "> 
-                    <div className="max-w-[560px] mx-auto text-center flex flex-col gap-8">
-                        <h2
-                            className={`${styles.heading1} text-center`}
-                        >
-                            {signUpData.heading}
-                        </h2>
-                        <p className="text-secondary-500 max-w-[363px] mx-auto">
-                            {signUpData.text}
-                        </p>
-                    </div>
-                    <div className={`max-w-[750px] w-full mx-auto px-6 md:px-8 py-4 shadow-sm bg-secondary-50 rounded-2xl border border-white`}>
-                        <SimpleForm data={signUpData.cta1}  />
-                    </div>
-
-                </div>
-            </div>
-            <SplineRaket
-                className=" top-10 right-[10%] -z-10 hidden xl:block"
-             />
-            {/* <Image
-              className="absolute top-10 right-[10%] -z-10 hidden xl:block"
-              src={"/images/rocket.png"}
-              alt=""
-              width={342}
-              height={455}
-            /> */}
+            <Test data={signUpData}/>
             <footer className={`relative lg:w-[93%] ${styles.horizontalCenter} `} aria-labelledby="footer-heading">
                 <h2 id="footer-heading" className="sr-only">
                     Footer
