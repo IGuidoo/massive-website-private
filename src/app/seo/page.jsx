@@ -1,3 +1,5 @@
+import Hero from "./Hero"
+import HeroBackgroundSEO from "@/images/HeroBackgroundSEO.svg"
 
 export const metadata = {
     title: {
@@ -9,7 +11,10 @@ export const metadata = {
 
 export default function page() {
     return(
-        <div>SEO page</div>
+        <div className="w-full relative">
+          <Hero />
+          <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10"/>
+        </div>
     )
 
 }

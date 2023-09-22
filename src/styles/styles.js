@@ -28,6 +28,9 @@ const styles = {
     buttonT2: "text-base leading-6 font-semibold",
 
     buttonS3: "rounded-lg button-gradient-purple text-secondary-50",
+    buttonS4: "rounded-lg bg-secondary-50 text-secondary-600 shadow-sm border border-2 border-white",
+
+    buttonWidthMD: "w-full md:w-fit text-center ",
 
 
     gutter: 'px-6 md:max-w-[1536px]',

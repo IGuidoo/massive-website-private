@@ -33,6 +33,7 @@ import {
     LinkedinGray,
     TwitterGray,
 } from "../components/icons"
+import TagsList from "@/components/TagsList"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -150,7 +151,7 @@ const OverOns = ({ data = [] }) => {
                 width={2800}
                 height={2000}
                 alt="foto"
-                className="scale-[2] lg:order-2 md:scale-[2] xl:transform xl:translate-x-[27%] xl:translate-y-[-45%] xl:absolute xl:right-0 xl:scale-[1.2]"
+                className="-z-10 scale-[2] lg:order-2 md:scale-[2] xl:transform xl:translate-x-[27%] xl:translate-y-[-45%] xl:absolute xl:right-0 xl:scale-[1.2]"
             />
             <div className={`pt-[19%] flex flex-col gap-8 lg:max-w-[725px] lg:pt-[0%]`}>
                 <div className='flex flex-col gap-4'>
@@ -172,15 +173,7 @@ const OverOns = ({ data = [] }) => {
                             {data.cta[0].text}
                         </Link>
                     </div>
-                    <div className='flex flex-wrap gap-2'>
-                        {data.tags.map((tag, index) => (
-                            <div key={index} className='flex pl-1 pr-4 py-1 gap-1.5 bg-secondary-100 rounded-full'>
-                                {/* <img src={PurpleCheckmark} alt="" /> */}
-                                <PurpleCheckmark />
-                                <h4 className='text-xs leading-4 font-medium self-center text-secondary-500'>{tag.text}</h4> {/* Use tag.text instead of tag.content */}
-                            </div>
-                        ))}
-                    </div>
+                    <TagsList tagsData={data} />
                 </div>
             </div>
         </section>
@@ -284,10 +277,10 @@ const OverOnsData = {
     text: ["Door nauw samen te werken met ondernemers voorzien wij hen van creatieve en datagedreven oplossingen met het streven naar transparantie in alles wat we doen."],
     cta: [{ text: "Lees verder -->", link: "/#" }],
     tags: [
-        { text: "Unieke aanpak" },
-        { text: "Gedreven door Data" },
-        { text: "Samen naar Succes" },
-        { text: "Transparantie" }
+        { name: "Unieke aanpak", href: "/#" },
+        { name: "Gedreven door Data", href: "/#"  },
+        { name: "Samen naar Succes", href: "/#"  },
+        { name: "Transparantie", href: "/#"  }
     ]
 }
 
