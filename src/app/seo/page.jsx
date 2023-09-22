@@ -1,6 +1,7 @@
 import AcordionWithIcons from "@/components/AcordionWithIcons"
 import Hero from "./Hero"
 import HeroBackgroundSEO from "@/images/HeroBackgroundSEO.svg"
+import Diensten from "@/components/Diensten"
 
 export const metadata = {
   title: {
@@ -19,6 +20,8 @@ export default function page() {
       </div>
 
       <AcordionWithIcons />
+
+      <Diensten />
     </>
   )
 

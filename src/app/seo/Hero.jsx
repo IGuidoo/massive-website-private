@@ -15,7 +15,7 @@ const Hero = () => {
                     <div className='flex gap-4 mb-8'>
                         {HeroData.title.icon}
                         <div className=''>
-                            <p className='text-lg leading-7 font-semibold text-gray-800'>{HeroData.title.title}</p>
+                            <p className='text-lg leading-7 font-semibold text-secondary-800'>{HeroData.title.title}</p>
                             <p className='text-sm leading-5 text-secondary-500 mt-[-4px]'>{HeroData.title.subTitle}</p>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ const Hero = () => {
                                 {HeroData.cta[2].title}
                             </Link>
                         </div>
-                        
+
                     </div>
                 </div>
 
