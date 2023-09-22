@@ -10,7 +10,7 @@ const Hero = () => {
     return (
         <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32`}>
 
-            <div className='grid grid-flow-row  gap-12 md:grid-flow-col md:grid-cols-2'>
+            <div className='grid grid-flow-row  gap-12 xl:grid-flow-col xl:grid-cols-2'>
                 <div>
                     <div className='flex gap-4 mb-8'>
                         {HeroData.title.icon}
@@ -21,11 +21,13 @@ const Hero = () => {
                     </div>
 
                     <div className='flex flex-col gap-16'>
+
                         <div className='flex flex-col gap-8'>
-                            <h1 className={` ${styles.heading2} `}>{HeroData.content.title}</h1>
+                            <h1 className={` ${styles.heading2} heading-gradient-gray`}>{HeroData.content.title}</h1>
                             <p className={` ${styles.text} `}>{HeroData.content.body}</p>
                             <TagsList tagsData={HeroData.content} />
                         </div>
+
                         <div className='flex flex-col gap-2 items-center md:flex-row'>
                             <Link
                                 href={HeroData.cta[0].href}
@@ -33,29 +35,25 @@ const Hero = () => {
                             >
                                 {HeroData.cta[0].title}
                             </Link>
-                            <p className={` ${styles.text}`}>{HeroData.cta[1].textBetween}</p>
+                            <p className={` ${styles.text} hidden md:block`}>{HeroData.cta[1].textBetween}</p>
                             <Link
                                 href={HeroData.cta[2].href}
                                 className={` ${styles.buttonT2} ${styles.buttonP4} ${styles.buttonS4} ${styles.buttonWidthMD}inline-block `}
                             >
                                 {HeroData.cta[2].title}
                             </Link>
-
                         </div>
+                        
                     </div>
                 </div>
 
-
-
                 <div className="w-full">
-                    <HeroImgSEO className="w-full  md:w-[110%]" />
+                    { HeroData.heroImg }
                 </div>
 
-                {/* <p>{ HeroData.title.title }</p> */}
             </div>
 
         </section>
-            
     )
 }
 
@@ -64,6 +62,7 @@ export default Hero
 
 
 const HeroData = {
+    heroImg: <HeroImgSEO className="w-full  xl:w-[110%]" />,
     title: {
         title: "SEO",
         subTitle: "Stijg uit boven je concurentie",

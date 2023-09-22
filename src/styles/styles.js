@@ -38,7 +38,7 @@ const styles = {
 
 
 
-    
+    // headingGradientGray: "bg-gradient-to-r from-[#5B6D87] via-transparent to-[#1F2937] bg-clip-text text-transparent",
     heading1: "text-3xl leading-9 font-bold text-secondary-800 md:text-4xl md:leading-10   ",
     heading2: "text-3xl leading-9 font-bold text-secondary-700 md:text-5xl md:leading-none",
     heading3: "text-2xl leading-8 font-semibold text-secondary-800 md:text-5xl md:leading-none",

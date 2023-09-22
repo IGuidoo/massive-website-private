@@ -96,6 +96,16 @@ body {
   gap: 8px;
 }
 
-.button-gradient-purple{
-  background: var(--Gradient, linear-gradient(180deg, #9869E9 21.45%, #5238EF 199.04%));
+.button-gradient-purple {
+  background: var(
+    --Gradient,
+    linear-gradient(180deg, #9869e9 21.45%, #5238ef 199.04%)
+  );
+}
+
+.heading-gradient-gray {
+  background: linear-gradient(107deg, #5b6d87 -8.14%, #1f2937 44.41%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
