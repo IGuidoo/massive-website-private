@@ -22,7 +22,7 @@ const AcordionWithIcons = () => {
             </div>
             <div className='grid grid-flow-row lg:grid-cols-2 '>
                 {SEO.accordion.map((item) => (
-                    <details className='p-4 lg:p-8 text-base leading-6 font-medium text-secondary-700 md:text-lg md:leading-7'>
+                    <details key={item.title} className='p-4 lg:p-8 text-base leading-6 font-medium text-secondary-700 md:text-lg md:leading-7'>
                         <summary className='flex gap-6 items-center pb-4 '>
                             {item.icon}
                             <h3 className='text-xl leading-7 font-semibold text-secondary-800'>{item.title}</h3>
