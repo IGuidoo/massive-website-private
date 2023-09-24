@@ -1,21 +1,26 @@
 "use client"
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from '@/styles/styles'
 import { ChartBarIcon } from '@heroicons/react/20/solid'
 import parse from 'html-react-parser';
 import Boek from "@/images/Boek.svg"
 
 const Diensten = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
+    // states
+    const [activeIndex, setActiveIndex] = useState(null);
     const [isExpanded, setIsExpanded] = useState(false);
+    const accordionRefs = useRef([]);
     const beginSectionRef = useRef(null);
 
+    // styles for scrolling
     const contentStyles = {
         overflow: 'hidden',
         transition: 'max-height 1s ease',
         maxHeight: isExpanded ? '3000px' : '750px'
     };
+
+    // styles to show more gradient
     const gradientStyles = {
         position: 'absolute',
         bottom: '0',
@@ -25,19 +30,31 @@ const Diensten = () => {
         background: 'linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))',
     }
 
+    // scroll back to top on mobile after the accordion is closed
+    useEffect(() => {
+        if (activeIndex !== null && accordionRefs.current[activeIndex]) {
+            const offsetTop = accordionRefs.current[activeIndex].offsetTop;
+            window.scrollTo({
+                top: offsetTop - 50, // Set extra scroll padding
+                behavior: 'smooth'
+            });
+        }
+    }, [activeIndex]);
+
+    // handle scroll to top of section 
     const handleToggleContent = () => {
         if (isExpanded && beginSectionRef.current) {
             beginSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+
+            //On mobile close the accordion
+            setActiveIndex(null)
         }
         setIsExpanded(prevState => !prevState);
     };
 
+    // open and close accordion on mobile
     const handleToggle = (index) => {
-        if (activeIndex === index) {
-            setActiveIndex(null);
-        } else {
-            setActiveIndex(index);
-        }
+        setActiveIndex(prevIndex => (prevIndex === index ? null : index));
     };
 
     return (
@@ -62,11 +79,14 @@ const Diensten = () => {
                 </div>
 
                 {/* Content */}
-                <div className='flex-grow'>
+                <div  className='flex-grow'>
                     {seoDiensten.dienten.map((diensten, index) => (
-                        <div key={index}>
+                        <div key={index} ref={el => accordionRefs.current[index] = el}>
+                            
                             {/* Accordion Header for mobile*/}
-                            <div className='cursor-pointer flex gap-4 my-4 md:hidden' onClick={() => handleToggle(index)}>
+                            <div className='cursor-pointer flex gap-4 my-4 md:hidden'
+                                
+                                onClick={() => handleToggle(index)}>
                                 {diensten.icon}
                                 <h3 className={`${styles.heading3} self-center`}>{diensten.subTitle}</h3>
                             </div>
@@ -87,14 +107,18 @@ const Diensten = () => {
                                     <div id="diensten" style={contentStyles}>
                                         {parse(diensten.body)}
                                     </div>
+
                                     {/* Gradient Overlay */}
                                     {!isExpanded && (
                                         <div style={gradientStyles} />
                                     )}
+
                                 </div>
+
                                 <button className="self-center mt-6" onClick={handleToggleContent}>
                                     {isExpanded ? 'Lees minder..' : 'Lees meer..'}
                                 </button>
+
                             </div>
                         </div>
                     ))}
