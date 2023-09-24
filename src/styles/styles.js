@@ -68,6 +68,7 @@ const styles = {
       width: '1px',
       backgroundColor: '#e5e7eb', // This is the color for bg-gray-300 in Tailwind
       height: '100%'`,
+
 };
 
 export const layout = {
