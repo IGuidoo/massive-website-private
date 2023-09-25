@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
             className={clsx('h-full antialiased')}
             suppressHydrationWarning
         >
-            <body className="relative min-h-full bg-white dark:bg-slate-900">
+            <body className="relative min-h-full bg-secondary-50 dark:bg-slate-900 ">
                 {/* <Providers> */}
                 
                 <div className='relative w-full'>

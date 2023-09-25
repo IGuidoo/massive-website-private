@@ -1,6 +1,5 @@
 import AcordionWithIcons from "@/components/AcordionWithIcons"
 import Hero from "./Hero"
-import HeroBackgroundSEO from "@/images/HeroBackgroundSEO.svg"
 import Diensten from "@/components/Diensten"
 
 
@@ -9,10 +8,9 @@ import Diensten from "@/components/Diensten"
 
 // Hero
 import { ChartBarIcon } from '@heroicons/react/20/solid'
-import HeroImgSEO from "@/images/HeroImgSEO.svg"
-import HeroSEO from '@/images/hero/HeroSEO.svg'
 
-import HeroIMAGE from "@/images/hero/Massive_Header_SEO_pagina.svg"
+import Massive_Header_SVG_SEO_page from "@/images/hero/Massive_Header_SVG_SEO_page.svg"
+
 
 // Accordion
 import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon} from '@heroicons/react/20/solid'
@@ -44,7 +42,7 @@ export default function page() {
 
 
 const HeroData = {
-  heroImg: <HeroIMAGE className="w-full overflow-visible " />,
+  heroImg: <Massive_Header_SVG_SEO_page className="w-full overflow-visible " />,
   title: {
       title: "SEO",
       subTitle: "Stijg uit boven je concurentie",

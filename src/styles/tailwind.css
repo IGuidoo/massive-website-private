@@ -228,3 +228,7 @@ details[open] summary {
 .content-wrapper.expanded::after {
   display: none;
 }
+
+.gekkegradient{
+  fill: linear-gradient(37deg, #ff0000 26.68%, rgba(255, 3, 3, 0) 33.12%);
+}
