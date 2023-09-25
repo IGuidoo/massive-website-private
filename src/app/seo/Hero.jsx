@@ -46,11 +46,8 @@ const Hero = ({ data = [] }) => {
                 </div>
 
                 <div className="hidden lg:flex w-full self-center ">
-                    <div className=' lg:absolute lg:top-0 lg:left-[10%] 2xl:left-0 w-[100%] -z-10'>
-                    {/* <div className=' w-full -z-20  '> */}
-                        {/* <Gradient className="absolute xl:-top-[94px] right-0 big-blend "/> */}
+                    <div className=' lg:absolute lg:top-0 lg:left-[10%] 2xl:left-0 2xl:top-[-93px] w-[100%] -z-10'>
                         {data.heroImg}
-                        {/* <BGhero className="hidden lg:block absolute  md:top-[180px]  xl:-top-[94px] right-0 -z-30 max-w-[1920px] w-full 2xl:scale-90" /> */}
                     </div>
                 </div>
 
