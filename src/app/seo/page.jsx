@@ -29,7 +29,7 @@ export const metadata = {
 export default function page() {
   return (
     <>
-      <div className="w-full relative">
+      <div className="w-full relative max-w-[1920px] mx-auto">
         <Hero data={HeroData} />
         {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
       </div>

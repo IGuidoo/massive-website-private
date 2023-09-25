@@ -5,6 +5,7 @@ import Link from 'next/link'
 import TagsList from '@/components/TagsList'
 
 import BGhero from "@/images/hero/Group_226.svg"
+import Gradient from "@/images/hero/Glow_Heading.svg"
 
 
 const Hero = ({ data = [] }) => {
@@ -50,9 +51,10 @@ const Hero = ({ data = [] }) => {
 
                 <div className="w-full  flex self-center ">
                     {/* <div className='absolute top-[-190%] left-[-100%] w-[200%] -z-10'> */}
-                    <div className=' w-full   '>
+                    <div className=' w-full -z-20  '>
+                        <Gradient className="absolute xl:-top-[94px] right-0 "/>
                         {data.heroImg}
-                        <BGhero className="hidden md:block absolute  md:top-[180px]  xl:-top-[94px] right-0 -z-10 max-w-[1920px] w-full 2xl:scale-90" />
+                        <BGhero className="hidden lg:block absolute  md:top-[180px]  xl:-top-[94px] right-0 -z-30 max-w-[1920px] w-full 2xl:scale-90" />
                     </div>
                 </div>
 
