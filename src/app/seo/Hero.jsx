@@ -2,53 +2,58 @@ import styles from '@/styles/styles'
 import React from 'react'
 import Link from 'next/link'
 
-import { ChartBarIcon } from '@heroicons/react/20/solid'
-import HeroImgSEO from "@/images/HeroImgSEO.svg"
 import TagsList from '@/components/TagsList'
 
-const Hero = () => {
-    return (
-        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32`}>
+import BGhero from "@/images/hero/Group_226.svg"
 
-            <div className='grid grid-flow-row  gap-12 xl:grid-flow-col xl:grid-cols-2'>
-                <div>
+
+const Hero = ({ data = [] }) => {
+    return (
+        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:pb-32 md:pt-32 xl:pt-0 `}>
+
+            <div className='grid grid-flow-row lg:grid-flow-col lg:grid-cols-2'>
+                <div className='self-center'>
                     <div className='flex gap-4 mb-8'>
-                        {HeroData.title.icon}
+                        {data.title.icon}
                         <div className=''>
-                            <p className='text-lg leading-7 font-semibold text-secondary-800'>{HeroData.title.title}</p>
-                            <p className='text-sm leading-5 text-secondary-500 mt-[-4px]'>{HeroData.title.subTitle}</p>
+                            <p className='text-lg leading-7 font-semibold text-secondary-800'>{data.title.title}</p>
+                            <p className='text-sm leading-5 text-secondary-500 mt-[-4px]'>{data.title.subTitle}</p>
                         </div>
                     </div>
 
                     <div className='flex flex-col gap-16'>
 
                         <div className='flex flex-col gap-8'>
-                            <h1 className={` ${styles.heading2} heading-gradient-gray`}>{HeroData.content.title}</h1>
-                            <p className={` ${styles.text} `}>{HeroData.content.body}</p>
-                            <TagsList tagsData={HeroData.content} />
+                            <h1 className={` ${styles.heading2} heading-gradient-gray`}>{data.content.title}</h1>
+                            <p className={` ${styles.text} `}>{data.content.body}</p>
+                            <TagsList tagsData={data.content} />
                         </div>
 
                         <div className='flex flex-col gap-2 items-center md:flex-row'>
                             <Link
-                                href={HeroData.cta[0].href}
+                                href={data.cta[0].href}
                                 className={` ${styles.buttonT2} ${styles.buttonP4} ${styles.buttonS3} ${styles.buttonWidthMD}  inline-block `}
                             >
-                                {HeroData.cta[0].title}
+                                {data.cta[0].title}
                             </Link>
-                            <p className={` ${styles.text} hidden md:block`}>{HeroData.cta[1].textBetween}</p>
+                            <p className={` ${styles.text} hidden md:block`}>{data.cta[1].textBetween}</p>
                             <Link
-                                href={HeroData.cta[2].href}
+                                href={data.cta[2].href}
                                 className={` ${styles.buttonT2} ${styles.buttonP4} ${styles.buttonS4} ${styles.buttonWidthMD}inline-block `}
                             >
-                                {HeroData.cta[2].title}
+                                {data.cta[2].title}
                             </Link>
                         </div>
 
                     </div>
                 </div>
 
-                <div className="w-full">
-                    { HeroData.heroImg }
+                <div className="w-full  flex self-center ">
+                    {/* <div className='absolute top-[-190%] left-[-100%] w-[200%] -z-10'> */}
+                    <div className=' w-full   '>
+                        {data.heroImg}
+                        <BGhero className="hidden md:block absolute  md:top-[180px]  xl:-top-[94px] right-0 -z-10 max-w-[1920px] w-full 2xl:scale-90" />
+                    </div>
                 </div>
 
             </div>
@@ -60,28 +65,3 @@ const Hero = () => {
 export default Hero
 
 
-
-const HeroData = {
-    heroImg: <HeroImgSEO className="w-full  xl:w-[110%]" />,
-    title: {
-        title: "SEO",
-        subTitle: "Stijg uit boven je concurentie",
-        icon: <ChartBarIcon className='w-[44px] h-[44px] text-primary-500 p-3 bg-primary-100 rounded' />
-    },
-    content: {
-        title: "Uitgebreide SEO-oplossingen voor een Dominante Online Aanwezigheid",
-        body: "Ontdek onze diverse SEO-diensten die zijn ontworpen om uw online zichtbaarheid te vergroten. Om websiteverkeer te stimuleren en uw bedrijf naar de top van de zoekresultaten te brengen.",
-        tags: [
-            { name: "Maandelijkse SEO", href: "/#" },
-            { name: "Traditionale SEO", href: "/#" },
-            { name: "Lokale SEO", href: "/#" },
-            { name: "eCommerce SEO", href: "/#" },
-            { name: "Enterprise SEO", href: "/#" },
-        ]
-    },
-    cta: [
-        { title: "Ontdek meer Diensten", href: "/#" },
-        { textBetween: "of" },
-        { title: "Neem Contact met ons op", href: "/#" },
-    ]
-}

@@ -6,12 +6,18 @@ import { ChartBarIcon } from '@heroicons/react/20/solid'
 import parse from 'html-react-parser';
 import Boek from "@/images/Boek.svg"
 
+
+import useWindowWidth from "@/utils/useWindowWidth";
+
 const Diensten = () => {
     // states
-    const [activeIndex, setActiveIndex] = useState(null);
+    const [activeIndex, setActiveIndex] = useState(0);
     const [isExpanded, setIsExpanded] = useState(false);
     const accordionRefs = useRef([]);
     const beginSectionRef = useRef(null);
+
+
+    const windowWidth = useWindowWidth();
 
     // styles for scrolling
     const contentStyles = {
@@ -31,26 +37,39 @@ const Diensten = () => {
     }
 
     // scroll back to top on mobile after the accordion is closed
+    const componentJustMounted = useRef(true);
+
     useEffect(() => {
+        if (componentJustMounted.current) {
+            componentJustMounted.current = false;
+            return;
+        }
+
         if (activeIndex !== null && accordionRefs.current[activeIndex]) {
             const offsetTop = accordionRefs.current[activeIndex].offsetTop;
             window.scrollTo({
-                top: offsetTop - 50, // Set extra scroll padding
+                top: offsetTop - 70, // Set extra scroll padding
                 behavior: 'smooth'
             });
         }
     }, [activeIndex]);
 
+
     // handle scroll to top of section 
     const handleToggleContent = () => {
         if (isExpanded && beginSectionRef.current) {
             beginSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
 
-            //On mobile close the accordion
-            setActiveIndex(null)
+        // Check if window width is less than a certain breakpoint, e.g., 768 for mobile
+        if (windowWidth < 768 && isExpanded) {
+            // On mobile close the accordion
+            setActiveIndex(null);
         }
         setIsExpanded(prevState => !prevState);
     };
+
+
 
     // open and close accordion on mobile
     const handleToggle = (index) => {
@@ -79,13 +98,13 @@ const Diensten = () => {
                 </div>
 
                 {/* Content */}
-                <div  className='flex-grow'>
+                <div className='flex-grow'>
                     {seoDiensten.dienten.map((diensten, index) => (
                         <div key={index} ref={el => accordionRefs.current[index] = el}>
-                            
+
                             {/* Accordion Header for mobile*/}
                             <div className='cursor-pointer flex gap-4 my-4 md:hidden'
-                                
+
                                 onClick={() => handleToggle(index)}>
                                 {diensten.icon}
                                 <h3 className={`${styles.heading3} self-center`}>{diensten.subTitle}</h3>

@@ -48,7 +48,7 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-white">
+        <header className=""> {/* bg-white */}
             <nav className={`${styles.gutter} xl:max-w-[1536px] mx-auto flex items-center justify-between py-6`} aria-label="Global">
                 {/* Desktop Logo */}
                 <div className="flex lg:flex-1">

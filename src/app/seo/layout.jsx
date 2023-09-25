@@ -18,12 +18,12 @@ export default function RootLayout({ children }) {
             className={clsx('h-full antialiased')}
             suppressHydrationWarning
         >
-            <body className="min-h-full bg-white dark:bg-slate-900">
+            <body className="relative min-h-full bg-white dark:bg-slate-900">
                 {/* <Providers> */}
                 
                 <div className='relative w-full'>
                     <Navbar />
-                    <div className="absolute bottom-0 w-full h-full -z-20 custom-bg-gradient"></div>
+                    {/* <div className="absolute bottom-0 w-full h-full -z-20 custom-bg-gradient"></div> */}
                 </div>
 
                 <main>
