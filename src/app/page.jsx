@@ -33,6 +33,14 @@ import {
     LinkedinGray,
     TwitterGray,
 } from "../components/icons"
+import {
+    SVG_SEA,
+    SVG_SEO,
+    SVG_Strategie,
+    SVG_Webshop,
+    SVG_Website
+} from "@/images/diensten"
+
 import TagsList from "@/components/TagsList"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
@@ -311,7 +319,7 @@ const CatagoriesServecesData = [
                 cta1Slug: ["hoi"],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg",
+                img: <SVG_Website /> ,
             },
             {
                 id: ["webshop"],
@@ -336,7 +344,7 @@ const CatagoriesServecesData = [
                 cta1Slug: ["oke"],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg",
+                img: <SVG_Webshop />
             },
             {
                 id: ["seo"],
@@ -361,7 +369,7 @@ const CatagoriesServecesData = [
                 cta1Slug: [""],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg",
+                img: <SVG_SEO />,
             },
             {
                 id: ["sea"],
@@ -386,7 +394,7 @@ const CatagoriesServecesData = [
                 cta1Slug: [""],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg",
+                img: <SVG_SEA />,
             },
             {
                 id: ["strategie"],
@@ -411,7 +419,7 @@ const CatagoriesServecesData = [
                 cta1Slug: [""],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: "/images/dienstenWebshop.svg",
+                img: <SVG_Strategie />,
             },
         ]
     }

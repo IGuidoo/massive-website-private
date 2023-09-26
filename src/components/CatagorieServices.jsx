@@ -75,13 +75,8 @@ const CatagoriesServices = ({ data = [] }) => {
                         xl:grid-cols-2 mt-12 xl:mt-24 ${activeDienstIndex === index ? "block" : "hidden"
                 }`}
             >
-              <Image
-                className="max-w-xl w-full  ml-auto mr-auto xl:mr-0"
-                src={dienst.img}
-                width={651}
-                height={481}
-                alt={dienst.id}
-              />
+              {dienst.img}
+
               <div className="flex flex-col gap-6 xl:max-w-lg grid-pos-row-1">
                 <div className="flex gap-3">
                   {/* <img src={logoSmall} alt="logo" /> */}
@@ -135,7 +130,7 @@ const CatagoriesServices = ({ data = [] }) => {
 
             </div>
           ))}
-        <div className={`-z-50 absolute top-0 left-0 h-full w-full custom-bg-gradient rounded-b-4xl ${styles.boxWidth}`}></div>
+          <div className={`-z-50 absolute top-0 left-0 h-full w-full custom-bg-gradient rounded-b-4xl ${styles.boxWidth}`}></div>
         </div>
       </div>
     </section>

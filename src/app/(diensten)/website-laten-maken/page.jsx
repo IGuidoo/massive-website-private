@@ -1,7 +1,7 @@
 import AcordionWithIcons from "@/components/AcordionWithIcons"
 import Hero from "@/app/(diensten)/DienstenHero"
 import Diensten from "@/app/(diensten)/Diensten"
-
+import styles from "@/styles/styles"
 
 
 // imports data 
@@ -10,6 +10,9 @@ import Diensten from "@/app/(diensten)/Diensten"
 import { ChartBarIcon } from '@heroicons/react/20/solid'
 import Massive_Header_SVG_Website_page from "@/images/hero/SVG_Website_page.svg"
 
+//Links Rechts
+import LTRI from "@/components/LTRI"
+import LIRT from "@/components/LIRT"
 
 // Accordion
 import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon} from '@heroicons/react/20/solid'
@@ -28,18 +31,24 @@ export const metadata = {
 }
 
 export default function page() {
-  return (
-    <>
-      <div className="w-full relative max-w-[1920px] mx-auto">
-        <Hero data={ HeroData } />
-        {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
-      </div>
+    return (
+        <>
+            <div className="w-full relative max-w-[1920px] mx-auto">
+                <Hero data={HeroData} />
+                {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
+            </div>
 
-      <AcordionWithIcons data={ AccordionData } className="z-10" />
+            <section className={`flex flex-col gap-32 ${styles.paddingY}`}>
+                <LIRT data={LinksRechtsData[0]} />
+                <LTRI data={LinksRechtsData[1]} />
+                <LIRT data={LinksRechtsData[2]} />
+            </section>
 
-      <Diensten data={ seoDiensten } className="z-10" />
-    </>
-  )
+            <AcordionWithIcons data={AccordionData} className="z-10" />
+
+            <Diensten data={seoDiensten} className="z-10" />
+        </>
+    )
 
 }
 
@@ -70,7 +79,26 @@ const HeroData = {
   ]
 }
 
-
+const LinksRechtsData = [
+    {
+        title: "Digitale gezicht van uw onderneming",
+        subTitle: "Webdesign op Maat: Laat Uw Unieke Merk Stralen",
+        body: "Zorg ervoor dat het uw unieke merk en waarden weerspiegelt met een website op maat. Wij begrijpen dat elke onderneming uniek is, en daarom bieden wij op maat gemaakte oplossingen die passen bij uw specifieke behoeften en doelen. Laat uw website ontwerpen door een professioneel webdesign bureau dat aandacht besteedt aan elk detail, van het ontwerp tot de functionaliteit, om een naadloze en aantrekkelijke gebruikerservaring te garanderen.",
+        img: "/images/image_56.png",
+    },
+    {
+        title: "Wordt hoger gevonden in Google",
+        subTitle: "Betaalbare en Transparante Website Laten Maken Kosten",
+        body: "Budget is vaak een zorg, maar een professionele website hoeft geen fortuin te kosten. Wij bieden betaalbare en transparante prijzen voor het laten maken van een website. Geen verborgen kosten, geen verrassingen. Ontvang een duidelijke en gedetailleerde offerte voordat het project van start gaat, zodat u precies weet wat u kunt verwachten en hoeveel het u gaat kosten.",
+        img: "/images/image_56.png",
+    },
+    {
+        title: `Een website is nooit echt "klaar" `,
+        subTitle: "Continue Ondersteuning en Website Onderhoud",
+        body: "Wij begrijpen dat uw zakelijke website regelmatig onderhoud en updates nodig heeft om soepel te blijven draaien en up-to-date te blijven met de nieuwste technologieën en beveiligingsnormen. Wij bieden continue ondersteuning en website onderhoudsdiensten om ervoor te zorgen dat uw website altijd op zijn best presteert, zodat u zich kunt concentreren op wat u het beste doet: uw bedrijf runnen.",
+        img: "/images/image_56.png",
+    },
+]
 
 const AccordionData = {
   title: {

@@ -1,6 +1,7 @@
 import AcordionWithIcons from "@/components/AcordionWithIcons"
 import Hero from "@/app/(diensten)/DienstenHero"
 import Diensten from "@/app/(diensten)/Diensten"
+import styles from "@/styles/styles"
 
 
 
@@ -10,7 +11,9 @@ import Diensten from "@/app/(diensten)/Diensten"
 import { ChartBarIcon } from '@heroicons/react/20/solid'
 import Massive_Header_SVG_SEA_page from "@/images/hero/SVG_SEA_page.svg"
 
-
+//Links Rechts
+import LTRI from "@/components/LTRI"
+import LIRT from "@/components/LIRT"
 
 // Accordion
 import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon} from '@heroicons/react/20/solid'
@@ -29,20 +32,27 @@ export const metadata = {
 }
 
 export default function page() {
-  return (
-    <>
-      <div className="w-full relative max-w-[1920px] mx-auto">
-        <Hero data={ HeroData } />
-        {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
-      </div>
+    return (
+        <>
+            <div className="w-full relative max-w-[1920px] mx-auto">
+                <Hero data={HeroData} />
+                {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
+            </div>
 
-      <AcordionWithIcons data={ AccordionData } className="z-10" />
+            <section className={`flex flex-col gap-32 ${styles.paddingY}`}>
+                <LIRT data={LinksRechtsData[0]} />
+                <LTRI data={LinksRechtsData[1]} />
+                <LIRT data={LinksRechtsData[2]} />
+            </section>
 
-      <Diensten data={ seoDiensten } className="z-10" />
-    </>
-  )
+            <AcordionWithIcons data={AccordionData} className="z-10" />
+
+            <Diensten data={seoDiensten} className="z-10" />
+        </>
+    )
 
 }
+
 
 
 const HeroData = {
@@ -71,6 +81,27 @@ const HeroData = {
   ]
 }
 
+const LinksRechtsData = [
+    {
+        "title": "Efficiënte Leadgeneratie voor Elk Budget",
+        "subTitle": "Doelgerichte Campagnes Binnen Uw Budget",
+        "body": "Heeft u een beperkt marketingbudget maar wilt u toch opvallen tussen de online concurrentie? Onze SEA-specialisten helpen u bij het opzetten van doelgerichte campagnes die uw ideale klanten bereiken, zonder uw budget te overschrijden. Geniet van kosteneffectieve advertentieoplossingen die resultaten opleveren.",
+        "img": "/images/image_56.png"
+    },
+    {
+        "title": "Verhoog de Zichtbaarheid van Uw Bedrijf",
+        "subTitle": "Versterk Uw Online Aanwezigheid",
+        "body": "Begrijpen we dat het essentieel is om een betrouwbare en effectieve online marketingstrategie te hebben om de zichtbaarheid te vergroten. Ons team van experts biedt op maat gemaakte SEA-oplossingen die zijn ontworpen om uw online aanwezigheid te versterken en meer klanten naar uw bedrijf te trekken.",
+        "img": "/images/image_56.png"
+    },
+    {
+        "title": "Schaalbare SEA Oplossingen voor Elk Bedrijfsformaat",
+        "subTitle": "Bereik Uw Marketingdoelen en Laat Uw Bedrijf Groeien",
+        "body": "Of u nu een groot of klein bedrijf heeft, wij bieden geavanceerde SEA-strategieën die zijn afgestemd op uw specifieke behoeften, zodat u uw marketingdoelen kunt bereiken en uw bedrijf kunt laten groeien. Ontdek schaalbare online advertentieoplossingen die met u meegroeien.",
+        "img": "/images/image_56.png"
+    }
+
+]
 
 
 const AccordionData = {

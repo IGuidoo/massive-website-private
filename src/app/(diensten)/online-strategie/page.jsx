@@ -1,7 +1,7 @@
 import AcordionWithIcons from "@/components/AcordionWithIcons"
 import Hero from "@/app/(diensten)/DienstenHero"
 import Diensten from "@/app/(diensten)/Diensten"
-
+import styles from "@/styles/styles"
 
 
 // imports data 
@@ -10,10 +10,12 @@ import Diensten from "@/app/(diensten)/Diensten"
 import { ChartBarIcon } from '@heroicons/react/20/solid'
 import Massive_Header_SVG_Strategie_page from "@/images/hero/SVG_Strategie_page.svg"
 
-
+//Links Rechts
+import LTRI from "@/components/LTRI"
+import LIRT from "@/components/LIRT"
 
 // Accordion
-import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon} from '@heroicons/react/20/solid'
+import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
 
 //Diensten 
 // import Boek from "@/images/Boek.svg"
@@ -29,18 +31,24 @@ export const metadata = {
 }
 
 export default function page() {
-  return (
-    <>
-      <div className="w-full relative max-w-[1920px] mx-auto">
-        <Hero data={ HeroData } />
-        {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
-      </div>
+    return (
+        <>
+            <div className="w-full relative max-w-[1920px] mx-auto">
+                <Hero data={HeroData} />
+                {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
+            </div>
 
-      <AcordionWithIcons data={ AccordionData } className="z-10" />
+            <section className={`flex flex-col gap-32 ${styles.paddingY}`}>
+                <LIRT data={LinksRechtsData[0]} />
+                <LTRI data={LinksRechtsData[1]} />
+                <LIRT data={LinksRechtsData[2]} />
+            </section>
 
-      <Diensten data={ seoDiensten } className="z-10" />
-    </>
-  )
+            <AcordionWithIcons data={AccordionData} className="z-10" />
+
+            <Diensten data={seoDiensten} className="z-10" />
+        </>
+    )
 
 }
 
@@ -71,6 +79,32 @@ const HeroData = {
   ]
 }
 
+const LinksRechtsData = [
+    {
+        "title": "Ontdek de Kracht van Effectieve Online Strategie",
+        "subTitle": "Navigeer met Ons Door de Complexiteit van Digitale Marketing",
+        "body": "In de digitale wereld van vandaag is een robuuste online strategie essentieel. Wij zijn het online marketing bureau dat u helpt bij het navigeren door de complexiteit van digitale marketing. Wij begrijpen dat tijd en middelen kostbaar zijn. Daarom zorgen wij voor een efficiënte leadgeneratie en een krachtige online marketing strategie, zodat u zich kunt concentreren op wat u het beste doet.",
+        "img": "/images/image_56.png"
+    },
+    {
+        "title": "Uw Partner in Online Marketing",
+        "subTitle": "Ondersteuning bij Elke Stap, van SEO tot Google Ads",
+        "body": "Als full service marketingbureau begrijpen we de unieke uitdagingen van het online landschap. Wij zijn hier om u te ondersteunen bij elke stap, van SEO tot Google Ads uitbesteden. Onze experts in zoekmachinemarketing en Google Marketing zorgen ervoor dat uw bedrijf opvalt in de digitale wereld, waardoor u meer klanten en omzet genereert.",
+        "img": "/images/image_56.png"
+    },
+    {
+        "title": "SEA Specialist voor Uw Bedrijf",
+        "subTitle": "Betrouwbare en Uitgebreide SEA Diensten",
+        "body": "Zoek niet verder voor een betrouwbare SEA specialist. Wij bieden uitgebreide search engine advertising diensten aan die zijn afgestemd op uw specifieke behoeften. Wij zorgen voor effectieve en efficiënte Google Ads campagnes, waardoor u meer leads en klanten aantrekt zonder de bank te breken.",
+        "img": "/images/image_56.png"
+    },
+    {
+        "title": "SEO Uitbesteden met Vertrouwen",
+        "subTitle": "Ervaar Succes met Onze Bewezen SEO Strategieën",
+        "body": "SEO is cruciaal voor online succes. Als ervaren SEO specialisten nemen wij de last van zoekmachineoptimalisatie van uw schouders. Wij zorgen voor een grondige SEO check en implementeren bewezen SEO strategieën die uw website hoger in de zoekresultaten plaatsen, waardoor uw zichtbaarheid en bereik toenemen.",
+        "img": "/images/image_56.png"
+    }
+]
 
 
 const AccordionData = {

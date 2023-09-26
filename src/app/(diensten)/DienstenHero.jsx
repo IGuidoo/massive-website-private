@@ -6,7 +6,7 @@ import TagsList from '@/components/TagsList'
 
 const Hero = ({ data = [] }) => {
     return (
-        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32`}>
+        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} ${styles.paddingY}`}>
 
             <div className='grid grid-flow-row lg:grid-flow-col lg:grid-cols-2'>
                 <div className='self-center z-10'>

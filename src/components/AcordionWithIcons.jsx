@@ -6,7 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const AcordionWithIcons = ({ data = [] }) => {
     return (
-        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32 z-10 relative`}>
+        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} ${styles.paddingY} z-10 relative`}>
             <div className='flex flex-col gap-4 items-center pb-12 lg:pb-24'>
                 <div className="flex text-xs leading-4">
                     <LogoSmall />

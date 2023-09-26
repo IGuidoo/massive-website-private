@@ -77,7 +77,7 @@ const Diensten = ({ data = [] }) => {
     };
 
     return (
-        <section ref={beginSectionRef} className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32`}>
+        <section ref={beginSectionRef} className={` ${styles.gutter} ${styles.mdHorizontalCenter} ${styles.paddingY}`}>
             <div className="md:flex md:gap-12 xl:gap-24">
 
                 {/* Left side navigation Desktop only */}

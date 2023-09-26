@@ -1,7 +1,7 @@
 import AcordionWithIcons from "@/components/AcordionWithIcons"
 import Hero from "@/app/(diensten)/DienstenHero"
 import Diensten from "@/app/(diensten)/Diensten"
-
+import styles from "@/styles/styles"
 
 
 // imports data 
@@ -38,7 +38,7 @@ export default function page() {
                 {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
             </div>
 
-            <section className="flex flex-col gap-16">
+            <section className={`flex flex-col gap-32 ${styles.paddingY}`}>
                 <LIRT data={LinksRechtsData[0]} />
                 <LTRI data={LinksRechtsData[1]} />
                 <LIRT data={LinksRechtsData[2]} />
@@ -81,25 +81,25 @@ const HeroData = {
 
 const LinksRechtsData = [
     {
-        title: "Digitale gezicht van uw onderneming",
-        subTitle: "Webdesign op Maat: Laat Uw Unieke Merk Stralen",
-        body: "Zorg ervoor dat het uw unieke merk en waarden weerspiegelt met een website op maat. Wij begrijpen dat elke onderneming uniek is, en daarom bieden wij op maat gemaakte oplossingen die passen bij uw specifieke behoeften en doelen. Laat uw website ontwerpen door een professioneel webdesign bureau dat aandacht besteedt aan elk detail, van het ontwerp tot de functionaliteit, om een naadloze en aantrekkelijke gebruikerservaring te garanderen.",
-        img: "/images/image_56.png",
+        "title": "Efficiënte en Betaalbare Webshop Oplossingen",
+        "subTitle": "Naadloze en Gebruiksvriendelijke Webshop Oplossingen",
+        "body": "Op zoek naar een efficiënte en betaalbare oplossing voor uw webshop? Geniet van een naadloze en gebruiksvriendelijke webshop oplossing, geoptimaliseerd voor alle apparaten en platforms. Ervaar gemoedsrust met onze continue ondersteuning en onderhoudsdiensten, zodat u zich kunt concentreren op wat echt belangrijk is - uw bedrijf laten groeien.",
+        "img": "/images/image_56.png"
     },
     {
-        title: "Wordt hoger gevonden in Google",
-        subTile: "Betaalbare en Transparante Website Laten Maken Kosten",
-        body: "Budget is vaak een zorg, maar een professionele website hoeft geen fortuin te kosten. Wij bieden betaalbare en transparante prijzen voor het laten maken van een website. Geen verborgen kosten, geen verrassingen. Ontvang een duidelijke en gedetailleerde offerte voordat het project van start gaat, zodat u precies weet wat u kunt verwachten en hoeveel het u gaat kosten.",
-        img: "/images/image_56.png",
+        "title": "Op Maat Gemaakt Webdesign voor Elk Bedrijf",
+        "subTitle": "Een Webdesign Dat Uw Merkidentiteit Weerspiegelt",
+        "body": "Wij begrijpen het belang van een schoon en professioneel webdesign dat uw merkidentiteit weerspiegelt en uw online zichtbaarheid verbetert. Onze experts werken nauw met u samen om een op maat gemaakt webdesign te creëren dat aansluit bij uw unieke behoeften en doelen.",
+        "img": "/images/image_56.png"
     },
     {
-        title: `Een website is nooit echt "klaar" `,
-        subTitle: "Continue Ondersteuning en Website Onderhoud",
-        body: "Wij begrijpen dat uw zakelijke website regelmatig onderhoud en updates nodig heeft om soepel te blijven draaien en up-to-date te blijven met de nieuwste technologieën en beveiligingsnormen. Wij bieden continue ondersteuning en website onderhoudsdiensten om ervoor te zorgen dat uw website altijd op zijn best presteert, zodat u zich kunt concentreren op wat u het beste doet: uw bedrijf runnen.",
-        img: "/images/image_56.png",
-    },
-]
+        "title": "Uitgebreide Webdesign Oplossingen voor Elk Formaat",
+        "subTitle": "Betrouwbare Webdesignpartner voor Uw Bedrijf",
+        "body": "Ervaar de waarde van een betrouwbare webdesignpartner. Wij bieden uitgebreide webdesign oplossingen, inclusief SEO-optimalisatie, continue ondersteuning en onderhoud, en een toegewijd projectmanagement team om ervoor te zorgen dat uw website altijd up-to-date en effectief is in het bereiken van uw doelgroep.",
+        "img": "/images/image_56.png"
+    }
 
+]
 
 const AccordionData = {
     title: {

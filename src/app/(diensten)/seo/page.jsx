@@ -1,7 +1,7 @@
 import AcordionWithIcons from "@/components/AcordionWithIcons"
 import Hero from "@/app/(diensten)/DienstenHero"
 import Diensten from "@/app/(diensten)/Diensten"
-
+import styles from "@/styles/styles"
 
 
 // imports data 
@@ -37,11 +37,11 @@ export default function page() {
                 {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
             </div>
 
-            {/* <section className="flex flex-col gap-16">
+            <section className={`flex flex-col gap-32 ${styles.paddingY}`}>
                 <LTRI data={LinksRechtsData[0]} />
                 <LIRT data={LinksRechtsData[1]} />
                 <LTRI data={LinksRechtsData[2]} />
-            </section> */}
+            </section>
 
 
             <AcordionWithIcons data={AccordionData} className="z-10" />
@@ -79,7 +79,26 @@ const HeroData = {
     ]
 }
 
-
+const LinksRechtsData = [
+    {
+        "title": "SEO Check Web: Ontdek Waar Uw Kansen Liggen",
+        "subTitle": "Krijg Inzicht in Uw Websiteprestaties en Mogelijkheden",
+        "body": "Bent u onzeker over de huidige stand van uw website SEO? Onze uitgebreide SEO check geeft u inzicht in uw websiteprestaties en onbenutte mogelijkheden. Wij bieden duidelijke, begrijpelijke rapporten en praktische aanbevelingen om uw website te optimaliseren, zodat u zich kunt concentreren op uw bedrijf, terwijl wij zorgen voor de groei van uw online aanwezigheid.",
+        "img": "/images/image_56.png"
+    },
+    {
+        "title": "Google Ads Uitbesteden: Maximaliseer Uw ROI",
+        "subTitle": "Geniet van Maximale Resultaten Zonder de Hoofdpijn",
+        "body": "Google Ads kan een krachtige motor zijn voor de groei van uw bedrijf, maar het kan ook complex en tijdrovend zijn. Wij nemen het beheer van uw Google Ads campagnes over, zodat u kunt genieten van maximale resultaten zonder de hoofdpijn van het dagelijks beheer van uw campagnes. Vertrouw op onze ervaren Google Ads managers om uw advertentiebudget optimaal te benutten en uw ROI te maximaliseren.",
+        "img": "/images/image_56.png"
+    },
+    {
+        "title": "Lokale SEO: Domineer Uw Lokale Markt",
+        "subTitle": "Verbeter Uw Zichtbaarheid in Lokale Zoekresultaten",
+        "body": "Lokale SEO is cruciaal voor bedrijven die hun lokale markt willen domineren. Wij zijn specialisten in lokale SEO en kunnen u helpen uw zichtbaarheid in lokale zoekresultaten te verbeteren, meer lokaal verkeer naar uw website te trekken en uw bedrijf te laten groeien in uw specifieke geografische gebied. Met onze hulp kunt u zich richten op het bedienen van uw lokale klanten, terwijl wij zorgen voor uw online groei.",
+        "img": "/images/image_56.png"
+    }
+]
 
 
 const AccordionData = {
