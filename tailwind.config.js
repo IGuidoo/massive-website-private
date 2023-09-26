@@ -21,6 +21,9 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      screens: {
+        "3xl" : "1536px"
+      },
       maxWidth: {
         '8xl': '88rem',
       },

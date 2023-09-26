@@ -47,8 +47,8 @@ const Hero = ({ data = [] }) => {
                     </div>
                 </div>
 
-                <div className="hidden lg:flex w-full self-center ">
-                    <div className=' lg:absolute lg:top-[5%] xl:top-[-93px]  lg:left-[10%] 2xl:left-0  w-[100%]'>
+                <div className=" lg:flex w-full self-center ">
+                    <div className=' lg:absolute lg:top-[-10%] 3xl:top-[-200px]  lg:left-[20%] 2xl:left-[12%]  w-[100%]'>
                         {data.heroImg}
                     </div>
                 </div>

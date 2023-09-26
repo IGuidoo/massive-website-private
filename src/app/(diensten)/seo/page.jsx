@@ -14,7 +14,9 @@ import Massive_Header_SVG_Website_page from "@/images/hero/SVG_Website_page.svg"
 import Massive_Header_SVG_eCommerce_page from "@/images/hero/SVG_eCommerce_page.svg"
 import Massive_Header_SVG_SEA_page from "@/images/hero/SVG_SEA_page.svg"
 import Massive_Header_SVG_Strategie_page from "@/images/hero/SVG_Strategie_page.svg"
-// import Massive_Header_SVG_Website_page from "@/images/hero/SVG_Website_page.svg"
+
+
+import Massive_Header_SVG_test from "@/images/hero/SVG_test.svg"
 
 
 // Accordion
@@ -51,7 +53,7 @@ export default function page() {
 
 
 const HeroData = {
-  heroImg: <Massive_Header_SVG_SEO_page className="w-full overflow-visible " />,
+  heroImg: <Massive_Header_SVG_test className="w-full overflow-visible " />,
   title: {
       title: "SEO",
       subTitle: "Stijg uit boven je concurentie",
@@ -59,7 +61,7 @@ const HeroData = {
       colors: "text-primary-500 bg-primary-100"
   },
   content: {
-      title: "Uitgebreide SEO-oplossingen voor een Dominante Online",
+      title: "Uitgebreide SEO-oplossingen voor een",
       body: "Ontdek onze diverse SEO-diensten die zijn ontworpen om uw online zichtbaarheid te vergroten. Om websiteverkeer te stimuleren en uw bedrijf naar de top van de zoekresultaten te brengen.",
       tags: [
           { name: "Maandelijkse SEO", href: "/#" },
