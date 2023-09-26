@@ -6,7 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const AcordionWithIcons = ({ data = [] }) => {
     return (
-        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32`}>
+        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32 z-10 relative`}>
             <div className='flex flex-col gap-4 items-center pb-12 lg:pb-24'>
                 <div className="flex text-xs leading-4">
                     <LogoSmall />
@@ -22,11 +22,13 @@ const AcordionWithIcons = ({ data = [] }) => {
                 {data.accordion.map((item) => (
                     <details key={item.title} className='text-base leading-6 font-medium text-secondary-700 md:text-lg md:leading-7'>
                         <summary className='flex gap-6 items-center pb-4 '>
-                            {item.icon}
+                            <div className={`${ item.colors } w-[44px] h-[44px] p-3 rounded border border-1 border-white shadow-sm`}>
+                                {item.icon}
+                            </div>
                             <h3 className='text-xl leading-7 font-semibold text-secondary-800'>{item.title}</h3>
                             <ChevronDownIcon className="w-8 h-8 ml-auto chevron" />
                         </summary>
-                            {item.body}
+                        {item.body}
                     </details>
                 ))}
             </div>

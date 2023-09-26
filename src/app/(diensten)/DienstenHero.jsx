@@ -6,19 +6,21 @@ import TagsList from '@/components/TagsList'
 
 const Hero = ({ data = [] }) => {
     return (
-        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32  `}>
+        <section className={` ${styles.gutter} ${styles.mdHorizontalCenter} py-16 md:py-32`}>
 
             <div className='grid grid-flow-row lg:grid-flow-col lg:grid-cols-2'>
-                <div className='self-center'>
-                    <div className='flex gap-4 mb-8'>
-                        {data.title.icon}
+                <div className='self-center z-10'>
+                    <div className='flex gap-4 mb-8 '>
+                        <div className={`${ data.title.colors } w-[44px] h-[44px] p-3 rounded `}>
+                            {data.title.icon}
+                        </div>
                         <div className=''>
                             <p className='text-lg leading-7 font-semibold text-secondary-800'>{data.title.title}</p>
                             <p className='text-sm leading-5 text-secondary-500 mt-[-4px]'>{data.title.subTitle}</p>
                         </div>
                     </div>
 
-                    <div className='flex flex-col gap-16'>
+                    <div className='flex flex-col gap-16 max-w-[690px]'>
 
                         <div className='flex flex-col gap-8'>
                             <h1 className={` ${styles.heading2} heading-gradient-gray pb-1`}>{data.content.title}</h1>
@@ -46,7 +48,7 @@ const Hero = ({ data = [] }) => {
                 </div>
 
                 <div className="hidden lg:flex w-full self-center ">
-                    <div className=' lg:absolute lg:top-0 lg:left-[10%] 2xl:left-0 2xl:top-[-93px] w-[100%] -z-10'>
+                    <div className=' lg:absolute lg:top-[5%] xl:top-[-93px]  lg:left-[10%] 2xl:left-0  w-[100%]'>
                         {data.heroImg}
                     </div>
                 </div>
