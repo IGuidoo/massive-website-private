@@ -22,11 +22,11 @@ import styles from "@/styles/styles.js";
 
 const products = [
     { name: 'SEO', description: 'Stijg uit boven je concurenten', href: '/seo', icon: ChartBarIcon },
-    { name: 'SEA', description: 'Effective SEA-Campanges', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Website', description: 'Creative, datagedreven websites', href: '#', icon: ComputerDesktopIcon },
-    { name: 'eCommerce', description: 'Online web-winkeloplossingen', href: '#', icon: ShoppingCartIcon },
-    { name: 'Strategie', description: 'Doelgerichte online strategieën', href: '#', icon: PresentationChartLineIcon },
-    { name: 'CMS', description: 'Innovatief contentbeheer', href: '#', icon: ServerIcon },
+    { name: 'SEA', description: 'Effective SEA-Campanges', href: '/online-marketing', icon: CursorArrowRaysIcon },
+    { name: 'Website', description: 'Creative, datagedreven websites', href: '/website-laten-maken', icon: ComputerDesktopIcon },
+    { name: 'eCommerce', description: 'Online web-winkeloplossingen', href: '/webshop-laten-maken', icon: ShoppingCartIcon },
+    { name: 'Strategie', description: 'Doelgerichte online strategieën', href: '/online-strategie', icon: PresentationChartLineIcon },
+    // { name: 'CMS', description: 'Innovatief contentbeheer', href: '#', icon: ServerIcon },
 ]
 const callsToAction = [
     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },

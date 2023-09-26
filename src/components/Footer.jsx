@@ -178,12 +178,12 @@ const footerData = {
     diensten: {
         title: 'Diensten',
         list: [
-            { name: 'Website', href: '#' },
-            { name: 'eCommerce', href: '#' },
+            { name: 'Website', href: '/website-laten-maken' },
+            { name: 'eCommerce', href: '/webshop-laten-maken' },
             { name: 'SEO', href: '/seo' },
-            { name: 'SEA', href: '#' },
-            { name: 'CMS', href: '#' },
-            { name: 'Steategie', href: '#' },
+            { name: 'SEA', href: '/online-marketing' },
+            // { name: 'CMS', href: '#' },
+            { name: 'Steategie', href: '/online-strategie' },
         ]
     },
 

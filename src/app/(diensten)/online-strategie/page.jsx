@@ -8,13 +8,8 @@ import Diensten from "@/app/(diensten)/Diensten"
 
 // Hero
 import { ChartBarIcon } from '@heroicons/react/20/solid'
+import Massive_Header_SVG_Strategie_page from "@/images/hero/SVG_Strategie_page.svg"
 
-import Massive_Header_SVG_SEO_page from "@/images/hero/SVG_SEO_page.svg"
-import Massive_Header_SVG_Website_page from "@/images/hero/SVG_Website_page.svg"
-import Massive_Header_SVG_eCommerce_page from "@/images/hero/SVG_eCommerce_page.svg"
-// import Massive_Header_SVG_Website_page from "@/images/hero/SVG_Website_page.svg"
-// import Massive_Header_SVG_Website_page from "@/images/hero/SVG_Website_page.svg"
-// import Massive_Header_SVG_Website_page from "@/images/hero/SVG_Website_page.svg"
 
 
 // Accordion
@@ -51,15 +46,15 @@ export default function page() {
 
 
 const HeroData = {
-  heroImg: <Massive_Header_SVG_Website_page className="w-full overflow-visible " />,
+  heroImg: <Massive_Header_SVG_Strategie_page className="w-full overflow-visible " />,
   title: {
-      title: "Website",
+      title: "SEO",
       subTitle: "Stijg uit boven je concurentie",
       icon: <ChartBarIcon />,
       colors: "text-primary-500 bg-primary-100"
   },
   content: {
-      title: "Het Digitale vizitekaartje van uw Bedrijf",
+      title: "Uitgebreide SEO-oplossingen voor een",
       body: "Ontdek onze diverse SEO-diensten die zijn ontworpen om uw online zichtbaarheid te vergroten. Om websiteverkeer te stimuleren en uw bedrijf naar de top van de zoekresultaten te brengen.",
       tags: [
           { name: "Maandelijkse SEO", href: "/#" },

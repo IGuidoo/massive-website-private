@@ -5,13 +5,14 @@ import Diensten from "@/app/(diensten)/Diensten"
 
 
 // imports data 
-// Hero
-import { ChartBarIcon } from '@heroicons/react/20/solid'
-import Massive_Header_SVG_SEO_page from "@/images/hero/SVG_SEO_page.svg"
 
-// Links Rechts 
-import LIRT from "@/components/LIRT"
+// Hero
+import { ShoppingCartIcon } from '@heroicons/react/20/solid'
+import Massive_Header_SVG_eCommerce_page from "@/images/hero/SVG_eCommerce_page.svg"
+
+//Links Rechts
 import LTRI from "@/components/LTRI"
+import LIRT from "@/components/LIRT"
 
 // Accordion
 import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
@@ -37,12 +38,11 @@ export default function page() {
                 {/* <HeroBackgroundSEO className="hidden md:block md:absolute bottom-0 -z-10" /> */}
             </div>
 
-            {/* <section className="flex flex-col gap-16">
-                <LTRI data={LinksRechtsData[0]} />
-                <LIRT data={LinksRechtsData[1]} />
-                <LTRI data={LinksRechtsData[2]} />
-            </section> */}
-
+            <section className="flex flex-col gap-16">
+                <LIRT data={LinksRechtsData[0]} />
+                <LTRI data={LinksRechtsData[1]} />
+                <LIRT data={LinksRechtsData[2]} />
+            </section>
 
             <AcordionWithIcons data={AccordionData} className="z-10" />
 
@@ -54,16 +54,16 @@ export default function page() {
 
 
 const HeroData = {
-    heroImg: <Massive_Header_SVG_SEO_page className="w-full overflow-visible " />,
+    heroImg: <Massive_Header_SVG_eCommerce_page className="w-full overflow-visible " />,
     title: {
-        title: "SEO",
-        subTitle: "Stijg uit boven je concurentie",
-        icon: <ChartBarIcon />,
-        colors: "text-primary-500 bg-primary-100"
+        title: "eCommerce",
+        subTitle: "Online web-winkeloplossingen",
+        icon: <ShoppingCartIcon />,
+        colors: "text-green-500 bg-green-100"
     },
     content: {
-        title: "Uitgebreide SEO-oplossingen voor een",
-        body: "Ontdek onze diverse SEO-diensten die zijn ontworpen om uw online zichtbaarheid te vergroten. Om websiteverkeer te stimuleren en uw bedrijf naar de top van de zoekresultaten te brengen.",
+        title: "Professioneel Website Laten Maken: Uw Online Succes Begint Hier",
+        body: "Of u nu op zoek bent naar een zakelijke website of een ecommerce webshop, wij zorgen voor een website die niet alleen visueel aantrekkelijk is, maar ook geoptimaliseerd voor zoekmachines, zodat u de zichtbaarheid krijgt die u verdient.",
         tags: [
             { name: "Maandelijkse SEO", href: "/#" },
             { name: "Traditionale SEO", href: "/#" },
@@ -79,15 +79,43 @@ const HeroData = {
     ]
 }
 
-
+const LinksRechtsData = [
+    {
+        title: "Digitale gezicht van uw onderneming",
+        subTitle: "Webdesign op Maat: Laat Uw Unieke Merk Stralen",
+        body: "Zorg ervoor dat het uw unieke merk en waarden weerspiegelt met een website op maat. Wij begrijpen dat elke onderneming uniek is, en daarom bieden wij op maat gemaakte oplossingen die passen bij uw specifieke behoeften en doelen. Laat uw website ontwerpen door een professioneel webdesign bureau dat aandacht besteedt aan elk detail, van het ontwerp tot de functionaliteit, om een naadloze en aantrekkelijke gebruikerservaring te garanderen.",
+        img: "/images/image_56.png",
+    },
+    {
+        title: "Wordt hoger gevonden in Google",
+        subTile: "Betaalbare en Transparante Website Laten Maken Kosten",
+        body: "Budget is vaak een zorg, maar een professionele website hoeft geen fortuin te kosten. Wij bieden betaalbare en transparante prijzen voor het laten maken van een website. Geen verborgen kosten, geen verrassingen. Ontvang een duidelijke en gedetailleerde offerte voordat het project van start gaat, zodat u precies weet wat u kunt verwachten en hoeveel het u gaat kosten.",
+        img: "/images/image_56.png",
+    },
+    {
+        title: `Een website is nooit echt "klaar" `,
+        subTitle: "Continue Ondersteuning en Website Onderhoud",
+        body: "Wij begrijpen dat uw zakelijke website regelmatig onderhoud en updates nodig heeft om soepel te blijven draaien en up-to-date te blijven met de nieuwste technologieën en beveiligingsnormen. Wij bieden continue ondersteuning en website onderhoudsdiensten om ervoor te zorgen dat uw website altijd op zijn best presteert, zodat u zich kunt concentreren op wat u het beste doet: uw bedrijf runnen.",
+        img: "/images/image_56.png",
+    },
+]
 
 
 const AccordionData = {
     title: {
         topText: [
-            { content: "SEO", className: "text-gray-800 font-semibold whitespace-nowrap self-center ml-3" },
-            { content: " | ", className: "text-purple-300 font-medium whitespace-nowrap self-center ml-3" },
-            { content: "Massive Online Marketing", className: "text-gray-600 font-medium ml-3" }
+            {
+                content: "SEO",
+                className: "text-gray-800 font-semibold whitespace-nowrap self-center ml-3"
+            },
+            {
+                content: " | ",
+                className: "text-purple-300 font-medium whitespace-nowrap self-center ml-3"
+            },
+            {
+                content: "Massive Online Marketing",
+                className: "text-gray-600 font-medium ml-3"
+            }
         ],
         heading: "Wat kunt u van onze SEO diensten verwachten",
     },
@@ -140,7 +168,7 @@ const seoDiensten = {
         {
             subTitle: "SEO Audit",
             title: "Waarom Heeft u SEO audit diensten nodig?",
-            icon: <ChartBarIcon className='w-[44px] h-[44px] text-primary-500 p-3 bg-primary-100 rounded' />,
+            icon: <ShoppingCartIcon className='w-[44px] h-[44px] text-primary-500 p-3 bg-primary-100 rounded' />,
             body: `
           <p class="diensten-text" class="diensten-text">Een grondige SEO audit vormt de hoeksteen van een succesvolle online aanwezigheid. Hier bij Massive zetten we ons in om uw website naar nieuwe hoogten te tillen door middel van een combinatie van menselijke expertise en geavanceerde technologie. Onze aanpak omvat een diepgaande verkenning van de technische, inhoudelijke en externe facetten die van invloed zijn op de prestaties van uw website in de complexe wereld van zoekmachines.</p>
           <h3 class="diensten-h3">Waar is onze SEO Audit goed voor?</h3>
@@ -171,13 +199,13 @@ const seoDiensten = {
         {
             subTitle: "Keyword research",
             title: "sdg",
-            icon: <ChartBarIcon className='w-[44px] h-[44px] text-primary-500 p-3 bg-primary-100 rounded' />,
+            icon: <ShoppingCartIcon className='w-[44px] h-[44px] text-primary-500 p-3 bg-primary-100 rounded' />,
             body: "sdg"
         },
         {
             subTitle: "On-page seo",
             title: "sdg",
-            icon: <ChartBarIcon className='w-[44px] h-[44px] text-primary-500 p-3 bg-primary-100 rounded' />,
+            icon: <ShoppingCartIcon className='w-[44px] h-[44px] text-primary-500 p-3 bg-primary-100 rounded' />,
             body: "sdg"
         },
     ]
