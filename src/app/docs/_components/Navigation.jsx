@@ -17,21 +17,22 @@ export function Navigation({ className, onLinkClick }) {
       <ul role="list" className="space-y-9">
         {navigation.map((section) => (
           <li key={section.title}>
-            <h2 className="font-display font-medium text-slate-900 dark:text-white">
+            <h2 className="font-display font-medium text-secondary-900 dark:text-white">
               {section.title}
             </h2>
+
             <ul
               role="list"
-              className="-2 space-y-2  dark:border-slate-800 lg:mt-4 lg:space-y-4 lg:border-slate-200"
+              className="-2 space-y-2  dark:border-secondary-800 lg:mt-4 lg:space-y-4 lg:border-secondary-200"
             >
               {section.links.map((link) => (
                 <li key={link.href} className="relative">
                   <div className="flex justify-between">
                     <div className={clsx(
-                      'h-4 w-4 self-center',  // Adjusted here
+                      'h-[16px] w-[16px] self-center',  // Adjusted here
                       link.href === pathname
-                        ? 'text-primary-500'
-                        : 'text-slate-500 dark:text-slate-400 dark:hover:text-slate-300 ',
+                        ? 'text-primary-600'
+                        : 'text-secondary-600 dark:text-secondary-400 dark:hover:text-secondary-300 ',
                     )}
                     >
                       {section.icon}
@@ -40,10 +41,10 @@ export function Navigation({ className, onLinkClick }) {
                       href={link.href}
                       onClick={onLinkClick}
                       className={clsx(
-                        'block w-full pl-3.5 ',  // Adjusted here
+                        'block max-w-fit pl-3.5 justify-start mr-auto',  // Adjusted here
                         link.href === pathname
-                          ? 'font-semibold text-primary-500 '
-                          : 'text-slate-500 before:hidden before:bg-slate-300 hover:text-primary-500 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300',
+                          ? 'font-semibold text-primary-600 '
+                          : 'text-secondary-600 before:hidden before:bg-secondary-300 hover:text-primary-600 dark:text-secondary-400 dark:before:bg-secondary-700 dark:hover:text-secondary-300',
                       )}
                     >
                       {link.title}
@@ -51,10 +52,10 @@ export function Navigation({ className, onLinkClick }) {
                     {link.subCatagories ? (
                       <ChevronDownIcon
                         className={clsx(
-                          'h-5 w-5',
+                          'h-5 w-5 cursor-pointer',
                           link.href === pathname
-                            ? 'text-primary-500'
-                            : 'text-slate-500 hover:text-primary-500 dark:text-slate-400 dark:hover:text-slate-300'
+                            ? 'text-primary-600'
+                            : 'text-secondary-600  dark:text-secondary-400 dark:hover:text-secondary-300'
                         )}
                         onClick={(e) => {
                           e.preventDefault();
@@ -63,17 +64,12 @@ export function Navigation({ className, onLinkClick }) {
                       />
                     ) : null}
                   </div>
+
+                  {/* sub section  */}
                   {link.href === expandedSection && link.subCatagories?.map(sub => (
-                    <li key={sub.href} className="relative pl-5">
-                      <div className="flex justify-between">
-                        <div className={clsx(
-                          'h-4 w-4 self-center',  // Adjusted here
-                          sub.href === pathname
-                            ? 'text-primary-500'
-                            : 'text-slate-500 dark:text-slate-400 dark:hover:text-slate-300 ',
-                        )}
-                        >
-                          {sub.icon}
+                    <li key={sub.href} className="relative pl-8">
+                      <div className="flex justify-between relative">
+                        <div className="h-full w-[1px] bg-secondary-400 absolute left-0 top-0 hover:bg-primary-600">
                         </div>
                         <Link
                           href={sub.href}
@@ -81,50 +77,53 @@ export function Navigation({ className, onLinkClick }) {
                           className={clsx(
                             'block w-full pl-3.5',  // Adjusted here
                             sub.href === pathname
-                              ? 'font-semibold text-primary-500 '
-                              : 'text-slate-500 before:hidden before:bg-slate-300 hover:text-primary-500 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300',
+                              ? 'font-semibold text-primary-600 '
+                              : 'text-secondary-600 before:hidden before:bg-secondary-300 hover:text-primary-600 hover:before:block dark:text-secondary-400 dark:before:bg-secondary-700 dark:hover:text-secondary-300',
                           )}
                         >
                           {sub.title}
                         </Link>
+
                         {sub.subSubCatagories ? (
-                          <span onClick={(e) => {
-                            e.preventDefault();
-                            setExpandedSubSection(sub.href === expandedSubSection ? null : sub.href);
-                          }}>
-                            ▼
-                          </span>
+                          <ChevronDownIcon
+                            className={clsx(
+                              'h-5 w-5',
+                              sub.href === pathname
+                                ? 'text-primary-600'
+                                : 'text-secondary-600  dark:text-secondary-400 dark:hover:text-secondary-300'
+                            )}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setExpandedSubSection(sub.href === expandedSubSection ? null : sub.href);
+                            }}
+                          />
                         ) : null}
                       </div>
+
+                      {/* Sub sub section */}
                       {sub.href === expandedSubSection && sub.subSubCatagories?.map(subSub => (
-                        <li key={subSub.href} className="relative pl-5">
-                          <div className={clsx(
-                            'h-4 w-4 self-center',  // Adjusted here
-                            sub.href === pathname
-                              ? 'text-primary-500'
-                              : 'text-slate-500 dark:text-slate-400 dark:hover:text-slate-300 ',
-                          )}
-                          >
-                            {subSub.icon}
-                          </div>
+                        <li key={subSub.href} className="relative pl-2">
                           <Link
                             href={subSub.href}
                             onClick={onLinkClick}
                             className={clsx(
                               'block w-full pl-3.5 ',  // Adjusted here
                               subSub.href === pathname
-                                ? 'font-semibold text-primary-500 '
-                                : 'text-slate-500 before:hidden before:bg-slate-300 hover:text-primary-500 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300',
+                                ? 'font-semibold text-primary-600 '
+                                : 'text-secondary-600 before:hidden before:bg-secondary-300 hover:text-primary-600 hover:before:block dark:text-secondary-400 dark:before:bg-secondary-700 dark:hover:text-secondary-300',
                             )}
                           >
                             {subSub.title}
                           </Link>
                         </li>
                       ))}
+
                     </li>
                   ))}
+
                 </li>
               ))}
+
             </ul>
           </li>
         ))}

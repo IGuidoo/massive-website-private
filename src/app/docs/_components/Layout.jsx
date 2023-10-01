@@ -37,7 +37,7 @@ function Header() {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-white px-4 py-4  shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
         isScrolled
           ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
           : 'dark:bg-transparent',
@@ -46,7 +46,7 @@ function Header() {
       <div className="mr-6 flex lg:hidden">
         <MobileNavigation />
       </div>
-      <div className="relative flex flex-grow basis-0 items-center">
+      <div className="relative flex flex-grow basis-0 items-center lg:flex-grow-0 lg:min-w-[300px]">
         <Link href="/" aria-label="Home page">
           <Logomark className="h-9 w-9 lg:hidden" />
           <Logo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100 lg:block" />
@@ -55,10 +55,13 @@ function Header() {
       <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
         <Search />
       </div>
-      <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
+      <div className="relative flex basis-0 justify-end gap-8 md:flex-grow text-xs leading-6 font-medium items-center">
         <ThemeSelector className="relative z-10" />
-        <Link href="https://github.com" className="group" aria-label="GitHub">
-          <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
+        <Link href="/" className="group whitespace-nowrap" aria-label="GitHub">
+          Ga naar Massive.nl
+        </Link>
+        <Link href="/login" className=' px-4 py-1 rounded-md bg-primary-600 text-primary-100'>
+          Login
         </Link>
       </div>
     </header>
@@ -67,25 +70,45 @@ function Header() {
 
 export function Layout({ children }) {
   let pathname = usePathname()
-  let isHomePage = pathname === '/'
+  let isHomePage = pathname === '/docs'
 
   return (
-    <div className="flex w-full flex-col">
+
+    <div>
       <Header />
-
-      {isHomePage && <Hero />}
-
-      <div className="relative mx-auto flex w-full max-w-8xl flex-auto justify-center sm:px-2 lg:px-8 xl:px-12">
-        <div className="hidden lg:relative lg:block lg:flex-none">
-          <div className="absolute inset-y-0 right-0 w-[50vw] bg-slate-50 dark:hidden" />
-          <div className="absolute bottom-0 right-0 top-16 hidden h-12 w-px bg-gradient-to-t from-slate-800 dark:block" />
-          <div className="absolute bottom-0 right-0 top-28 hidden w-px bg-slate-800 dark:block" />
-          <div className="sticky top-[4.75rem] -ml-0.5 h-[calc(100vh-4.75rem)] w-64 overflow-y-auto overflow-x-hidden py-16 pl-0.5 pr-8 xl:w-72 xl:pr-16">
-            <Navigation />
-          </div>
+      <div className='w-full h-full flex mx-auto'>
+        <div className='lg:min-w-[300px] lg:p-4  lg:h-full hidden lg:sticky lg:block lg:top-[4.75rem] lg:flex-none  z-20 '>
+          <Navigation className="px-4" />
         </div>
-        {children}
+        
+        <main>
+          {isHomePage && <Hero />}
+
+          <div className="relative mx-auto flex w-full flex-auto justify-center ">
+            {children}
+          </div>
+        </main>
+
       </div>
+
     </div>
+
+
+
+
+    // <div className="flex w-full flex-col">
+    //   <Header />
+
+    //   {isHomePage && <Hero />}
+
+    //   <div className="relative mx-auto flex w-full flex-auto justify-center ">
+    //     <div className="hidden lg:relative lg:block lg:flex-none">
+    //       <div className="sticky top-[4.75rem] -ml-0.5 h-[calc(100vh-4.75rem)] w-64 overflow-y-auto overflow-x-hidden py-16 pl-0.5 px-8 xl:w-72 xl:px-16">
+    //         <Navigation />
+    //       </div>
+    //     </div>
+    //     {children}
+    //   </div>
+    // </div>
   )
 }

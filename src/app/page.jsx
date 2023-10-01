@@ -42,6 +42,7 @@ import {
 } from "@/images/diensten"
 
 import TagsList from "@/components/TagsList"
+import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -59,7 +60,9 @@ export default function page() {
     return (
         <div className="">
             <div className="relative bg-white rounded-b-4xl md:bg-transparent">
-                <Navbar />
+                <ResponsiveNavbar />
+                
+                {/* <Navbar /> */}
                 <Hero data={HeroData} />
                 <div className="absolute md:w-[93%] left-[3.5%] top-0 -z-10 md:h-full bg-white rounded-b-4xl border-solid border-white border-3 shadow-lg"></div>
                 <div className="absolute bottom-[-16px] w-full h-[50%] -z-20 rounded-b-4xl custom-bg-gradient md:w-[90%] md:left-[5%] md:h-[130%]"></div>

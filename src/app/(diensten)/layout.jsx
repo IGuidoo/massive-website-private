@@ -2,6 +2,7 @@ import ProjectTest from '@/components/navbar/MegaDropdown'
 import DienstenNavbar from './DienstenNavbar'
 import Footer from '@/components/sections/Footer'
 import clsx from 'clsx'
+import ResponsiveNavbar from '@/components/navbar/ResponsiveNavbar'
 // import { Providers } from '@/app/providers'
 
 export const metadata = {
@@ -19,12 +20,14 @@ export default function RootLayout({ children }) {
             className={clsx('h-full antialiased')}
             suppressHydrationWarning
         >
-            <body className="relative min-h-full bg-secondary-50 dark:bg-slate-900 max-w-[1920px] mx-auto">
+            <body>
                 {/* <Providers> */}
 
-                <div className='relative w-full z-50'>
+                {/* <div className='relative w-full z-50'>
                     <DienstenNavbar />
-                </div>
+                </div> */}
+
+                <ResponsiveNavbar />
 
                 <main className='bg-gray-50'>
                     {children}
@@ -33,8 +36,6 @@ export default function RootLayout({ children }) {
                 <Footer className={"max-w-[1920px] mx-auto"} />
 
                 {/* </Providers> */}
-
-                <ProjectTest />
             </body>
         </html>
     )

@@ -73,6 +73,12 @@ body {
   font-family: Inter;
   overflow-x: hidden;
   background-color: #f9fafb;
+
+  position: relative;
+  background: var(--secondary-50);
+  min-height: 100%;
+  /* max-width: 1920px; */
+  margin: 0 auto;
 }
 
 /* Gradients */

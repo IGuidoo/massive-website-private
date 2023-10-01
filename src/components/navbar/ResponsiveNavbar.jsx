@@ -3,18 +3,24 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link';
 import styles from '@/styles/styles';
-import useWindowWidth from '@/utils/useWindowWidth';
+import  "@/components/navbar/ResponsiveNavbar.css"
+import "@/styles/icons.css"
 
 import MegaDropdown from '@/components/navbar/MegaDropdown.jsx';
-import SmallDropdownWithIcons from './navbar/SmallDropdownWithIcons';
+import SmallDropdownWithIcons from './SmallDropdownWithIcons';
 import { MenuLogo, OutlineMail } from "@/components/icons"
 
+import {
+    ComputerDesktopIcon,
+    ShoppingCartIcon,
+    ChartBarIcon,
+    CursorArrowRaysIcon,
+    ServerIcon,
+    PresentationChartLineIcon,
+} from '@heroicons/react/24/outline'
 
 
 const ResponsiveNavbar = () => {
-    const windowWidth = useWindowWidth();
-
-
     useEffect(() => {
         /*=============== SHOW MENU ===============*/
         const showMenu = (toggleId, navId) => {
@@ -23,16 +29,11 @@ const ResponsiveNavbar = () => {
 
             // Function to toggle menu
             const toggleMenu = () => {
-                // Add show-menu class to nav menu
                 nav.classList.toggle('show-menu')
-                // Add show-icon to show and hide menu icon
                 toggle.classList.toggle('show-icon')
             }
 
-            // Add click event listener to toggle
             toggle.addEventListener('click', toggleMenu)
-
-            // Return cleanup function to remove event listener
             return () => toggle.removeEventListener('click', toggleMenu);
         }
 
@@ -47,14 +48,9 @@ const ResponsiveNavbar = () => {
         // Loop through each dropdown item
         dropdownItems.forEach((item) => {
             const dropdownButton = item.querySelector('.dropdown__button')
-
-            // Function to handle button click
             const handleButtonClick = () => {
-                // Select the current show-dropdown class
                 const showDropdown = document.querySelector('.show-dropdown')
-                // Call the toggleItem function
                 toggleItem(item)
-                // Remove the show-dropdown class from other items
                 if (showDropdown && showDropdown !== item) {
                     toggleItem(showDropdown)
                 }
@@ -71,8 +67,6 @@ const ResponsiveNavbar = () => {
         const toggleItem = (item) => {
             // Select each dropdown content
             const dropdownContainer = item.querySelector('.dropdown__container')
-
-            // If the same item contains the show-dropdown class, remove
             if (item.classList.contains('show-dropdown')) {
                 dropdownContainer.removeAttribute('style')
                 item.classList.remove('show-dropdown')
@@ -91,9 +85,7 @@ const ResponsiveNavbar = () => {
         const removeStyle = () => {
             // Validate if the media query reaches 1118px
             if (mediaQuery.matches) {
-                // Remove the dropdown container height style
                 dropdownContainer.forEach((e) => e.removeAttribute('style'))
-                // Remove the show-dropdown class from dropdown item
                 dropdownItems.forEach((e) => e.classList.remove('show-dropdown'))
             }
         }
@@ -114,7 +106,7 @@ const ResponsiveNavbar = () => {
 
     return (
         // <!--=============== HEADER ===============-->
-        <header className="relative top-0 left-0 w-full shadow-md bg-white z-10">
+        <header className="relative top-0 left-0 w-full shadow-mdW z-10">
             <nav className={` p-6 lg:h-20 lg:flex   ${styles.gutter} max-w-[1536px] mx-auto `} >
                 <div className=" h-full flex justify-between items-center" style={{ flexGrow: "1.8" }}>
                     <Link href="/" className=''>
@@ -131,10 +123,10 @@ const ResponsiveNavbar = () => {
                 <div className="nav__menu lg:flex lg:flex-grow lg:justify-between" id="nav-menu">
                     <ul className="nav__list">
                         {/* <!--=============== DROPDOWN 1 ===============--> */}
-                        <MegaDropdown />
+                        <MegaDropdown data={discover} />
 
                         {/* <!--=============== DROPDOWN 2 ===============--> */}
-                        <SmallDropdownWithIcons />
+                        <SmallDropdownWithIcons data={diensten} />
 
                     </ul>
 
@@ -164,46 +156,67 @@ const ResponsiveNavbar = () => {
 export default ResponsiveNavbar
 
 
-const discover = [
+const discover = {
+    "title": "Discover",
+    "dropdown": [
+        {
+            "icon": "ri-flashlight-line",
+            "title": "Most viewed courses",
+            "list": [
+                { "name": "HTML for beginers", "href": "#" },
+                { "name": "Advanced CSS", "href": "#" },
+                { "name": "JavaScript OOP", "href": "#" },
+            ]
+
+        },
+        {
+            "icon": "ri-heart-3-line",
+            "title": "Popular cources",
+            "list": [
+                { "name": "Development with Flutter", "href": "#" },
+                { "name": "Web development with React", "href": "#" },
+                { "name": "Backend development expert", "href": "#" },
+            ]
+
+        },
+        {
+            "icon": "ri-book-mark-line",
+            "title": "Careers",
+            "list": [
+                { "name": "Web development", "href": "#" },
+                { "name": "Applecations development", "href": "#" },
+                { "name": "UI/UX design", "href": "#" },
+                { "name": "Informatic security", "href": "#" },
+            ]
+
+        },
+        {
+            "icon": "ri-file-paper-2-line",
+            "title": "Certifications",
+            "list": [
+                { "name": "Course certificates", "href": "#" },
+                { "name": "Free certivicates", "href": "#" },
+            ]
+
+        },
+
+    ]
+}
+
+const diensten = {
+    "title": "Diensten",
+    "dropdown":
     {
-        "icon": "ri-flashlight-line",
         "title": "Most viewed courses",
         "list": [
-            { "name": "HTML for beginers", "href": "#" },
-            { "name": "Advanced CSS", "href": "#" },
-            { "name": "JavaScript OOP", "href": "#" },
+            { name: 'SEO', description: 'Stijg uit boven je concurenten', href: '/seo', icon: ChartBarIcon },
+            { name: 'SEA', description: 'Effective SEA-Campanges', href: '/online-marketing', icon: CursorArrowRaysIcon },
+            { name: 'Website', description: 'Creative, datagedreven websites', href: '/website-laten-maken', icon: ComputerDesktopIcon },
+            { name: 'eCommerce', description: 'Online web-winkeloplossingen', href: '/webshop-laten-maken', icon: ShoppingCartIcon },
+            { name: 'Strategie', description: 'Doelgerichte online strategieën', href: '/online-strategie', icon: PresentationChartLineIcon },
+            // { name: 'CMS', description: 'Innovatief contentbeheer', href: '#', icon: ServerIcon },
         ]
 
-    },
-    {
-        "icon": "ri-heart-3-line",
-        "title": "Popular cources",
-        "list": [
-            { "name": "Development with Flutter", "href": "#" },
-            { "name": "Web development with React", "href": "#" },
-            { "name": "Backend development expert", "href": "#" },
-        ]
+    }
 
-    },
-    {
-        "icon": "ri-book-mark-line",
-        "title": "Careers",
-        "list": [
-            { "name": "Web development", "href": "#" },
-            { "name": "Applecations development", "href": "#" },
-            { "name": "UI/UX design", "href": "#" },
-            { "name": "Informatic security", "href": "#" },
-        ]
-
-    },
-    {
-        "icon": "ri-file-paper-2-line",
-        "title": "Certifications",
-        "list": [
-            { "name": "Course certificates", "href": "#" },
-            { "name": "Free certivicates", "href": "#" },
-        ]
-
-    },
-
-]
+}
