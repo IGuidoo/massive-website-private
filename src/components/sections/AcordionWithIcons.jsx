@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from '@/styles/styles'
-import { LogoSmall } from './icons'
+import { LogoSmall } from '../icons'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const AcordionWithIcons = ({ data = [] }) => {

@@ -13,7 +13,7 @@ import {
     XMarkIcon,
     Bars3Icon,
 } from '@heroicons/react/24/outline'
-import { MenuLogo, OutlineMail } from "./icons"
+import { MenuLogo, OutlineMail } from "../icons"
 
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid';
 // import { ThemeSelector } from "@/app/docs/_components/ThemeSelector";
@@ -158,6 +158,7 @@ export default function Navbar() {
                         </Transition>
                     </Popover>
                 </Popover.Group>
+
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-16">
                     {/* <ThemeSelector className="relative z-10 place-self-center" /> */}
                     <Link href="/docs" className="text-secondary-900 text-base place-self-center">
@@ -168,6 +169,7 @@ export default function Navbar() {
                         Contact
                     </Link>
                 </div>
+
             </nav>
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10" />

@@ -10,7 +10,7 @@ import RenderText from "@/lib/RenderText";
 import Image from "next/image";
 
 // Import Assets
-import { LogoSmall } from "./icons";
+import { LogoSmall } from "../icons";
 
 const CatagoriesServices = ({ data = [] }) => {
   const activeDienstIndexShownFirst = 0;

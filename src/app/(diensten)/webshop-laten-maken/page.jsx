@@ -1,4 +1,4 @@
-import AcordionWithIcons from "@/components/AcordionWithIcons"
+import AcordionWithIcons from "@/components/sections/AcordionWithIcons"
 import Hero from "@/app/(diensten)/DienstenHero"
 import Diensten from "@/app/(diensten)/Diensten"
 import styles from "@/styles/styles"

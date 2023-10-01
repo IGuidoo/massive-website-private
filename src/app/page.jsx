@@ -5,12 +5,12 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "@/styles/styles.js"
 
-import LatestDevelopments from "@/components/LatestDevelopments"
-import Footer from "@/components/Footer"
-import Carousel from "@/components/Carousel"
+import LatestDevelopments from "@/components/sections/LatestDevelopments"
+import Footer from "@/components/sections/Footer"
+import Carousel from "@/components/sections/Carousel"
 import Hero from "../components/Hero"
-import Navbar from "@/components/Navbar.jsx"
-import CatagoriesServices from "@/components/CatagorieServices"
+import Navbar from "@/components/sections/Navbar.jsx"
+import CatagoriesServices from "@/components/sections/CatagorieServices"
 
 import {
     Allinone1,

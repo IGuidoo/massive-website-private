@@ -6,7 +6,7 @@ import Link from "next/link";
 import styles from "@/styles/styles";
 // import Card from "@/components/Card.jsx";
 
-import { LogoSmall } from "./icons";
+import { LogoSmall } from "../icons";
 
 
 const Carousel = ({ data }) => {

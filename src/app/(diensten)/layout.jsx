@@ -1,5 +1,6 @@
+import ProjectTest from '@/components/navbar/MegaDropdown'
 import DienstenNavbar from './DienstenNavbar'
-import Footer from '@/components/Footer'
+import Footer from '@/components/sections/Footer'
 import clsx from 'clsx'
 // import { Providers } from '@/app/providers'
 
@@ -32,6 +33,8 @@ export default function RootLayout({ children }) {
                 <Footer className={"max-w-[1920px] mx-auto"} />
 
                 {/* </Providers> */}
+
+                <ProjectTest />
             </body>
         </html>
     )

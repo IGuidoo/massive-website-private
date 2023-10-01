@@ -2,21 +2,21 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { MenuLogo, OutlineMail } from "./icons"
+import { MenuLogo, OutlineMail } from "../icons"
 
 import {
     FacebookGray,
     InstagramGray,
     LinkedinGray,
     TwitterGray,
-} from "./icons"
+} from "../icons"
 
 
 
 // import { footerData } from "../../constants/footerData";
 import styles from "@/styles/styles";
 import RenderText from "@/lib/RenderText";
-import Test from "./FooterSignUp";
+import Test from "../FooterSignUp";
 
 
 

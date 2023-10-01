@@ -1,5 +1,5 @@
-import clsx from 'clsx'
-// import { Providers } from '@/app/providers'
+import Head from 'next/head';
+import clsx from 'clsx';
 
 export const metadata = {
   title: {
@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
           {/* <Providers> */}
             {children}
           {/* </Providers> */}
+          {/* <script src="./lib/responsiveNavbarJS.js"></script> */}
       </body>
     </html>
   )

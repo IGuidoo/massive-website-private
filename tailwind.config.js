@@ -77,6 +77,13 @@ module.exports = {
           950: "#030712"
         },      
       },
+      transitionProperty: {
+        'opacity-transform': 'opacity, transform',
+      },
+      transitionDuration: {
+        '100': '0.1s',
+        '400': '0.4s'
+      },
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
       },
