@@ -23,7 +23,8 @@ const icons = {
   warning: (props) => <Icon icon="warning" color="amber" {...props} />,
 }
 
-const Callout = ({ title, children, type = 'note' }) => {
+// fix the export default 
+export default function Callout({ type, title, children }) {
   let IconComponent = icons[type]
 
   return (
@@ -41,4 +42,3 @@ const Callout = ({ title, children, type = 'note' }) => {
   )
 }
 
-export default Callout

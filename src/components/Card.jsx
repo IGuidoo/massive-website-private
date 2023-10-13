@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Card = ({ data }) => {
   return (
     <div className="m-w-33%">
-      <img src={data.img} alt={data.title} className="w-full h-48 object-cover rounded-t-md" />
+      <Image src={data.img} alt={data.title} width={300} height={200} className="w-full h-48 object-cover rounded-t-md" />
+
       <div>
         <h2 className="mt-4 text-gray-800 text-2xl leading-8 font-semibold">{data.title}</h2>
         <h3 className="mt-2 text-gray-700 text-lg leading-7 font-medium">{data.subtite}</h3>

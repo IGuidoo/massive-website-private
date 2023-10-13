@@ -9,7 +9,6 @@ import LatestDevelopments from "@/components/sections/LatestDevelopments"
 import Footer from "@/components/sections/Footer"
 import Carousel from "@/components/sections/Carousel"
 import Hero from "../components/Hero"
-import Navbar from "@/components/sections/Navbar.jsx"
 import CatagoriesServices from "@/components/sections/CatagorieServices"
 
 import {
@@ -514,7 +513,7 @@ const blogCardsData = {
     heading: ["Freebies om uw kennis binnen de Online Marketing te vergroten "],
     cards: [
         {
-            img: "asdf",
+            img: "/images/image_56.png",
             title: "Massive Website gaat Live!",
             subtite: "Dit is een subtitle",
             text: "Subtitle teksten met kleiner lettertype, Subtitle met kleiner lettertype, Subtitle teksten met kleiner lettertype teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, Subtitle ",
@@ -526,7 +525,7 @@ const blogCardsData = {
             ]
         },
         {
-            img: "asdf",
+            img: "/images/image_56.png",
             title: "Kijk deze kekke code",
             subtite: "Dit is een subtitle",
             text: "Subtitle teksten met kleiner lettertype, Subtitle met kleiner lettertype, Subtitle teksten met kleiner lettertype teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, Subtitle ",
@@ -537,7 +536,7 @@ const blogCardsData = {
             ]
         },
         {
-            img: "asdf",
+            img: "/images/image_56.png",
             title: "Waarom zijn userflows zo belangrijk?",
             subtite: "Dit is een subtitle",
             text: "Subtitle teksten met kleiner lettertype, Subtitle met kleiner lettertype, Subtitle teksten met kleiner lettertype teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, Subtitle ",
@@ -548,7 +547,7 @@ const blogCardsData = {
             ]
         },
         {
-            img: "asdf",
+            img: "/images/image_56.png",
             title: "Test",
             subtite: "Dit is een Test subtitle",
             text: "Subtitle teksten met kleiner lettertype, Subtitle met kleiner lettertype, Subtitle teksten met kleiner lettertype teksten met kleiner lettertype, Subtitle teksten met kleiner lettertype, Subtitle ",

@@ -1,5 +1,3 @@
-import ProjectTest from '@/components/navbar/MegaDropdown'
-import DienstenNavbar from './DienstenNavbar'
 import Footer from '@/components/sections/Footer'
 import clsx from 'clsx'
 import ResponsiveNavbar from '@/components/navbar/ResponsiveNavbar'
@@ -22,10 +20,6 @@ export default function RootLayout({ children }) {
         >
             <body>
                 {/* <Providers> */}
-
-                {/* <div className='relative w-full z-50'>
-                    <DienstenNavbar />
-                </div> */}
 
                 <ResponsiveNavbar />
 
