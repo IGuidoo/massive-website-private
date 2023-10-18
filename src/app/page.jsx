@@ -10,7 +10,7 @@ import Footer from "@/components/sections/Footer"
 import Carousel from "@/components/sections/Carousel"
 import Hero from "../components/Hero"
 import CatagoriesServices from "@/components/sections/CatagorieServices"
-import SubHeadingHeadingText from "@/components/sections/subHeadingHeadingText"
+import SubHeadingHeadingText from "@/components/heading-text/subHeadingHeadingText"
 
 import {
     Allinone1,
@@ -20,6 +20,7 @@ import {
     PurpleCheckmark,
     HomeMobileBackgroundPNG,
 
+
     GoogleGray,
     WordpressGray,
     ShopifyGray,
@@ -28,6 +29,7 @@ import {
     GoogleAnalyticsGray,
     AdobeGray,
 
+    // Social Icons
     FacebookGray,
     InstagramGray,
     LinkedinGray,
@@ -40,6 +42,7 @@ import {
     SVG_Webshop,
     SVG_Website,
 
+    // Card Grod imports
     Home_onlineAdvertenties,
     Home_onlineMarketing,
     Home_zoekmachineoptimalizatie,
@@ -47,9 +50,16 @@ import {
     Home_webwinkelOplossingen,
 } from "@/images/diensten"
 
+// IconText imports
+import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
+
+
 import TagsList from "@/components/TagsList"
 import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar"
 import CardGrid from "@/components/sections/CardGrid"
+import SubheadingHeadingTextSm from "@/components/heading-text/SubheadingHeadingTextSm"
+import TextWithIcons from "@/components/sections/TextWithIcons"
+import LogoSubHeadingHeadingTextButtons from "@/components/LogoSubHeadingHeadingTextButtons"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -77,15 +87,25 @@ export default function page() {
             </div>
             <main>
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto`}>
-                    <SubHeadingHeadingText data={dienstenGridData.titel} gap={4} mdGap={6} maxWidth={680} />
-                    <div className="mt-[79px] md:mt-[47px]">
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15`}>
+                    <SubHeadingHeadingText data={dienstenGridData.title} cssClass="gap-4 md:gap-4 max-w-[680px]"/>
+                    <div className="mt-[79px] lg:mt-[47px]">
                         <CardGrid data={dienstenGridData.cards} />
                     </div>
                 </section>
 
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15`}> 
+                        <SubheadingHeadingTextSm data={OnzeDienstenData.title} cssClass="gap-3 max-w-[854px] items-center md:text-center md:mx-auto" />
 
-                <section>
+                </section>
+
+
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15`}>
+                    <TextWithIcons data={TextIconData} />
+                </section>
+                
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15`}>
+                    <LogoSubHeadingHeadingTextButtons data={newOverOns} />
                 </section>
 
 
@@ -159,7 +179,7 @@ export default function page() {
 
 
 const dienstenGridData = {
-    titel: {
+    title: {
         subHeading: "Website of Web-winkel laten maken?",
         heading: [
             'Professioneel Website Laten Maken: Uw ',
@@ -169,13 +189,102 @@ const dienstenGridData = {
         text: "Bent u opzoek naar Webdesign of Web development, een zakelijke website of een ecommerce webshop? Wij zorgen voor website beheer die niet alleen visueel aantrekkelijk is maar ook geoptimalizeerd en gebruiksvriendelijk."
     },
     cards: [
-    { img: <Home_zakelijkeWebsite />, heading: "Zakelijke Website laten Maken", text: "Transformeer uw zakelijke visie, laat nu een professionele, op maat gemaakte website bouwen die even indrukwekkend is als uw bedrijf!" },
-    { img: <Home_webwinkelOplossingen />, heading: "Ecommerce & Webwinkel Oplossingen", text: "Geintreseerd in een webshop laten maken? Breng je bedrijfs visie tot leven met een online marketing bureau dat naar u luistert." },
-    { img: <Home_zoekmachineoptimalizatie />, heading: "Zoekmachineoptimalizatie", text: "Wordt hoger gevonden in google met onze SEO diensten, voor een breeder bereik en vertrouwen." },
-    { img: <Home_onlineAdvertenties />, heading: "Online Advertenties", text: "Ontdek nieuwe lead generatie met onze (SEA) digital marketing campagnes." },
-    { img: <Home_onlineMarketing />, heading: "Online Marketing Strategie", text: "Krijg inzagen op bedrijfs statestieken en optimeer via data gedreven besluiten." },
+        { img: <Home_zakelijkeWebsite />, heading: "Zakelijke Website laten Maken", text: "Transformeer uw zakelijke visie, laat nu een professionele, op maat gemaakte website bouwen die even indrukwekkend is als uw bedrijf!" },
+        { img: <Home_webwinkelOplossingen />, heading: "Ecommerce & Webwinkel Oplossingen", text: "Geintreseerd in een webshop laten maken? Breng je bedrijfs visie tot leven met een online marketing bureau dat naar u luistert." },
+        { img: <Home_zoekmachineoptimalizatie />, heading: "Zoekmachineoptimalizatie", text: "Wordt hoger gevonden in google met onze SEO diensten, voor een breeder bereik en vertrouwen." },
+        { img: <Home_onlineAdvertenties />, heading: "Online Advertenties", text: "Ontdek nieuwe lead generatie met onze (SEA) digital marketing campagnes." },
+        { img: <Home_onlineMarketing />, heading: "Online Marketing Strategie", text: "Krijg inzagen op bedrijfs statestieken en optimeer via data gedreven besluiten." },
     ]
 }
+
+
+const OnzeDienstenData = {
+    title: {
+        subHeading: "Digital Marketing Bureau",
+        heading: [
+            "Uw marketing partner voor ",
+            { type: "span", content: "Online Succes", className: "text-primary-500" }
+        ],
+        text: "Wij zijn een full-service online marketing bureau dat zich richt op het leveren van resultaten voor onze klanten. Wij bieden een breed scala aan diensten aan, waaronder webdesign, webdevelopment, SEO, SEA, social media marketing, content marketing en meer."
+    },
+}
+
+const TextIconData = {
+    title: {
+        topText: [
+            { content: "SEO", className: "text-gray-800 font-semibold whitespace-nowrap self-center ml-3" },
+            { content: " | ", className: "text-purple-300 font-medium whitespace-nowrap self-center ml-3" },
+            { content: "Massive Online Marketing", className: "text-gray-600 font-medium ml-3" }
+        ],
+        heading: "Bij Massive Werken wij aan",
+    },
+    content: [
+        {
+            title: 'Bereiken van doel gerichte klanten',
+            body: "dit is body text",
+            icon: <UserGroupIcon />,
+            colors: "text-primary-500 bg-primary-100 "
+        },
+        {
+            title: "Bouwen aan Vertrouwen en Geloofwaardigheid",
+            icon: <ShieldCheckIcon />,
+            colors: "text-green-500 bg-green-100"
+        },
+        {
+            title: "Vergroten van uw Online Zichtbaarheid",
+            icon: <MegaphoneIcon />,
+            colors: "text-indigo-500 bg-indigo-100"
+        },
+        {
+            title: "Kosteneffectieve Marketing",
+            icon: <PresentationChartLineIcon />,
+            colors: "text-red-500 bg-red-100"
+        },
+        {
+            title: "Voor Blijven op de Concurrentie",
+            icon: <ArrowTrendingUpIcon />,
+            colors: "text-yellow-500 bg-yellow-100"
+        }
+    ]
+}
+
+
+const newOverOns = {
+    subHeading: [
+        {
+            content: "Website",
+            className: "text-gray-700 font-semibold"
+        },
+        {
+            content: " | ",
+            className: "text-purple-300 font-medium"
+        },
+        {
+            content: "Zakelijke visies omzetten in opmerkelijke successen.",
+            className: "text-gray-600 font-medium"
+        }
+    ],
+    heading: "Creatieve webwinkel met Datagedreven Optimalizatie",
+    text: "Zakelijke visies omzetten in opmerkelijke successen. We doen dit door nauw samen te werken met ondernemers, hen te voorzien van creatieve en datagedreven oplossingen, en altijd te streven naar transparantie in alles wat we doen.",
+    buttons:[
+        {
+            type: "button",
+            content: "Contact",
+            url: "/#",
+            className: "w-full md:w-fit bg-secondary-50 text-secondary-600 px-6 py-3 rounded-lg justify-center flex border-solid border-white border-1.5 shadow-md   text-base leading-6 font-semibold text-secondary-50"
+        },
+        {
+            type: "button",
+            content: "Kijk hoe we je verder kunnen helpen",
+            url: "/#",
+            className: "w-full md:w-fit bg-primary-500 px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50"
+        },
+    ]
+
+}
+
+
+
 
 
 

@@ -51,7 +51,7 @@ const styles = {
     textSmall: "text-xs leading-4 font-normal text-secondary-600 md:text-base md:leading-6 md:font-normal",
     
     
-    
+    heading4xl: "text-3xl leading-9 font-bold md:text-4xl md:leading-10 text-secondary-800",
     heading5xl: "text-4xl leading-10 font-bold md:text-5xl md:leading-none text-secondary-800",
     subHeadingRounded: "text-sm leading-5 font-semibold text-secondary-500 px-4 py-2 rounded-full bg-secondary-50 shadow-sm border border-2 broder-white w-fit",
     
