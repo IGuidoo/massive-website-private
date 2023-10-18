@@ -1,5 +1,5 @@
 const styles = {
-    boxWidth: "xl:max-w-[1536px] w-full",
+    
 
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",
@@ -33,8 +33,9 @@ const styles = {
     buttonWidthMD: "w-full md:w-fit text-center ",
 
 
+    boxWidth: "xl:max-w-[1536px] w-full",
     gutter: 'px-6 md:max-w-[1536px]',
-    gutterPadding: 'px-6',
+    gutterPadding: 'px-6 md:px-12 [1632px]:px-0',
 
 
 

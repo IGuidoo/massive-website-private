@@ -57,8 +57,8 @@ export const metadata = {
 
 export default function page() {
     return (
-        <div className="">
-            <div className="relative bg-white rounded-b-4xl md:bg-transparent">
+        <div className="relative">
+            <div className="relative bg-white rounded-b-4xl md:bg-transparent max-w-[1920px] mx-auto">
                 <ResponsiveNavbar />
                 
                 {/* <Navbar /> */}
@@ -95,6 +95,42 @@ export default function page() {
             <Suspense>
             <Footer />
             </Suspense>
+            <div className="absolute top-[500px] left-1/2 transform -translate-x-1/2"> 
+            <svg width="1835" height="2458" viewBox="0 0 1835 2458" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1787.5" y="1675.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="56.5" y="112.5" width="47" height="47" rx="11.5" transform="rotate(90 56.5 112.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="56.5" y="498.5" width="47" height="47" rx="11.5" transform="rotate(90 56.5 498.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="0.5" y="1164.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="0.5" y="1108.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="4.5" y="1960.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="4.5" y="2072.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="4.5" y="2128.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1412.5" y="618.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="60.5" y="1960.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1669.5" y="622.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="112.5" y="0.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 0.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1596.5" y="767.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1725.5" y="622.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="112.5" y="56.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 56.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1781.5" y="678.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1731.5" y="1731.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1731.5" y="1563.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1731.5" y="1619.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1645.5" y="1101.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1645.5" y="1157.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1589.5" y="1101.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="112.5" y="554.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 554.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1778 2354)" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="56.5" y="1220.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1722 2410)" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1778 2298)" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="52.5" y="1623.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="108.5" y="1679.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1356.5" y="618.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+<rect x="1412.5" y="674.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+</svg>
+
+            </div>
         </div>
     )
 }
@@ -103,7 +139,7 @@ export default function page() {
 const AllInOne = ({ data }) => {
     return (
         <section className=' py-15'>
-            <div className={`${styles.gutter} ${styles.mdHorizontalCenter}`}>
+            <div className={`${styles.gutterPadding} ${styles.boxWidth} ${styles.mdHorizontalCenter}`}>
                 <div className={`pb-7 max-w-[1090px] md:text-center ${styles.mdHorizontalCenter}`}>
                     <div className='flex md:justify-center'>
                         <div className="flex text-xs leading-4">

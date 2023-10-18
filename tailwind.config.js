@@ -21,6 +21,9 @@ module.exports = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     extend: {
+      gridTemplateColumns: {
+        "34": "repeat(34, minmax(0, 1fr))"
+      },
       screens: {
         "3xl" : "1536px"
       },

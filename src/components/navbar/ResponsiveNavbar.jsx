@@ -107,7 +107,7 @@ const ResponsiveNavbar = () => {
     return (
         // <!--=============== HEADER ===============-->
         <header className="relative top-0 left-0 w-full shadow-mdW z-10">
-            <nav className={` p-6 lg:h-20 lg:flex   ${styles.gutter} max-w-[1536px] mx-auto `} >
+            <nav className={` p-6 lg:h-20 lg:flex ${styles.gutterPadding} ${styles.boxWidth} mx-auto `} >
                 <div className=" h-full flex justify-between items-center" style={{ flexGrow: "1.8" }}>
                     <Link href="/" className=''>
                         Massive
