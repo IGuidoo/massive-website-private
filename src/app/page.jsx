@@ -63,9 +63,9 @@ export default function page() {
                 
                 {/* <Navbar /> */}
                 <Hero data={HeroData} />
-                <div className="absolute md:w-[93%] left-[3.5%] top-0 -z-10 md:h-full bg-white rounded-b-4xl border-solid border-white border-3 shadow-lg"></div>
-                <div className="absolute bottom-[-16px] w-full h-[50%] -z-20 rounded-b-4xl custom-bg-gradient md:w-[90%] md:left-[5%] md:h-[130%]"></div>
-                <div className={`absolute bottom-[-34px] w-full h-full -z-30 bg-secondary-100 rounded-b-4xl md:bottom-[-49px] md:w-[97%] md:left-[1.5%]  md:h-[230%] md:border-solid md:border-white md:border-3`}></div>
+                <div className="absolute md:w-[97%] 2xl:w-[93%] md:left-[1.5%] 2xl:left-[3.5%] top-0 -z-10 md:h-full bg-white rounded-b-4xl border-solid border-white border-3 shadow-lg"></div>
+                <div className="absolute bottom-[-16px] w-full h-[50%] -z-20 rounded-b-4xl custom-bg-gradient 2xl:w-[90%] 2xl:left-[5%] 2xl:h-[130%]"></div>
+                <div className={`absolute bottom-[-34px] w-full h-full -z-30 bg-secondary-100 rounded-b-4xl 2xl:bottom-[-49px] 2xl:w-[97%] 2xl:left-[1.5%]  2xl:h-[230%] 2xl:border-solid 2xl:border-white 2xl:border-3`}></div>
             </div>
             <main>
                 <AllInOne data={allinoneData} />
@@ -95,7 +95,7 @@ export default function page() {
             <Suspense>
             <Footer />
             </Suspense>
-            <div className="absolute top-[500px] left-1/2 transform -translate-x-1/2"> 
+            {/* <div className="absolute top-[500px] left-1/2 transform -translate-x-1/2"> 
             <svg width="1835" height="2458" viewBox="0 0 1835 2458" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="1787.5" y="1675.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
 <rect x="56.5" y="112.5" width="47" height="47" rx="11.5" transform="rotate(90 56.5 112.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
@@ -130,7 +130,7 @@ export default function page() {
 <rect x="1412.5" y="674.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
 </svg>
 
-            </div>
+            </div> */}
         </div>
     )
 }
