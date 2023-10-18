@@ -10,6 +10,7 @@ import Footer from "@/components/sections/Footer"
 import Carousel from "@/components/sections/Carousel"
 import Hero from "../components/Hero"
 import CatagoriesServices from "@/components/sections/CatagorieServices"
+import SubHeadingHeadingText from "@/components/sections/subHeadingHeadingText"
 
 import {
     Allinone1,
@@ -37,11 +38,18 @@ import {
     SVG_SEO,
     SVG_Strategie,
     SVG_Webshop,
-    SVG_Website
+    SVG_Website,
+
+    Home_onlineAdvertenties,
+    Home_onlineMarketing,
+    Home_zoekmachineoptimalizatie,
+    Home_zakelijkeWebsite,
+    Home_webwinkelOplossingen,
 } from "@/images/diensten"
 
 import TagsList from "@/components/TagsList"
 import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar"
+import CardGrid from "@/components/sections/CardGrid"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -60,7 +68,7 @@ export default function page() {
         <div className="relative">
             <div className="relative bg-white rounded-b-4xl md:bg-transparent max-w-[1920px] mx-auto">
                 <ResponsiveNavbar />
-                
+
                 {/* <Navbar /> */}
                 <Hero data={HeroData} />
                 <div className="absolute md:w-[97%] 2xl:w-[93%] md:left-[1.5%] 2xl:left-[3.5%] top-0 -z-10 md:h-full bg-white rounded-b-4xl border-solid border-white border-3 shadow-lg"></div>
@@ -68,6 +76,20 @@ export default function page() {
                 <div className={`absolute bottom-[-34px] w-full h-full -z-30 bg-secondary-100 rounded-b-4xl 2xl:bottom-[-49px] 2xl:w-[97%] 2xl:left-[1.5%]  2xl:h-[230%] 2xl:border-solid 2xl:border-white 2xl:border-3`}></div>
             </div>
             <main>
+
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto`}>
+                    <SubHeadingHeadingText data={dienstenGridData.titel} gap={4} mdGap={6} maxWidth={680} />
+                    <div className="mt-[79px] md:mt-[47px]">
+                        <CardGrid data={dienstenGridData.cards} />
+                    </div>
+                </section>
+
+
+                <section>
+                </section>
+
+
+
                 <AllInOne data={allinoneData} />
                 <div className="md:relative overflow-x-clip">
                     <OverOns data={OverOnsData} />
@@ -78,62 +100,83 @@ export default function page() {
                 </Suspense>
 
                 <Suspense>
-                <div className="relative">
-                    <LatestDevelopments data={LatestDevelopmentsData} />
-                </div>
+                    <div className="relative">
+                        <LatestDevelopments data={LatestDevelopmentsData} />
+                    </div>
                 </Suspense>
                 <Suspense>
-                {/* { testData.test  */}
-                <div className=" h-[200px]"></div>
+                    {/* { testData.test  */}
+                    <div className=" h-[200px]"></div>
                 </Suspense>
                 <Suspense>
-                <Carousel data={blogCardsData} className={`${styles.borderInsetWhite3}`}/>
+                    <Carousel data={blogCardsData} className={`${styles.borderInsetWhite3}`} />
                 </Suspense>
                 <div className="h-[300px]"></div>
 
             </main>
             <Suspense>
-            <Footer />
+                <Footer />
             </Suspense>
             {/* <div className="absolute top-[500px] left-1/2 transform -translate-x-1/2"> 
             <svg width="1835" height="2458" viewBox="0 0 1835 2458" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="1787.5" y="1675.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="56.5" y="112.5" width="47" height="47" rx="11.5" transform="rotate(90 56.5 112.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="56.5" y="498.5" width="47" height="47" rx="11.5" transform="rotate(90 56.5 498.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="0.5" y="1164.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="0.5" y="1108.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="4.5" y="1960.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="4.5" y="2072.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="4.5" y="2128.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1412.5" y="618.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="60.5" y="1960.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1669.5" y="622.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="112.5" y="0.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 0.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1596.5" y="767.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1725.5" y="622.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="112.5" y="56.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 56.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1781.5" y="678.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1731.5" y="1731.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1731.5" y="1563.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1731.5" y="1619.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1645.5" y="1101.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1645.5" y="1157.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1589.5" y="1101.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="112.5" y="554.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 554.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1778 2354)" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="56.5" y="1220.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1722 2410)" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1778 2298)" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="52.5" y="1623.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="108.5" y="1679.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1356.5" y="618.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-<rect x="1412.5" y="674.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
-</svg>
+                <rect x="1787.5" y="1675.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="56.5" y="112.5" width="47" height="47" rx="11.5" transform="rotate(90 56.5 112.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="56.5" y="498.5" width="47" height="47" rx="11.5" transform="rotate(90 56.5 498.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="0.5" y="1164.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="0.5" y="1108.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="4.5" y="1960.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="4.5" y="2072.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="4.5" y="2128.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1412.5" y="618.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="60.5" y="1960.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1669.5" y="622.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="112.5" y="0.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 0.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1596.5" y="767.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1725.5" y="622.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="112.5" y="56.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 56.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1781.5" y="678.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1731.5" y="1731.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1731.5" y="1563.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1731.5" y="1619.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1645.5" y="1101.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1645.5" y="1157.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1589.5" y="1101.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="112.5" y="554.5" width="47" height="47" rx="11.5" transform="rotate(90 112.5 554.5)" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1778 2354)" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="56.5" y="1220.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1722 2410)" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="-0.5" y="0.5" width="47" height="47" rx="11.5" transform="matrix(-1 0 0 1 1778 2298)" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="52.5" y="1623.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="108.5" y="1679.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1356.5" y="618.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+                <rect x="1412.5" y="674.5" width="47" height="47" rx="11.5" fill="#F9FAFB" stroke="#D1D5DB"/>
+            </svg>
 
             </div> */}
         </div>
     )
 }
+
+
+const dienstenGridData = {
+    titel: {
+        subHeading: "Website of Web-winkel laten maken?",
+        heading: [
+            'Professioneel Website Laten Maken: Uw ',
+            { type: 'span', content: 'Online Succes', className: 'text-primary-500' },
+            ' Begint Hier'
+        ],
+        text: "Bent u opzoek naar Webdesign of Web development, een zakelijke website of een ecommerce webshop? Wij zorgen voor website beheer die niet alleen visueel aantrekkelijk is maar ook geoptimalizeerd en gebruiksvriendelijk."
+    },
+    cards: [
+    { img: <Home_zakelijkeWebsite />, heading: "Zakelijke Website laten Maken", text: "Transformeer uw zakelijke visie, laat nu een professionele, op maat gemaakte website bouwen die even indrukwekkend is als uw bedrijf!" },
+    { img: <Home_webwinkelOplossingen />, heading: "Ecommerce & Webwinkel Oplossingen", text: "Geintreseerd in een webshop laten maken? Breng je bedrijfs visie tot leven met een online marketing bureau dat naar u luistert." },
+    { img: <Home_zoekmachineoptimalizatie />, heading: "Zoekmachineoptimalizatie", text: "Wordt hoger gevonden in google met onze SEO diensten, voor een breeder bereik en vertrouwen." },
+    { img: <Home_onlineAdvertenties />, heading: "Online Advertenties", text: "Ontdek nieuwe lead generatie met onze (SEA) digital marketing campagnes." },
+    { img: <Home_onlineMarketing />, heading: "Online Marketing Strategie", text: "Krijg inzagen op bedrijfs statestieken en optimeer via data gedreven besluiten." },
+    ]
+}
+
 
 
 const AllInOne = ({ data }) => {
@@ -324,9 +367,9 @@ const OverOnsData = {
     cta: [{ text: "Lees verder -->", link: "/#" }],
     tags: [
         { name: "Unieke aanpak", href: "/#" },
-        { name: "Gedreven door Data", href: "/#"  },
-        { name: "Samen naar Succes", href: "/#"  },
-        { name: "Transparantie", href: "/#"  }
+        { name: "Gedreven door Data", href: "/#" },
+        { name: "Samen naar Succes", href: "/#" },
+        { name: "Transparantie", href: "/#" }
     ]
 }
 
@@ -357,7 +400,7 @@ const CatagoriesServecesData = [
                 cta1Slug: ["hoi"],
                 cta2Text: ["Contact"],
                 cta2Slug: ["/contact"],
-                img: <SVG_Website /> ,
+                img: <SVG_Website />,
             },
             {
                 id: ["webshop"],

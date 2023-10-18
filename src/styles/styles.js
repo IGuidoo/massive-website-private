@@ -48,12 +48,15 @@ const styles = {
     
     subHeading: "text-xs leading-4 font-semibold text-primary-500 md:text-sm md:leading-5",
 
-    text: "text-base leading-6 font-medium text-secondary-700 md:text-lg md:leading-7",
     textSmall: "text-xs leading-4 font-normal text-secondary-600 md:text-base md:leading-6 md:font-normal",
-
-
-
-
+    
+    
+    
+    heading5xl: "text-4xl leading-10 font-bold md:text-5xl md:leading-none text-secondary-800",
+    subHeadingRounded: "text-sm leading-5 font-semibold text-secondary-500 px-4 py-2 rounded-full bg-secondary-50 shadow-sm border border-2 broder-white w-fit",
+    
+    text: "text-base leading-6 font-medium text-secondary-600 md:text-lg md:leading-7",
+    
 
     primaryCTA: "w-full md:w-fit bg-primary-500 px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50",
     secondaryCTA: "w-full md:w-fit bg-secondary-50 text-secondary-600 px-6 py-3 rounded-lg justify-center flex border-solid border-white border-1.5 shadow-md   text-base leading-6 font-semibold text-secondary-50",

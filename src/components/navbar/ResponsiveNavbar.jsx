@@ -110,7 +110,7 @@ const ResponsiveNavbar = () => {
             <nav className={` p-6 lg:h-20 lg:flex ${styles.gutterPadding} ${styles.boxWidth} mx-auto `} >
                 <div className=" h-full flex justify-between items-center" style={{ flexGrow: "1.8" }}>
                     <Link href="/" className=''>
-                        Massive
+                        <MenuLogo />
                     </Link>
 
                     <div className="nav__toggle" id="nav-toggle">
@@ -127,6 +127,12 @@ const ResponsiveNavbar = () => {
 
                         {/* <!--=============== DROPDOWN 2 ===============--> */}
                         <SmallDropdownWithIcons data={diensten} />
+
+                        <li className='flex flex-col lg:flex-row place-self-center'>
+                            <Link href="/over-ons" className={`flex justify-between items-center text-sm font-semibold leading-6 text-secondary-900 ${styles.gutter} py-5 `} >
+                                Over ons
+                            </Link>
+                        </li>
 
                     </ul>
 
