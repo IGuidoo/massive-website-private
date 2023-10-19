@@ -161,7 +161,7 @@ body {
   transition: max-height 0.5s ease-out;
   background-color: var(--secondary-50);
 
-  max-height: 7rem; /* Set a max-height value just enough to show the summary content */
+  max-height: 5rem; /* Set a max-height value just enough to show the summary content */
   overflow: hidden; /* Hide the rest of the content */
 }
 
@@ -176,7 +176,8 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  height: 3rem; /* This height value must be equal to max-height value of <details> element  */
+  padding: 40px 32px;
+  height: 1rem; /* This height value must be equal to max-height value of <details> element  */
 }
 
 .simple-accordion__label:hover{
@@ -202,7 +203,9 @@ body {
   transform: rotate(-90deg);
   transition: transform 0.3s ease-in-out;
 }
-
+.simple-accordion__body{
+  margin-top: -10px;
+}
 
 
 
