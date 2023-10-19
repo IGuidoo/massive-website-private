@@ -33,11 +33,15 @@ module.exports = {
       padding: {
         "3.5" : "0.875rem",
         "13.5" : "3.375rem",
+        "11": "44px",
         "15" : "60px",
+        "36" : "144px",	
       },
       margin: {
+
         "15" : "60px",
-        "23" : "92px"
+        "23" : "92px",
+        "36" : "144px",	
       },
       borderRadius: {
         "4xl" : "32px"

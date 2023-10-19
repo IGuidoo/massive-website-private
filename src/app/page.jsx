@@ -34,6 +34,17 @@ import {
     InstagramGray,
     LinkedinGray,
     TwitterGray,
+
+    // Onze tools Grid
+    FacebookColor,
+    InstagramColor,
+    LinkedinColor,
+    GoogleAdsColor,
+    GoogleAnalyticsColor,
+    GoogleSearchConsoleColor,
+    GoogleMybusinessColor,
+    SemRushColor,
+    ShopifyColor,
 } from "../components/icons"
 import {
     SVG_SEA,
@@ -59,10 +70,13 @@ import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar"
 import CardGrid from "@/components/sections/CardGrid"
 import SubheadingHeadingTextSm from "@/components/heading-text/SubheadingHeadingTextSm"
 import TextWithIcons from "@/components/sections/TextWithIcons"
-import LogoSubHeadingHeadingTextButtons from "@/components/LogoSubHeadingHeadingTextButtons"
+import TextGridIcons from "@/components/one-time/TextGridIcons"
+import RenderText from "@/lib/RenderText"
+import AnnimationRef from "@/components/annimations/Animation"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
+
 
 export const metadata = {
     title: {
@@ -73,7 +87,10 @@ export const metadata = {
         'Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.',
 }
 
+
+
 export default function page() {
+
     return (
         <div className="relative">
             <div className="relative bg-white rounded-b-4xl md:bg-transparent max-w-[1920px] mx-auto">
@@ -87,25 +104,53 @@ export default function page() {
             </div>
             <main>
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15`}>
-                    <SubHeadingHeadingText data={dienstenGridData.title} cssClass="gap-4 md:gap-4 max-w-[680px]"/>
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+                    <SubHeadingHeadingText data={dienstenGridData.title} cssClass="gap-4 md:gap-4 max-w-[680px]" />
                     <div className="mt-[79px] lg:mt-[47px]">
                         <CardGrid data={dienstenGridData.cards} />
                     </div>
                 </section>
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15`}> 
-                        <SubheadingHeadingTextSm data={OnzeDienstenData.title} cssClass="gap-3 max-w-[854px] items-center md:text-center md:mx-auto" />
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+                    <SubheadingHeadingTextSm data={OnzeDienstenData.title} cssClass="gap-3 max-w-[854px] items-center md:text-center md:mx-auto" />
 
                 </section>
 
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+                    <div className="banner-container">
+                        <div className="w-full max-w-[590px] lg:m-8 lg:p-5 rounded-2xl flex flex-col justify-between desktop-banner__text-container">
+                            <h2 className={`${styles.heading4xl}`}>
+                                <RenderText content={medischeBannerData.heading} />
+                            </h2>
+                            <TagsList tagsData={medischeBannerData} tagBG="bg-white" cssClass=" mt-2 lg:mt-0" />
+                            <Link href={medischeBannerData.button.link} className={`${styles.secondaryCTA} hidden lg:block `}>
+                                {medischeBannerData.button.content}
+                            </Link>
+                        </div>
+                        <div className="mobile-banner-container ml-auto " >
+                            <Image
+                                className="ml-auto overflow-hidden pt-[27px] rounded-br-2xl w-[80%] lg:w-full "
+                                src={"/images/medische-gezondheidszorg-website-mockup.png"}
+                                width={737}
+                                height={391}
+                                alt="Mockup van een medische website met een mannelijke arts"
+                            />
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15`}>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
                     <TextWithIcons data={TextIconData} />
                 </section>
-                
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15`}>
-                    <LogoSubHeadingHeadingTextButtons data={newOverOns} />
+
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
+                    <TextGridIcons data={newOverOns} />
+                </section>
+
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+                    <AnnimationRef />
                 </section>
 
 
@@ -205,8 +250,27 @@ const OnzeDienstenData = {
             "Uw marketing partner voor ",
             { type: "span", content: "Online Succes", className: "text-primary-500" }
         ],
-        text: "Wij zijn een full-service online marketing bureau dat zich richt op het leveren van resultaten voor onze klanten. Wij bieden een breed scala aan diensten aan, waaronder webdesign, webdevelopment, SEO, SEA, social media marketing, content marketing en meer."
+        text: "Bij Massive Online Marketing zetten wij zakelijke visies om in opmerkelijke successen. Door nauw samen te werken met ondernemers voorzien wij hen van Internet marketing oplossingen."
     },
+}
+
+const medischeBannerData = {
+    heading: [
+        { type: "span", content: "Ontdek hoe wij", className: "text-primary-500" },
+        " ondernemers helpen",
+        { type: "span", content: " aan nieuwe leads.", className: "text-primary-500" }
+    ],
+    tags: [
+        { name: "Goede Vindbaarheid", href: "/#" },
+        { name: "Op Maat Gemaakt", href: "/#" },
+        { name: "Razend Snel", href: "/#" },
+        { name: "Inzage op Statestieken", href: "/#" },
+        { name: "Online Adverteren", href: "/#" },
+    ],
+    button: {
+        content: "Neem contact op >",
+        link: "/#"
+    }
 }
 
 const TextIconData = {
@@ -221,7 +285,6 @@ const TextIconData = {
     content: [
         {
             title: 'Bereiken van doel gerichte klanten',
-            body: "dit is body text",
             icon: <UserGroupIcon />,
             colors: "text-primary-500 bg-primary-100 "
         },
@@ -250,35 +313,62 @@ const TextIconData = {
 
 
 const newOverOns = {
-    subHeading: [
-        {
-            content: "Website",
-            className: "text-gray-700 font-semibold"
-        },
-        {
-            content: " | ",
-            className: "text-purple-300 font-medium"
-        },
-        {
-            content: "Zakelijke visies omzetten in opmerkelijke successen.",
-            className: "text-gray-600 font-medium"
-        }
-    ],
-    heading: "Creatieve webwinkel met Datagedreven Optimalizatie",
-    text: "Zakelijke visies omzetten in opmerkelijke successen. We doen dit door nauw samen te werken met ondernemers, hen te voorzien van creatieve en datagedreven oplossingen, en altijd te streven naar transparantie in alles wat we doen.",
-    buttons:[
-        {
-            type: "button",
-            content: "Contact",
-            url: "/#",
-            className: "w-full md:w-fit bg-secondary-50 text-secondary-600 px-6 py-3 rounded-lg justify-center flex border-solid border-white border-1.5 shadow-md   text-base leading-6 font-semibold text-secondary-50"
-        },
-        {
-            type: "button",
-            content: "Kijk hoe we je verder kunnen helpen",
-            url: "/#",
-            className: "w-full md:w-fit bg-primary-500 px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50"
-        },
+    content: {
+        subHeading: [
+            {
+                content: "Website",
+                className: "text-gray-700 font-semibold"
+            },
+            {
+                content: " | ",
+                className: "text-purple-300 font-medium"
+            },
+            {
+                content: "Onbeperkt Potentieel Ontgrendeld",
+                className: "text-gray-600 font-medium"
+            }
+        ],
+        heading: [
+            "Versterkt door de ",
+            { type: "span", content: "Beste", className: "text-primary-500" },
+            " tools uit de Industrie",
+        ],
+        text: "Bij Massive maken we gebruik van Top-Tier Platforms. Zodat jij als ondernemer je bezig kunt houden met de dingen die er echt toe doen!",
+        buttons: [
+            {
+                type: "button",
+                content: "Contact",
+                url: "/#",
+                className: "w-full md:w-fit bg-secondary-50 text-secondary-600 px-6 py-3 rounded-lg justify-center flex border-solid border-white border-1.5 shadow-md   text-base leading-6 font-semibold text-secondary-50"
+            },
+            {
+                type: "button",
+                content: "Kijk hoe we je verder kunnen helpen",
+                url: "/#",
+                className: "w-full md:w-fit bg-primary-500 px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50"
+            },
+        ]
+
+    },
+    img: [
+        { icon: <GoogleAnalyticsColor />, text: "Analytics 4" },
+        { icon: <GoogleSearchConsoleColor />, text: "Search Console" },
+        { icon: <GoogleMybusinessColor />, text: "My Business" },
+        { icon: <FacebookColor />, text: "Facebook" },
+        { icon: <InstagramColor />, text: "Instagram" },
+        { icon: <LinkedinColor />, text: "Linkedin" },
+        { icon: <SemRushColor />, text: "SemRush" },
+        { icon: <ShopifyColor />, text: "Shopify" },
+        { icon: <GoogleAdsColor />, text: "Google Ads" },
+        { icon: <GoogleAnalyticsColor />, text: "Analytics 4" },
+        { icon: <GoogleSearchConsoleColor />, text: "Search Console" },
+        { icon: <GoogleMybusinessColor />, text: "My Business" },
+        { icon: <FacebookColor />, text: "Facebook" },
+        { icon: <InstagramColor />, text: "Instagram" },
+        { icon: <LinkedinColor />, text: "Linkedin" },
+        { icon: <SemRushColor />, text: "SemRush" },
+        { icon: <ShopifyColor />, text: "Shopify" },
+        { icon: <GoogleAdsColor />, text: "Google Ads" },
     ]
 
 }

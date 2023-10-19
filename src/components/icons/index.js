@@ -21,6 +21,15 @@ import InstagramGray from "./instagramGray.svg"
 import LinkedinGray from "./linkedinGray.svg"
 import TwitterGray from "./twitterGray.svg"
 
+import FacebookColor from "./facebookColor.svg"
+import InstagramColor from "./instagramColor.svg"
+import LinkedinColor from "./linkedinColor.svg"
+import GoogleAdsColor from "./googleAdsColor.svg"
+import GoogleAnalyticsColor from "./googleAnalyticsColor.svg"
+import GoogleSearchConsoleColor from "./googleSearchConsoleColor.svg"
+import GoogleMybusinessColor from "./googleMybusinessColor.svg"
+import SemRushColor from "./semRushColor.svg"
+import ShopifyColor from "./shopifyColor.svg"
 
 
 export {
@@ -46,4 +55,14 @@ export {
     InstagramGray,
     LinkedinGray,
     TwitterGray,
+
+    FacebookColor,
+    InstagramColor,
+    LinkedinColor,
+    GoogleAdsColor,
+    GoogleAnalyticsColor,
+    GoogleSearchConsoleColor,
+    GoogleMybusinessColor,
+    SemRushColor,
+    ShopifyColor,
 }
