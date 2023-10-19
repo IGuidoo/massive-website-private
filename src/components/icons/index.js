@@ -27,7 +27,7 @@ import LinkedinColor from "./linkedinColor.svg"
 import GoogleAdsColor from "./googleAdsColor.svg"
 import GoogleAnalyticsColor from "./googleAnalyticsColor.svg"
 import GoogleSearchConsoleColor from "./googleSearchConsoleColor.svg"
-import GoogleMybusinessColor from "./googleMybusinessColor.svg"
+import GoogleMybusinessColor from "./googleMyBusinessColor.svg"
 import SemRushColor from "./semRushColor.svg"
 import ShopifyColor from "./shopifyColor.svg"
 
