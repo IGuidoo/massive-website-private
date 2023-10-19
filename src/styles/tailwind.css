@@ -116,8 +116,8 @@ body {
 
 .contact-home {
   border-radius: 6px;
-  border: 2px solid var(--default-purple-300, #C4B5FD);
-  background: var(--default-purple-500, #8B5CF6);
+  border: 2px solid var(--purple-300, #C4B5FD);
+  background: var(--purple-500, #8B5CF6);
   
   /* shadow/base */
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
@@ -153,23 +153,58 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-details[open] .chevron {
-  transform: rotate(-90deg);
-  transition: transform 0.3s ease-in-out;
+
+
+.simple-accordion{
+  box-sizing: border-box;
+  background: white;
+  transition: max-height 0.5s ease-out;
+  background-color: var(--secondary-50);
+
+  max-height: 7rem; /* Set a max-height value just enough to show the summary content */
+  overflow: hidden; /* Hide the rest of the content */
+}
+
+.simple-accordion summary {
+  display: block; /* This hides the summary's ::marker pseudo-element */
+}
+
+.simple-accordion__input{
+  display: none;
+}
+.simple-accordion__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 3rem; /* This height value must be equal to max-height value of <details> element  */
+}
+
+.simple-accordion__label:hover{
+  cursor: pointer;
+}
+
+.simple-accordion__input:checked + .simple-accordion
+,.simple-accordion:has(input:checked) {
+  max-height: 400px; /* Set a max-height value enough to show all the content */
+}
+
+.simple-accordion__heading {
+  transition: color 0.3s ease;
+}
+.simple-accordion__input:checked + details .simple-accordion__heading {
+  color: var(--primary-500);
 }
 
 .chevron {
   transition: transform 0.3s ease-in-out;
 }
-
-details summary {
-  cursor: pointer;
-  transition: margin 250ms ease-out;
+.simple-accordion__input:checked + details .chevron{
+  transform: rotate(-90deg);
+  transition: transform 0.3s ease-in-out;
 }
 
-details[open] summary {
-  margin-bottom: 10px;
-}
+
+
 
 .test {
   box-shadow:
