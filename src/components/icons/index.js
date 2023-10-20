@@ -33,6 +33,7 @@ import ShopifyColor from "./shopifyColor.svg"
 
 import SpeedIndex from "./page-speed/speedIndex.svg"
 import Toegankelijkheid from "./page-speed/toegankelijkheid.svg"
+import MassiveLogoGray from "./massiveLogoGray.svg"
 
 
 export {
@@ -71,4 +72,5 @@ export {
 
     SpeedIndex,
     Toegankelijkheid,
+    MassiveLogoGray,
 }

@@ -57,11 +57,11 @@ const ShowContentBasedOnActiveElement = ({ data = [] }) => {
                             <SwipeableWithHeading setActiveIndex={setActiveIndex} headings={dienst.content.selection.map(item => item.heading)}>
                                 {dienst.content.selection.map((item, index) => (
                                         
-                                        <div key={index} typeOfBusiness={item.typeOfBusiness} className="flex flex-col gap-6 md:gap-12">
+                                        <div key={index} typeofbusiness={item.typeOfBusiness} className="flex flex-col gap-6 md:gap-12">
                                             {isMobile && <AnnimationRef />}
                                             {item.content.map(contentItem => (
-                                                <>
-                                                    <div key={contentItem.heading} className="flex flex-col gap-3 md:flex-row md:gap-6">
+                                                <div key={contentItem.heading}>
+                                                    <div className="flex flex-col gap-3 md:flex-row md:gap-6">
                                                         <div className={`text-primary-500 shadow-lg flex-none ${styles.borderInsetWhite2} w-[44px] h-[44px] p-3 rounded `}>
                                                             {contentItem.icon}
                                                         </div>
@@ -72,7 +72,7 @@ const ShowContentBasedOnActiveElement = ({ data = [] }) => {
                                                     </div>
                                                     <div className="h-[1px] w-full bg-green-100 md:hidden"></div>
 
-                                                </>
+                                                </div>
                                             ))}
 
                                         </div>

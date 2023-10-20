@@ -97,9 +97,9 @@ const PageSpeedStats = () => {
                         <path
                             d="M32.25 20.75L37.5 26L32.25 31.25M21.75 31.25L16.5 26L21.75 20.75M29.25 17.75L24.75 34.25"
                             stroke="#8B5CF6"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <rect
                             x="3.75"
@@ -108,7 +108,7 @@ const PageSpeedStats = () => {
                             height="46.5"
                             rx="3.25"
                             stroke="white"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                         />
                     </g>
                     <defs>
@@ -119,9 +119,9 @@ const PageSpeedStats = () => {
                             width="54"
                             height="54"
                             filterUnits="userSpaceOnUse"
-                            color-interpolation-filters="sRGB"
+                            colorInterpolationFilters="sRGB"
                         >
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feColorMatrix
                                 in="SourceAlpha"
                                 type="matrix"
@@ -180,9 +180,9 @@ const PageSpeedStats = () => {
                         <path
                             d="M18 22.25V32C18 32.5967 18.2371 33.169 18.659 33.591C19.081 34.0129 19.6533 34.25 20.25 34.25H33.75C34.3467 34.25 34.919 34.0129 35.341 33.591C35.7629 33.169 36 32.5967 36 32V22.25M18 22.25V20C18 19.4033 18.2371 18.831 18.659 18.409C19.081 17.9871 19.6533 17.75 20.25 17.75H33.75C34.3467 17.75 34.919 17.9871 35.341 18.409C35.7629 18.831 36 19.4033 36 20V22.25M18 22.25H36M20.25 20H20.258V20.008H20.25V20ZM22.5 20H22.508V20.008H22.5V20ZM24.75 20H24.758V20.008H24.75V20Z"
                             stroke="#8B5CF6"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <rect
                             x="3.75"
@@ -191,7 +191,7 @@ const PageSpeedStats = () => {
                             height="46.5"
                             rx="3.25"
                             stroke="white"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                         />
                     </g>
                     <defs>
@@ -202,9 +202,9 @@ const PageSpeedStats = () => {
                             width="54"
                             height="54"
                             filterUnits="userSpaceOnUse"
-                            color-interpolation-filters="sRGB"
+                            colorInterpolationFilters="sRGB"
                         >
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feColorMatrix
                                 in="SourceAlpha"
                                 type="matrix"
@@ -263,9 +263,9 @@ const PageSpeedStats = () => {
                         <path
                             d="M30.59 28.37C30.7982 29.2511 30.8044 30.1678 30.608 31.0516C30.4116 31.9354 30.0177 32.7633 29.4559 33.4732C28.8941 34.1832 28.1789 34.7568 27.364 35.1511C26.549 35.5454 25.6553 35.7501 24.75 35.75V30.95M30.59 28.37C32.4999 26.9788 34.0536 25.1555 35.1242 23.0491C36.1947 20.9427 36.7519 18.6129 36.75 16.25C34.3873 16.2483 32.0577 16.8055 29.9515 17.8761C27.8452 18.9467 26.0221 20.5003 24.631 22.41M30.59 28.37C28.8519 29.6413 26.8603 30.5214 24.75 30.95M24.75 30.95C24.647 30.971 24.543 30.991 24.439 31.01C23.5318 30.2906 22.7104 29.4692 21.991 28.562C22.0099 28.4578 22.0289 28.3538 22.05 28.25M24.631 22.41C23.7499 22.2016 22.833 22.1953 21.9491 22.3916C21.0652 22.588 20.2371 22.9818 19.5271 23.5436C18.817 24.1054 18.2433 24.8207 17.8489 25.6357C17.4546 26.4508 17.2498 27.3446 17.25 28.25H22.05M24.631 22.41C23.3599 24.1478 22.4788 26.14 22.05 28.25M19.811 30.64C19.1532 31.1292 18.6417 31.789 18.332 32.548C18.0223 33.307 17.9262 34.1363 18.054 34.946C18.8638 35.0737 19.6932 34.9774 20.4522 34.6675C21.2112 34.3577 21.871 33.846 22.36 33.188M31.5 23C31.5 23.3978 31.342 23.7794 31.0607 24.0607C30.7794 24.342 30.3978 24.5 30 24.5C29.6022 24.5 29.2206 24.342 28.9393 24.0607C28.658 23.7794 28.5 23.3978 28.5 23C28.5 22.6022 28.658 22.2206 28.9393 21.9393C29.2206 21.658 29.6022 21.5 30 21.5C30.3978 21.5 30.7794 21.658 31.0607 21.9393C31.342 22.2206 31.5 22.6022 31.5 23Z"
                             stroke="#8B5CF6"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <rect
                             x="3.75"
@@ -274,7 +274,7 @@ const PageSpeedStats = () => {
                             height="46.5"
                             rx="3.25"
                             stroke="white"
-                            stroke-width="1.5"
+                            strokeWidth="1.5"
                         />
                     </g>
                     <defs>
@@ -285,9 +285,9 @@ const PageSpeedStats = () => {
                             width="54"
                             height="54"
                             filterUnits="userSpaceOnUse"
-                            color-interpolation-filters="sRGB"
+                            colorInterpolationFilters="sRGB"
                         >
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feColorMatrix
                                 in="SourceAlpha"
                                 type="matrix"

@@ -28,6 +28,7 @@ import {
     GoogleMybusinessColor,
     SemRushColor,
     ShopifyColor,
+    MassiveLogoGray,
 } from "../components/icons"
 import {
     // Card Grod imports
@@ -120,18 +121,38 @@ export default function page() {
 
                         </div>
 
-                <Suspense>
-                    <CatagoriesServices data={CatagoriesServecesData} />
-                </Suspense>
+                    </div>
+                </section>
 
-                <div className="relative">
-                    <LatestDevelopments data={LatestDevelopmentsData} />
-                </div>
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+                    <TextWithIcons data={TextIconData} />
+                </section>
 
-                {/* { testData.test  */}
-                <div className=" h-[200px]"></div>
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
+                    <TextGridIcons data={newOverOns} />
+                </section>
 
-                <Carousel data={blogCardsData} />
+                <section className={` mx-auto py-15 mb:py-36 `}>
+                    <div className="flex flex-col gap-2 max-w-[950px] mx-auto">
+                        {faqData.map((item, index) => (
+                            <>
+                                <AccordionSinge key={index} title={item.title} body={item.body} cssClass={`md:rounded-2xl ${styles.borderInsetWhite3} shadow-sm`} />
+                                {index !== faqData.length - 1 && (
+                                    <MassiveLogoGray className="hidden md:block self-center" />
+                                )}
+                            </>
+                        ))}
+                    </div>
+                </section>
+
+                <section className={`${styles.boxWidth} mx-auto py-15 mb:py-36 relative overflow-hidden `}>
+                    <SubHeadingHeadingText data={pageSpeedData.title} cssClass="gap-4 md:gap-4 w-full max-w-[800px] absolute z-10 top-[20%]  md:top-[26%] absolute-center md:text-center md:items-center px-6" />
+                    <PageSpeedStats />
+                </section>
+
+
+
+
 
             </main>
             <Suspense>
@@ -300,15 +321,15 @@ const HeroData = [
         text: ["Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren"],
         cta1: {
             text: ["Ontdek onze Diensten"],
-            link: "/#"
+            link: ["/#"]
         },
         cta2: {
             text: ["Start uw Groeireis"],
-            link: "/#"
+            link: ["/#"]
         },
         cta3: {
             text: ["Of neem contact op -->"],
-            link: "/#"
+            link: ["/#"]
         },
         social: [
             {
