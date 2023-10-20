@@ -49,6 +49,7 @@ import TextGridIcons from "@/components/one-time/TextGridIcons"
 import RenderText from "@/lib/RenderText"
 import AnnimationRef from "@/components/annimations/Animation"
 import Accordion from "@/components/SimpleAccordion"
+import PageSpeedStats from "@/components/sections/PageSpeedStats"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -132,6 +133,13 @@ export default function page() {
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 `}>
                     <Accordion data={faqData} cssClass="max-w-[952px] mx-auto flex flex-col gap-10 " cssIndivClass={`rounded-2xl ${styles.borderInsetWhite3} shadow-sm`} />
                 </section>
+
+                <section className={`${styles.boxWidth} mx-auto py-15 mb:py-36 relative overflow-hidden `}>
+                    <SubHeadingHeadingText data={pageSpeedData.title} cssClass="gap-4 md:gap-4 w-full max-w-[800px] absolute z-10 top-[20%]  md:top-[26%] absolute-center md:text-center md:items-center px-6" />
+                    <PageSpeedStats />
+                </section>
+
+
 
 
             </main>
@@ -356,5 +364,236 @@ const faqData = [
     {
         title: "Blijf voor op de concurrentie",
         body: "De digitale wereld is constant in beweging. Door up-to-date te blijven met SEO, blijft u een stap voor op uw concurrenten. Dit is vooral belangrijk voor tech-savvy millennials en startup oprichters die in een competitieve markt opereren. De digitale wereld is constant in beweging. Door up-to-date te blijven met SEO, blijft u een stap voor op uw concurrenten. Dit is vooral belangrijk voor tech-savvy millennials en startup oprichters die in een competitieve markt opereren.",
+    }
+]
+
+
+const pageSpeedData = {
+    title: {
+        subHeading: "Digital Marketing Bureau",
+        heading: [
+            'Google PageSpeed  ',
+            { type: 'span', content: 'Insights', className: 'text-primary-500' },
+        ],
+        text: "Té mooi om waard te zijn? Dat denken wij ook! Kijk hier zelf wat Google wel niet over ons te zeggen heeft!"
+    },
+}
+
+
+const dienstenData = [
+    {
+        id: "zakelijke-website",
+        indexCard: {
+            icon: "",
+            heading: "Zakelijke Website",
+            subHeading: "Creatieve, datagedreven websites.",
+        },
+        content: {
+            selection: [
+                {
+                    heading: "Laat uw website op maat ontwerpen voor optimale lokale SEO en beheer het gemakkelijk zelf.",
+                    typeOfBusiness: "Start-Up",
+                    content: [
+                        { icon: "", heading: "Website laten maken", text: "Ons webdesign bureau ontwerpt websites op maat en houd rekening met uw lokale SEO, zodat uw bedrijf opvalt in deb buurt en omstreken." },
+                        { icon: "", heading: "Goedkoop Website Laten Maken", text: "Ontvang goedkope website ontwerpen die aansluiten op uw bedrijfsbudget en behoeften." },
+                        { icon: "", heading: "Zelfbeheer Mogelijkheden", text: "Onze gebruiksvriendelijke CMS systeem stelt u in staat om eenvoudige updates zelf te doen, zonder extra kosten." },
+                    ]
+                },
+                {
+                    heading: "Versterk uw merkidentiteit, begrijp uw bezoekers en behoud een soepel draaiende website met onze ondersteuning.",
+                    typeOfBusiness: "MKB Onderneming",
+                    content: [
+                        { icon: "", heading: "Professionele Website Laten maken", text: "Web development die uw merkidentiteit versterkt en aansluit op de behoefte van uw specifieke doelgroep." },
+                        { icon: "", heading: "Analytische Inzichten", text: "Krijg een dieper inzicht in uw bezoekers en hun gedrag met geavanceerde analyse-tools." },
+                        { icon: "", heading: "Ondersteuning en Onderhoud", text: "Wij bieden uitgebreide ondersteuning en onderhoudsdiensten om ervoor te zorgen dat uw website altijd soepel draait." },
+                    ]
+                },
+                {
+                    heading: "Bereik internationale markten met meertalige opties, geavanceerde beveiliging en naadloze integratie van bedrijfsprocessen.",
+                    typeOfBusiness: "Enterprise",
+                    content: [
+                        { icon: "", heading: "Multinationale Ondersteuning", text: "Wij bieden meertalige websites en valuta-opties voor uw internationale klantenbestand." },
+                        { icon: "", heading: "Maximale Beveiliging en Snelheid", text: "Onze toonaangevende technologie uw bescherm bedrijfsgegevens, terwijl we tegelijkertijd rezendsnelle laadtijden garanderen." },
+                        { icon: "", heading: "Geïntegreerde Bedrijfsprocessen", text: "Onze sites kunnen worden geïntegreerd met uw bestaande bedrijfssoftware, van CRM-systemen tot voorraadbeheer, voor een soepele bedrijfsvoering." },
+                    ]
+                },
+            ],
+            buttons: [
+                {
+                    type: "button",
+                    content: "Bekijk verolg stappen",
+                    url: "/#",
+                    className: "w-full md:w-fit bg-secondary-50 text-secondary-600 px-6 py-3 rounded-lg justify-center flex border-solid border-white border-1.5 shadow-md   text-base leading-6 font-semibold text-secondary-50"
+                },
+                {
+                    type: "button",
+                    content: "Neem Contact op",
+                    url: "/#",
+                    className: "w-full md:w-fit bg-primary-500 px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50"
+                },
+            ]
+        }
+
+    },
+    {
+        id: "webwinkel",
+        indexCard: {
+            icon: "",
+            heading: "eCommerce",
+            subHeading: "Online web-winkeloplossingen",
+        },
+        content: {
+            selection: [
+                {
+                    typeOfBusiness: "",
+                    heading: "Eenvoudig Beginnen, Groots Verkopen: Ontdek Ons Intuïtieve Platform",
+                    content: [
+                        { icon: "", heading: "Simpel & Intuïtief Platform", text: "Of je nou je webshop begint, onze oplossingen zijn gebruiksvriendelijk, zodat u moeiteloos uw producten kunt beheren en verkopen." },
+                        { icon: "", heading: "Lokale SEO Integratie", text: "Ons platform is geoptimaliseerd voor lokale zoekopdrachten, zodat uw winkel zichtbaar is voor klanten in uw regio" },
+                        { icon: "", heading: "Effectieve Marketing", text: "Implementeer marketingstrategieën zoals e-mailmarketing, zoekmachineoptimalisatie (SEO) en sociale media-integratie om de zichtbaarheid van de webwinkel te vergroten." },
+                    ]
+                },
+                {
+                    typeOfBusiness: "Groei Slim met Onze Geavanceerde Webshop Functies!",
+                    content: [
+                        { icon: "", heading: "Geavanceerde Webshop Functies", text: "Profiteer van geavanceerde tools voor voorraadbeheer, rapportage en marketing om uw online verkoop te stimuleren" },
+                        { icon: "", heading: "Multi-Channel Verkoop", text: "Integreer met populaire marktplaatsen en sociale media intregatie voor een uitgebreid verkoopnetwerk." },
+                        { icon: "", heading: "Training & Workshops", text: "Wij bieden trainingen en begeleiding om u en uw team te helpen overstappen om het meeste uit uw webshop te halen." },
+                    ]
+                },
+                {
+                    typeOfBusiness: "E-commerce Op Maat: Krachtige Oplossingen voor Wereldwijde Dominantie!",
+                    content: [
+                        { icon: "", heading: "Volledig Geïntegreerde E-commerce Oplossing", text: "Van krachtige analytics tot geavanceerde beveiligingsfuncties, ons platform is ontworpen om te voldoen aan grote volumes en product oplossingen op maat." },
+                        { icon: "", heading: "Internationale Verkoopmogelijkheden", text: "Koppel met CRM-systemen, ERP-oplossingen en andere bedrijfstools voor een gestroomlijnde bedrijfsvoering." },
+                        { icon: "", heading: "Geavanceerde Integraties & API's", text: "Breid uit naar nieuwe markten met meertalige ondersteuning, valutaconversie en internationale verzendopties." },
+                    ]
+                },
+            ],
+            buttons: [
+                {
+                    type: "button",
+                    content: "Bekijk verolg stappen",
+                    url: "/#",
+                    className: "w-full md:w-fit bg-secondary-50 text-secondary-600 px-6 py-3 rounded-lg justify-center flex border-solid border-white border-1.5 shadow-md   text-base leading-6 font-semibold text-secondary-50"
+                },
+                {
+                    type: "button",
+                    content: "Neem Contact op",
+                    url: "/#",
+                    className: "w-full md:w-fit bg-primary-500 px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50"
+                },
+            ]
+        }
+
+    },
+    {
+        id: "zoekmachineoptimalizatie",
+        indexCard: {
+            icon: "",
+            heading: "SEO",
+            subHeading: "Hoger gevonden worden in Google",
+        },
+        content: {
+            heading: "",
+            selection: [
+                {
+                    heading: "Lokale SEO Domineert: Maak Uw Startup Vindbaar in uw Regio",
+                    typeOfBusiness: "Start-Up",
+                    content: [
+                        { icon: "", heading: "Lokale SEO & Google Mijn Bedrijf Optimalisatie", text: "Verhoog uw online zichtbaarheid in lokale zoekresultaten en op Google Maps, zodat lead generatie in uw buurt u gemakkelijk kunnen vinden." },
+                        { icon: "", heading: "Betaalbare Pakketten", text: "Ontvang professionele zoek machine optimalisatie (SEO) hulp zonder uw budget te overschrijden." },
+                        { icon: "", heading: "Directe Rapportage", text: "Blijf op de hoogte van uw rankings en verkeer met maandelijkse online marketing rapporten." },
+                    ]
+                },
+                {
+                    heading:"SEO & Contentstrategie op Maat: Boost Uw Online Zichtbaarheid!",
+                    typeOfBusiness: "MKB Onderneming",
+                    content: [
+                        { icon: "", heading: "SEO & Contentstrategie", text: "Krijg een combinatie van technische SEO en contentoptimalisatie om uw online zichtbaarheid te vergroten." },
+                        { icon: "", heading: "Concurrentieanalyse en zoekwoordonderzoek", text: "Ontdek in een SEO audit op welken zoekwoorden uw concurrenten ranken en hoe u hoger in google kunt komen." },
+                        { icon: "", heading: "Meetbare Resultaten", text: "Zie duidelijke verbeteringen in uw ranking, verkeer en conversies doormiddel van onze online marketin." },
+                    ]
+                },
+                {
+                    heading: "Uitgebreide SEO-Strategie voor Grote Ondernemingen: Domineer Online!",
+                    typeOfBusiness: "Enterprise",
+                    content: [
+                        { icon: "", heading: "Volledig Geïntegreerde SEO-strategie", text: "Ontvang een uitgebreide online marketing oplossingen die technische SEO, content, linkbuilding en meer omvat." },
+                        { icon: "", heading: "Toegewijd Accountmanagement", text: "Werk samen met een toegewijde SEO specialist die uw bedrijfsdoelstellingen begrijpt en ernaar streeft deze te bereiken." },
+                        { icon: "", heading: "Geavanceerde Analyse & Rapportage", text: "Duik diep in gegevens met geavanceerde analytics en ontvang gedetailleerde rapporten over uw SEO prestaties." },
+                    ]
+                },
+            ],
+            buttons: [
+                {
+                    type: "button",
+                    content: "Bekijk verolg stappen",
+                    url: "/#",
+                    className: "w-full md:w-fit bg-secondary-50 text-secondary-600 px-6 py-3 rounded-lg justify-center flex border-solid border-white border-1.5 shadow-md   text-base leading-6 font-semibold text-secondary-50"
+                },
+                {
+                    type: "button",
+                    content: "Neem Contact op",
+                    url: "/#",
+                    className: "w-full md:w-fit bg-primary-500 px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50"
+                },
+            ]
+        }
+
+    },
+    {
+        id: "onlinemarketing",
+        indexCard: {
+            icon: "",
+            heading: "Online Advertenties",
+            subHeading: "Kost effectieve advertenties",
+        },
+        content: {
+            selection: [
+                {
+                    heading: "Eenvoudige Advertenties voor Startups: Snel en Effectief!",
+                    typeOfBusiness: "Start-Up",
+                    content: [
+                        { icon: "", heading: "Eenvoudige Advertentie-Setup", text: "Onze zoekmachinemarketing is ontworpen voor gebruikersvriendelijkheid, waardoor u eenvoudig en snel uw advertenties kunt opzetten." },
+                        { icon: "", heading: "Budgetvriendelijke Opties", text: "Speciaal ontworpen voor kleine bedrijven, onze advertentiepakketten zorgen ervoor dat u de beste waarde krijgt voor uw investering." },
+                        { icon: "", heading: "Gepersonaliseerde Doelgroep Targeting", text: "Bereik uw ideale klanten in Amsterdam en daarbuiten met onze geavanceerde doelgroep targeting tools." },
+                    ]
+                },
+                {
+                    heading: "Geavanceerde Advertentie Opties voor MKB: Optimaliseer Uw Campagnes",
+                    typeOfBusiness: "MKB Onderneming",
+                    content: [
+                        { icon: "", heading: "Geavanceerde Advertentie Functies", text: "Profiteer van uitgebreide analytics, A/B-testen, en meer om uw advertentiecampagnes te optimaliseren." },
+                        { icon: "", heading: "Strategische Consultatie", text: "Werk samen met onze experts om een effectieve en efficiënte advertentiestrategie te ontwikkelen." },
+                        { icon: "", heading: "Diepgaande Segmentatie & Personalisatie", text: "Richt u op niche-segmenten binnen uw markt op basis van reisgewoonten, locatie en boekingsgeschiedenis en andere touch points." },
+                    ]
+                },
+                {
+                    heading: "Maatwerk voor Grote Ondernemingen: Krachtige, Multinationale Advertenties!",
+                    typeOfBusiness: "Enterprise",
+                    content: [
+                        { icon: "", heading: "Op Maat Gemaakte Advertentie Ontwerpen", text: "Ons team kan op maat gemaakte advertentieontwerpen creëren die passen bij uw merk en boodschap." },
+                        { icon: "", heading: "Volledig Beheerde Advertentie Campagnes", text: "Laat onze marketing experts uw campagnes van begin tot eind beheren, zodat u zich kunt concentreren op uw bedrijf." },
+                        { icon: "", heading: "Multinationale Campagne Ondersteuning", text: "Bereik klanten in de hele wereld met meertalige advertenties en geavanceerde geografische targeting." },
+                    ]
+                },
+            ],
+            buttons: [
+                {
+                    type: "button",
+                    content: "Bekijk verolg stappen",
+                    url: "/#",
+                    className: "w-full md:w-fit bg-secondary-50 text-secondary-600 px-6 py-3 rounded-lg justify-center flex border-solid border-white border-1.5 shadow-md   text-base leading-6 font-semibold text-secondary-50"
+                },
+                {
+                    type: "button",
+                    content: "Neem Contact op",
+                    url: "/#",
+                    className: "w-full md:w-fit bg-primary-500 px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50"
+                },
+            ]
+        }
+
     }
 ]

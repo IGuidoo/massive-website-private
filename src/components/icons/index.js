@@ -31,6 +31,9 @@ import GoogleMybusinessColor from "./googleMyBusinessColor.svg"
 import SemRushColor from "./semRushColor.svg"
 import ShopifyColor from "./shopifyColor.svg"
 
+import SpeedIndex from "./page-speed/speedIndex.svg"
+import Toegankelijkheid from "./page-speed/toegankelijkheid.svg"
+
 
 export {
     // test,
@@ -65,4 +68,7 @@ export {
     GoogleMybusinessColor,
     SemRushColor,
     ShopifyColor,
+
+    SpeedIndex,
+    Toegankelijkheid,
 }
