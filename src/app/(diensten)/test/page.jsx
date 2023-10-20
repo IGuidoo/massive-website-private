@@ -3,7 +3,7 @@
 import ResponsiveNavbar from '@/components/navbar/ResponsiveNavbar'
 import React from 'react'
 
-import "@/styles/icons.css"
+// import "@/styles/icons.css"
 
 
 const page = () => {

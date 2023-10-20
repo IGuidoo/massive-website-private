@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import Link from 'next/link';
 import styles from '@/styles/styles';
 import  "@/components/navbar/ResponsiveNavbar.css"
-import "@/styles/icons.css"
+// import "@/styles/icons.css"
 
 import MegaDropdown from '@/components/navbar/MegaDropdown.jsx';
 import SmallDropdownWithIcons from './SmallDropdownWithIcons';
