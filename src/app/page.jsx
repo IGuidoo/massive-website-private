@@ -9,6 +9,8 @@ import Footer from "@/components/sections/Footer"
 import Hero from "../components/Hero"
 import SubHeadingHeadingText from "@/components/heading-text/subHeadingHeadingText"
 
+import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
+
 import {
     // Social Icons
     FacebookGray,
@@ -50,6 +52,8 @@ import RenderText from "@/lib/RenderText"
 import AnnimationRef from "@/components/annimations/Animation"
 import Accordion from "@/components/SimpleAccordion"
 import PageSpeedStats from "@/components/sections/PageSpeedStats"
+import AccordionSinge from "@/components/Accordion"
+import ShowContentBasedOnActiveElement from "@/components/ShowContentBasedOnActiveElement"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -89,9 +93,10 @@ export default function page() {
                 </section>
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
-                    <SubheadingHeadingTextSm data={OnzeDienstenData.title} cssClass="gap-3 max-w-[854px] items-center md:text-center md:mx-auto" />
-
+                    <SubheadingHeadingTextSm data={OnzeDienstenData.title} cssClass="gap-3 max-w-[854px] items-center md:text-center md:mx-auto pb-12" />
+                    <ShowContentBasedOnActiveElement data={dienstenData} />
                 </section>
+
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
                     <div className="banner-container">
@@ -126,18 +131,58 @@ export default function page() {
                     <TextGridIcons data={newOverOns} />
                 </section>
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
-                    <AnnimationRef />
-                </section>
-
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 `}>
-                    <Accordion data={faqData} cssClass="max-w-[952px] mx-auto flex flex-col gap-10 " cssIndivClass={`rounded-2xl ${styles.borderInsetWhite3} shadow-sm`} />
+                <section className={` mx-auto py-15 mb:py-36 `}>
+                    <div className="flex flex-col gap-2 max-w-[950px] mx-auto">
+                        {faqData.map((item, index) => (
+                            <>
+                                <AccordionSinge key={index} title={item.title} body={item.body} cssClass={`md:rounded-2xl ${styles.borderInsetWhite3} shadow-sm`} />
+                                {index !== faqData.length - 1 && (
+                                    <svg className="hidden md:block self-center" width="26" height="16" viewBox="0 0 26 16" fill="none">
+                                        <g filter="url(#filter0_i_2429_52275)">
+                                            <mask id="path-1-outside-1_2429_52275" maskUnits="userSpaceOnUse" x="0" y="-0.388672" width="25" height="16" fill="black">
+                                                <rect fill="white" y="-0.388672" width="25" height="16" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.237 10.1152L5.68523 14.667H1V9.98178L10.3705 0.611328H15.0557V5.16312L19.6075 0.611328H24.2927V5.29656L14.9222 14.667H10.237V10.1152Z" />
+                                            </mask>
+                                            <g filter="url(#filter1_i_2429_52275)">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.237 10.1152L5.68523 14.667H1V9.98178L10.3705 0.611328H15.0557V5.16312L19.6075 0.611328H24.2927V5.29656L14.9222 14.667H10.237V10.1152Z" fill="#E7E5E4" />
+                                            </g>
+                                            <path d="M10.237 10.1152H10.5447V9.37238L10.0194 9.89765L10.237 10.1152ZM5.68523 14.667V14.9747H5.81268L5.9028 14.8846L5.68523 14.667ZM1 14.667H0.692303V14.9747H1V14.667ZM1 9.98178L0.782425 9.76421L0.692303 9.85433V9.98178H1ZM10.3705 0.611328V0.303631H10.243L10.1529 0.393753L10.3705 0.611328ZM15.0557 0.611328H15.3634V0.303631H15.0557V0.611328ZM15.0557 5.16312H14.748V5.90596L15.2733 5.38069L15.0557 5.16312ZM19.6075 0.611328V0.303631H19.48L19.3899 0.393753L19.6075 0.611328ZM24.2927 0.611328H24.6004V0.303631H24.2927V0.611328ZM24.2927 5.29656L24.5103 5.51413L24.6004 5.42401V5.29656H24.2927ZM14.9222 14.667V14.9747H15.0497L15.1398 14.8846L14.9222 14.667ZM10.237 14.667H9.92932V14.9747H10.237V14.667ZM10.0194 9.89765L5.46765 14.4494L5.9028 14.8846L10.4546 10.3328L10.0194 9.89765ZM5.68523 14.3593H1V14.9747H5.68523V14.3593ZM1.3077 14.667V9.98178H0.692303V14.667H1.3077ZM1.21757 10.1994L10.588 0.828903L10.1529 0.393753L0.782425 9.76421L1.21757 10.1994ZM10.3705 0.919025H15.0557V0.303631H10.3705V0.919025ZM14.748 0.611328V5.16312H15.3634V0.611328H14.748ZM15.2733 5.38069L19.8251 0.828903L19.3899 0.393753L14.8381 4.94554L15.2733 5.38069ZM19.6075 0.919025H24.2927V0.303631H19.6075V0.919025ZM23.985 0.611328V5.29656H24.6004V0.611328H23.985ZM24.0751 5.07898L14.7047 14.4494L15.1398 14.8846L24.5103 5.51413L24.0751 5.07898ZM14.9222 14.3593H10.237V14.9747H14.9222V14.3593ZM10.5447 14.667V10.1152H9.92932V14.667H10.5447Z" fill="white" mask="url(#path-1-outside-1_2429_52275)" />
+                                            <path d="M25 15.3818L17.9995 15.3818L25 8.38135L25 15.3818Z" fill="#E7E5E4" stroke="white" stroke-width="0.333357" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_i_2429_52275" x="0.692383" y="0.303711" width="24.4746" height="15.8605" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                                <feOffset dy="0.615394" />
+                                                <feGaussianBlur stdDeviation="0.615394" />
+                                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                                <feBlend mode="normal" in2="shape" result="effect1_innerShadow_2429_52275" />
+                                            </filter>
+                                            <filter id="filter1_i_2429_52275" x="0.692383" y="0.303711" width="23.9082" height="14.9786" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                                <feOffset dy="0.307697" />
+                                                <feGaussianBlur stdDeviation="0.153849" />
+                                                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                                <feBlend mode="normal" in2="shape" result="effect1_innerShadow_2429_52275" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                )}
+                            </>
+                        ))}
+                    </div>
                 </section>
 
                 <section className={`${styles.boxWidth} mx-auto py-15 mb:py-36 relative overflow-hidden `}>
                     <SubHeadingHeadingText data={pageSpeedData.title} cssClass="gap-4 md:gap-4 w-full max-w-[800px] absolute z-10 top-[20%]  md:top-[26%] absolute-center md:text-center md:items-center px-6" />
                     <PageSpeedStats />
                 </section>
+
 
 
 
@@ -384,37 +429,38 @@ const dienstenData = [
     {
         id: "zakelijke-website",
         indexCard: {
-            icon: "",
+            icon: <ComputerDesktopIcon />,
+            colors: "bg-primary-100 text-primary-500",
             heading: "Zakelijke Website",
             subHeading: "Creatieve, datagedreven websites.",
         },
         content: {
             selection: [
                 {
-                    heading: "Laat uw website op maat ontwerpen voor optimale lokale SEO en beheer het gemakkelijk zelf.",
+                    heading: "Laat uw website op maat ontwerpen.",
                     typeOfBusiness: "Start-Up",
                     content: [
-                        { icon: "", heading: "Website laten maken", text: "Ons webdesign bureau ontwerpt websites op maat en houd rekening met uw lokale SEO, zodat uw bedrijf opvalt in deb buurt en omstreken." },
-                        { icon: "", heading: "Goedkoop Website Laten Maken", text: "Ontvang goedkope website ontwerpen die aansluiten op uw bedrijfsbudget en behoeften." },
-                        { icon: "", heading: "Zelfbeheer Mogelijkheden", text: "Onze gebruiksvriendelijke CMS systeem stelt u in staat om eenvoudige updates zelf te doen, zonder extra kosten." },
+                        { icon: <ComputerDesktopIcon />, heading: "Website laten maken", text: "Ons webdesign bureau ontwerpt websites op maat en houd rekening met uw lokale SEO, zodat uw bedrijf opvalt in deb buurt en omstreken." },
+                        { icon: <ComputerDesktopIcon />, heading: "Goedkoop Website Laten Maken", text: "Ontvang goedkope website ontwerpen die aansluiten op uw bedrijfsbudget en behoeften." },
+                        { icon: <ComputerDesktopIcon />, heading: "Zelfbeheer Mogelijkheden", text: "Onze gebruiksvriendelijke CMS systeem stelt u in staat om eenvoudige updates zelf te doen, zonder extra kosten." },
                     ]
                 },
                 {
                     heading: "Versterk uw merkidentiteit, begrijp uw bezoekers en behoud een soepel draaiende website met onze ondersteuning.",
                     typeOfBusiness: "MKB Onderneming",
                     content: [
-                        { icon: "", heading: "Professionele Website Laten maken", text: "Web development die uw merkidentiteit versterkt en aansluit op de behoefte van uw specifieke doelgroep." },
-                        { icon: "", heading: "Analytische Inzichten", text: "Krijg een dieper inzicht in uw bezoekers en hun gedrag met geavanceerde analyse-tools." },
-                        { icon: "", heading: "Ondersteuning en Onderhoud", text: "Wij bieden uitgebreide ondersteuning en onderhoudsdiensten om ervoor te zorgen dat uw website altijd soepel draait." },
+                        { icon: <ComputerDesktopIcon />, heading: "Professionele Website Laten maken", text: "Web development die uw merkidentiteit versterkt en aansluit op de behoefte van uw specifieke doelgroep." },
+                        { icon: <ComputerDesktopIcon />, heading: "Analytische Inzichten", text: "Krijg een dieper inzicht in uw bezoekers en hun gedrag met geavanceerde analyse-tools." },
+                        { icon: <ComputerDesktopIcon />, heading: "Ondersteuning en Onderhoud", text: "Wij bieden uitgebreide ondersteuning en onderhoudsdiensten om ervoor te zorgen dat uw website altijd soepel draait." },
                     ]
                 },
                 {
                     heading: "Bereik internationale markten met meertalige opties, geavanceerde beveiliging en naadloze integratie van bedrijfsprocessen.",
                     typeOfBusiness: "Enterprise",
                     content: [
-                        { icon: "", heading: "Multinationale Ondersteuning", text: "Wij bieden meertalige websites en valuta-opties voor uw internationale klantenbestand." },
-                        { icon: "", heading: "Maximale Beveiliging en Snelheid", text: "Onze toonaangevende technologie uw bescherm bedrijfsgegevens, terwijl we tegelijkertijd rezendsnelle laadtijden garanderen." },
-                        { icon: "", heading: "Geïntegreerde Bedrijfsprocessen", text: "Onze sites kunnen worden geïntegreerd met uw bestaande bedrijfssoftware, van CRM-systemen tot voorraadbeheer, voor een soepele bedrijfsvoering." },
+                        { icon: <ComputerDesktopIcon />, heading: "Multinationale Ondersteuning", text: "Wij bieden meertalige websites en valuta-opties voor uw internationale klantenbestand." },
+                        { icon: <ComputerDesktopIcon />, heading: "Maximale Beveiliging en Snelheid", text: "Onze toonaangevende technologie uw bescherm bedrijfsgegevens, terwijl we tegelijkertijd rezendsnelle laadtijden garanderen." },
+                        { icon: <ComputerDesktopIcon />, heading: "Geïntegreerde Bedrijfsprocessen", text: "Onze sites kunnen worden geïntegreerd met uw bestaande bedrijfssoftware, van CRM-systemen tot voorraadbeheer, voor een soepele bedrijfsvoering." },
                     ]
                 },
             ],
@@ -438,14 +484,15 @@ const dienstenData = [
     {
         id: "webwinkel",
         indexCard: {
-            icon: "",
+            icon: <ShoppingCartIcon />,
+            colors: "bg-green-100 text-green-500",
             heading: "eCommerce",
             subHeading: "Online web-winkeloplossingen",
         },
         content: {
             selection: [
                 {
-                    typeOfBusiness: "",
+                    typeOfBusiness: "Start-Up",
                     heading: "Eenvoudig Beginnen, Groots Verkopen: Ontdek Ons Intuïtieve Platform",
                     content: [
                         { icon: "", heading: "Simpel & Intuïtief Platform", text: "Of je nou je webshop begint, onze oplossingen zijn gebruiksvriendelijk, zodat u moeiteloos uw producten kunt beheren en verkopen." },
@@ -454,7 +501,8 @@ const dienstenData = [
                     ]
                 },
                 {
-                    typeOfBusiness: "Groei Slim met Onze Geavanceerde Webshop Functies!",
+                    typeOfBusiness: "MKB Onderneming",
+                    heading: "Groei Slim met Onze Geavanceerde Webshop Functies!",
                     content: [
                         { icon: "", heading: "Geavanceerde Webshop Functies", text: "Profiteer van geavanceerde tools voor voorraadbeheer, rapportage en marketing om uw online verkoop te stimuleren" },
                         { icon: "", heading: "Multi-Channel Verkoop", text: "Integreer met populaire marktplaatsen en sociale media intregatie voor een uitgebreid verkoopnetwerk." },
@@ -462,7 +510,8 @@ const dienstenData = [
                     ]
                 },
                 {
-                    typeOfBusiness: "E-commerce Op Maat: Krachtige Oplossingen voor Wereldwijde Dominantie!",
+                    typeOfBusiness: "Enterprise",
+                    heading: "E-commerce Op Maat: Krachtige Oplossingen voor Wereldwijde Dominantie!",
                     content: [
                         { icon: "", heading: "Volledig Geïntegreerde E-commerce Oplossing", text: "Van krachtige analytics tot geavanceerde beveiligingsfuncties, ons platform is ontworpen om te voldoen aan grote volumes en product oplossingen op maat." },
                         { icon: "", heading: "Internationale Verkoopmogelijkheden", text: "Koppel met CRM-systemen, ERP-oplossingen en andere bedrijfstools voor een gestroomlijnde bedrijfsvoering." },
@@ -490,7 +539,8 @@ const dienstenData = [
     {
         id: "zoekmachineoptimalizatie",
         indexCard: {
-            icon: "",
+            icon: <ChartBarIcon />,
+            colors: "bg-blue-100 text-blue-500",
             heading: "SEO",
             subHeading: "Hoger gevonden worden in Google",
         },
@@ -507,7 +557,7 @@ const dienstenData = [
                     ]
                 },
                 {
-                    heading:"SEO & Contentstrategie op Maat: Boost Uw Online Zichtbaarheid!",
+                    heading: "SEO & Contentstrategie op Maat: Boost Uw Online Zichtbaarheid!",
                     typeOfBusiness: "MKB Onderneming",
                     content: [
                         { icon: "", heading: "SEO & Contentstrategie", text: "Krijg een combinatie van technische SEO en contentoptimalisatie om uw online zichtbaarheid te vergroten." },
@@ -545,7 +595,8 @@ const dienstenData = [
     {
         id: "onlinemarketing",
         indexCard: {
-            icon: "",
+            icon: <CursorArrowRaysIcon />,
+            colors: "bg-cyan-100 text-cyan-500",
             heading: "Online Advertenties",
             subHeading: "Kost effectieve advertenties",
         },

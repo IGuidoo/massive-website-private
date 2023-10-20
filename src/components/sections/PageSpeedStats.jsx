@@ -74,7 +74,7 @@ const PageSpeedStats = () => {
 
     return (
         <>
-            <div className="universe left-1/2 transform -translate-x-1/2 overflow-hidden">
+            <div className="pageSpeedAnnimationContainer left-1/2 transform -translate-x-1/2 overflow-hidden">
                 {orbits.map((orbit, index) => (
                     <div className="orbit" style={{ width: orbit.radius * 2, height: orbit.radius * 2 }} key={index}></div>
                 ))}
@@ -83,7 +83,7 @@ const PageSpeedStats = () => {
                 {/* {!isMobile && (
                 <> */}
                 <svg
-                    className="planet"
+                    className="orbitingDiv"
                     id="orbitingDivTwo"
                     ref={divTwoRef}
                     width="54"
@@ -166,7 +166,7 @@ const PageSpeedStats = () => {
                     </defs>
                 </svg>
                 <svg
-                    className="planet"
+                    className="orbitingDiv"
                     id="orbitingDivOne"
                     ref={divOneRef}
                     width="54"
@@ -249,7 +249,7 @@ const PageSpeedStats = () => {
                     </defs>
                 </svg>
                 <svg
-                    className="planet"
+                    className="orbitingDiv"
                     id="orbitingDivThree"
                     ref={divThreeRef}
                     width="54"
@@ -337,8 +337,8 @@ const PageSpeedStats = () => {
 
             </div>
             <div className={` w-full px-30 shadow-inner rounded-3xl ${styles.borderInsetWhite3} vertical-white-gradient__page-speed page-speed__content-container relative  `} style={{ marginTop: -maxRadius }}>
-                <SpeedIndex className="sun" />
-                <div className='absolute top[-20px] h-[20px] bg-secondary-50 w-full'></div>
+                <SpeedIndex className="pageSpeedIndex" />
+                <div className='absolute top-[-20px] h-[20px] bg-secondary-50 w-full'></div>
                 <p className='pt-20 lg:pt-8 text-center md:text-left  text-xl leading-7 font-semibold'>Statestieken om over te pieken</p>
                 <div className='h-[1px] w-full md:max-w-[430px] bg-secondary-300 mt-2 '></div>
                 <div className='lg:grid grid-cols-3 py-12'>
