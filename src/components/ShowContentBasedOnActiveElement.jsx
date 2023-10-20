@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 // Import Utilities
 import styles from "@/styles/styles.js"
 import SwipeableWithHeading from "./SwipeableWithHeading";
-import AnnimationRef from "./annimations/Animation";
+// import AnnimationRef from "./annimations/Animation";
 import useWindowWidth from "@/utils/useWindowWidth";
 
 
@@ -58,7 +58,7 @@ const ShowContentBasedOnActiveElement = ({ data = [] }) => {
                                 {dienst.content.selection.map((item, index) => (
                                         
                                         <div key={index} typeofbusiness={item.typeOfBusiness} className="flex flex-col gap-6 md:gap-12">
-                                            {isMobile && <AnnimationRef />}
+                                            {/* {isMobile && <AnnimationRef />} */}
                                             {item.content.map(contentItem => (
                                                 <div key={contentItem.heading}>
                                                     <div className="flex flex-col gap-3 md:flex-row md:gap-6">
@@ -82,7 +82,7 @@ const ShowContentBasedOnActiveElement = ({ data = [] }) => {
 
                         </div>
                         <div className="my-auto">
-                            {!isMobile && <AnnimationRef />}
+                            {/* {!isMobile && <AnnimationRef />} */}
                         </div>
                     </div>
                 ))}

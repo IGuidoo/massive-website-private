@@ -28,7 +28,7 @@ const AnnimationRef = () => {
 
     return (
         <div>
-            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script>
+            {/* <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg==" crossOrigin="anonymous" referrerPolicy="no-referrer"></script> */}
 
             {/* Canvas for Animation */}
             <div ref={animatedElRef} className="animatedName"></div>
