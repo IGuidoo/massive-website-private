@@ -344,7 +344,7 @@ const PageSpeedStats = () => {
                 <div className='lg:grid grid-cols-3 py-12'>
                     <div className='flex flex-col gap-3 md:gap-12'>
                         {pageSpeedData.stats.map((stat, index) => (
-                            <div className='flex gap-4 items-center'>
+                            <div key={index} className='flex gap-4 items-center'>
                                 <div>
                                     {stat.icon}
                                 </div>
@@ -355,7 +355,7 @@ const PageSpeedStats = () => {
                     </div>
                     <div className='col-span-2 flex flex-col gap-3 md:grid grid-cols-2 md:gap-0 grid-rows-3 mt-8 lg:mt-0'>
                         {pageSpeedData.speedStats.map((stat, index) => (
-                            <div className='flex gap-4 w-full md:flex-col md:gap-2 md:w-fit page-speed__item-container'>
+                            <div key={index} className='flex gap-4 w-full md:flex-col md:gap-2 md:w-fit page-speed__item-container'>
                                 <div className='flex gap-4 items-center  page-speed__item-container-desk'>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="8" cy="8" r="8" fill="#A7F3D0" />
