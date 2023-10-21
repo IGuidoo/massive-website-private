@@ -72,7 +72,6 @@ import SubheadingHeadingTextSm from "@/components/heading-text/SubheadingHeading
 import TextWithIcons from "@/components/sections/TextWithIcons"
 import TextGridIcons from "@/components/one-time/TextGridIcons"
 import RenderText from "@/lib/RenderText"
-import AnnimationRef from "@/components/annimations/Animation"
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -147,10 +146,6 @@ export default function page() {
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
                     <TextGridIcons data={newOverOns} />
-                </section>
-
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
-                    <AnnimationRef />
                 </section>
 
 

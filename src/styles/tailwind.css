@@ -7,7 +7,7 @@
   [inert] ::-webkit-scrollbar {
     display: none;
   }
-  /* @font-face {
+  @font-face {
     font-family: 'Inter';
     font-weight: 400;
     src: url(../fonts/Inter-Regular.ttf) format('trueType');
@@ -36,7 +36,7 @@
     font-family: 'Inter';
     font-weight: 900;
     src: url(../fonts/Inter-Black.ttf) format('trueType');
-  } */
+  }
 }
 
 :root {

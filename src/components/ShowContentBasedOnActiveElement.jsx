@@ -5,7 +5,7 @@ import React, { useEffect, useState, useMemo } from "react";
 // Import Utilities
 import useWindowWidth from "@/utils/useWindowWidth";
 import styles from "@/styles/styles.js";
-
+import AnimationRef from "@/components/animations/Animation";
 // Import Components
 import { SwipeableBase, SwipeableArrowNavigation, SwipeableHeading, SwipeableTextNavigation } from "./SwipeableTest";
 import IconHeadingTextIndex from "./cards/IconHeadingTextIndex";
@@ -85,7 +85,9 @@ const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
 
                         </div>
                         <div className="my-auto">
-                            {/* {!isMobile && <AnnimationRef />} */}
+                            {/* {!isMobile &&  */}
+                            <AnimationRef />
+                            {/* // } */}
                         </div>
                     </div>
                 ))}

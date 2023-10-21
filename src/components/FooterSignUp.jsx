@@ -6,10 +6,10 @@ import SimpleForm from "@/components/SimpleForm";
 import styles from "@/styles/styles";
 import useWindowWidth from '@/utils/useWindowWidth'; // adjust the path according to your folder structure
 
-// const SplineRaket = dynamic(() => import('@/animations/Raket'), {
-//     loading: () => <div></div>, // Optional loading component
-//     ssr: false  // This will only load the component on the client side
-// });
+const SplineRaket = dynamic(() => import('@/animations/Raket'), {
+    loading: () => <div></div>, // Optional loading component
+    ssr: false  // This will only load the component on the client side
+});
 
 const FooterSignUp = ({ data = [] }) => {
     const windowWidth = useWindowWidth();
@@ -34,7 +34,7 @@ const FooterSignUp = ({ data = [] }) => {
                     </div>
                 </div>
             </div>
-            {/* {isXL && <SplineRaket className=" top-10 right-[10%] -z-10 hidden xl:block" />} */}
+            {isXL && <SplineRaket className=" top-10 right-[10%] -z-10 hidden xl:block" />}
         </>
     )
 }
