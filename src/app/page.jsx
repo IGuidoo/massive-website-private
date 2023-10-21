@@ -52,14 +52,17 @@ import TextWithIcons from "@/components/sections/TextWithIcons";
 import Hero from "../components/Hero";
 import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar";
 const TextGridIconsTest = dynamic(() => import("@/components/one-time/TextGridIconsTest"), {
+    loadingDelay: 2000,
     ssr: false, // This will make the component skip server-side rendering.
     loading: () => <p>Loading...</p>  // Optional loading component or text.
 });
 const ShowContentBasedOnActiveElement = dynamic(() => import("@/components/ShowContentBasedOnActiveElement"), {
+    loadingDelay: 5000,
     ssr: false, // This will make the component skip server-side rendering.
     loading: () => <p>Loading...</p>  // Optional loading component or text.
 });
 const PageSpeedStats = dynamic(() => import("@/components/sections/PageSpeedStats"), {
+    loadingDelay: 5000,
     ssr: false, // This will make the component skip server-side rendering.
     loading: () => <p>Loading...</p>  // Optional loading component or text.
 });
