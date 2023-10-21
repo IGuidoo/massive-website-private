@@ -6,18 +6,18 @@ import { useSwipeable } from "react-swipeable";
 import styles from "@/styles/styles";
 
 const SwipeableWithHeading = ({ children, headings }) => {
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setactiveindex] = useState(0);
     const itemsCount = React.Children.count(children);
 
     const handlers = useSwipeable({
         onSwipedLeft: () => {
             if (activeIndex < itemsCount - 1) {
-                setActiveIndex(prev => prev + 1);
+                setactiveindex(prev => prev + 1);
             }
         },
         onSwipedRight: () => {
             if (activeIndex > 0) {
-                setActiveIndex(prev => prev - 1);
+                setactiveindex(prev => prev - 1);
             }
         }
     });
@@ -50,16 +50,16 @@ const SwipeableWithHeading = ({ children, headings }) => {
             </h2>
             <div ref={containerRef} className={`flex justify-between rounded-4xl px-5 py-3 bg-secondary-50 my-8 overflow-hidden ${styles.borderInsetWhite3}`}>
                 {React.Children.map(children, (child, index) => {
-                    const typeOfBusiness = child.props.typeOfBusiness;
+                    const typeofbusiness = child.props.typeofbusiness;
                     return (
                         <>
                             <span
                                 key={index}
-                                onClick={() => setActiveIndex(index)}
+                                onClick={() => setactiveindex(index)}
                                 className={` whitespace-nowrap rounded-3xl cursor-pointer text-sm leading-5 font-medium px-6 py-2 
                                 ${activeIndex === index ? "text-secondary-50 bg-primary-500 shadow-inner" : ""}`}
                             >
-                                {typeOfBusiness}
+                                {typeofbusiness}
                             </span>
                         </>
                     );

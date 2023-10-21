@@ -416,3 +416,28 @@ summary::-webkit-details-marker {
   }
 }
 /* END PageSpeedStats */
+
+
+
+.perfect-center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: -1;
+}
+.svg-background {
+  width: 100;   /* or you can use something like 120vw if it's bigger than the grid */
+  height: auto;  /* to maintain the aspect ratio */
+}
+
+
+.relative-container {
+  position: relative;
+  width: 100%; /* Set the width and height of the container as needed */
+  height: 100%; /* Set the width and height of the container as needed */
+  background-image: url('/src/components/backgrounds/gridBackground.svg'); /* Replace 'your-background.svg' with the path to your SVG image */
+  background-size: contain; /* You can use 'contain' or 'cover' based on your needs */
+  background-repeat: no-repeat;
+  background-position: center center; /* This centers the background both horizontally and vertically */
+}

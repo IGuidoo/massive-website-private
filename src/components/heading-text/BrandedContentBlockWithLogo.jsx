@@ -9,9 +9,9 @@ import RenderText from '@/lib/RenderText'
 import { LogoSmall } from '@/components/icons'
 
 
-const LogoSubHeadingHeadingTextButtons = ({ data = [], cssClass, hideMbButtons }) => {
+const BrandedContentBlockWithLogo = ({ data = [], containerStyles, hideMbButtons }) => {
     return (
-        <div className={`flex flex-col gap-6 xl:max-w-lg grid-pos-row-1 ${cssClass}`}>
+        <div className={`flex flex-col gap-6 xl:max-w-lg ${containerStyles}`}>
             <div className="flex gap-3 items-center">
                 <LogoSmall />
                 <p className="text-[12px] sm:text-sm leading-4">
@@ -49,4 +49,4 @@ const LogoSubHeadingHeadingTextButtons = ({ data = [], cssClass, hideMbButtons }
     )
 }
 
-export default LogoSubHeadingHeadingTextButtons
+export default BrandedContentBlockWithLogo

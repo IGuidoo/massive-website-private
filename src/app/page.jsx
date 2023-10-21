@@ -7,7 +7,6 @@ import styles from "@/styles/styles.js"
 
 import Footer from "@/components/sections/Footer"
 import Hero from "../components/Hero"
-import SubHeadingHeadingText from "@/components/heading-text/subHeadingHeadingText"
 
 import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
 
@@ -46,9 +45,10 @@ import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIco
 import TagsList from "@/components/TagsList"
 import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar"
 import CardGrid from "@/components/sections/CardGrid"
-import SubheadingHeadingTextSm from "@/components/heading-text/SubheadingHeadingTextSm"
 import TextWithIcons from "@/components/sections/TextWithIcons"
 import TextGridIcons from "@/components/one-time/TextGridIcons"
+import TextGridIconsTest from "@/components/one-time/TextGridIconsTest"
+
 import RenderText from "@/lib/RenderText"
 import AnnimationRef from "@/components/annimations/Animation"
 import Accordion from "@/components/SimpleAccordion"
@@ -56,8 +56,11 @@ import PageSpeedStats from "@/components/sections/PageSpeedStats"
 import AccordionSinge from "@/components/Accordion"
 import ShowContentBasedOnActiveElement from "@/components/ShowContentBasedOnActiveElement"
 
+import SubHeadingWithHeadingAndText from "@/components/heading-text/SubHeadingWithHeadingAndText"
+
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
+import IconHeadingTextIndex from "@/components/cards/IconHeadingTextIndex"
 
 
 export const metadata = {
@@ -72,9 +75,17 @@ export const metadata = {
 
 
 export default function page() {
-
+    function ShowContentBasedOnActiveElementWrapper(props) {
+        if (props.type === "IconHeadingTextIndex") {
+            return <ShowContentBasedOnActiveElement {...props} IndexCardComponent={IconHeadingTextIndex} />;
+        }
+        // You can add more conditions for other component types if needed
+    
+        return null;
+    }
+    
     return (
-        <div className="relative">
+        <div className="relative  overflow-hidden">
             <div className="relative bg-white rounded-b-4xl md:bg-transparent max-w-[1920px] mx-auto">
                 <ResponsiveNavbar />
 
@@ -87,16 +98,18 @@ export default function page() {
             <main>
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
-                    <SubHeadingHeadingText data={dienstenGridData.title} cssClass="gap-4 md:gap-4 max-w-[680px]" />
+                    <SubHeadingWithHeadingAndText data={dienstenGridData.title} headingStyle="5xl" containerStyles="gap-4 md:gap-4 max-w-[680px]" />
                     <div className="mt-[79px] lg:mt-[47px]">
                         <CardGrid data={dienstenGridData.cards} />
                     </div>
                 </section>
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
-                    <SubheadingHeadingTextSm data={OnzeDienstenData.title} cssClass="gap-3 max-w-[854px] items-center md:text-center md:mx-auto pb-12" />
-                    <ShowContentBasedOnActiveElement data={dienstenData} />
+                    <SubHeadingWithHeadingAndText data={OnzeDienstenData.title} headingStyle="4xl" containerStyles="gap-3 max-w-[854px] items-center md:text-center md:mx-auto pb-12" />
+                    <ShowContentBasedOnActiveElement data={dienstenData} indexCardType="IconHeadingTextIndex" />
                 </section>
+
+
 
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
@@ -132,9 +145,15 @@ export default function page() {
                     <TextGridIcons data={newOverOns} />
                 </section>
 
-                <section className={` mx-auto py-15 mb:py-36 `}>
+                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
+                    <TextGridIconsTest data={newOverOns} />
+                </section>
+
+
+                <section className={` mx-auto py-15 mb:py-36  relative-container`}>
+                    <SubHeadingWithHeadingAndText data={faqData.title} headingPadding="px-12 py-2" containerStyles="md:mx-auto md:text-center items-center pb-16 gap-6" />
                     <div className="flex flex-col gap-2 max-w-[950px] mx-auto">
-                        {faqData.map((item, index) => (
+                        {faqData.accordion.map((item, index) => (
                             <>
                                 <AccordionSinge key={index} title={item.title} body={item.body} cssClass={`md:rounded-2xl ${styles.borderInsetWhite3} shadow-sm`} />
                                 {index !== faqData.length - 1 && (
@@ -146,7 +165,7 @@ export default function page() {
                 </section>
 
                 <section className={`${styles.boxWidth} mx-auto py-15 mb:py-36 relative overflow-hidden `}>
-                    <SubHeadingHeadingText data={pageSpeedData.title} cssClass="gap-4 md:gap-4 w-full max-w-[800px] absolute z-10 top-[20%]  md:top-[26%] absolute-center md:text-center md:items-center px-6" />
+                    <SubHeadingWithHeadingAndText data={pageSpeedData.title} headingStyle="5xl" containerStyles="gap-4 md:gap-4 w-full max-w-[800px] absolute z-10 top-[20%]  md:top-[26%] absolute-center md:text-center md:items-center px-6" />
                     <PageSpeedStats />
                 </section>
 
@@ -356,28 +375,34 @@ const HeroData = [
     }
 ]
 
-const faqData = [
-    {
-        title: 'Bereik gerichte klanten',
-        body: "Stel je voor dat je een fysieke winkel hebt in een drukke straat versus een afgelegen steegje. SEO zorgt ervoor dat uw website op de 'drukke straat' van het internet staat. Voor onze tech-savvy millennials en content creators betekent dit een groter publiek en meer kansen om op te vallen.",
+const faqData = {
+    title: {
+        subHeading: "FAQ",
+        heading: ["Veelgestelde Vragen"],
     },
-    {
-        title: "Bouw vertrouwen en geloofwaardigheid",
-        body: "SEO trekt niet zomaar willekeurig verkeer aan; het trekt bezoekers aan die actief op zoek zijn naar uw diensten. Voor startup oprichters zoals Jeroen en kleine ondernemers zoals Lisa betekent dit een hogere kans op conversies en klantbetrokkenheid.",
-    },
-    {
-        title: "Vergroot uw online zichtbaarheid",
-        body: "In tegenstelling tot betaalde advertenties, waarbij u betaalt voor elke klik, is SEO een langetermijninvestering met duurzame resultaten. Voor non-profit organizers zoals Anna, die vaak met beperkte budgetten werken, biedt SEO een betaalbare oplossing om hun boodschap te verspreiden.",
-    },
-    {
-        title: "Kosteneffectieve marketing",
-        body: "Een hoge ranking in zoekmachines geeft uw merk autoriteit. Voor e-commerce managers zoals Stefan en marketing executives zoals Thomas betekent dit een versterking van het merkimago en vertrouwen bij potentiële klanten.",
-    },
-    {
-        title: "Blijf voor op de concurrentie",
-        body: "De digitale wereld is constant in beweging. Door up-to-date te blijven met SEO, blijft u een stap voor op uw concurrenten. Dit is vooral belangrijk voor tech-savvy millennials en startup oprichters die in een competitieve markt opereren. De digitale wereld is constant in beweging. Door up-to-date te blijven met SEO, blijft u een stap voor op uw concurrenten. Dit is vooral belangrijk voor tech-savvy millennials en startup oprichters die in een competitieve markt opereren.",
-    }
-]
+    accordion:[
+        {
+            title: 'Bereik gerichte klanten',
+            body: "Stel je voor dat je een fysieke winkel hebt in een drukke straat versus een afgelegen steegje. SEO zorgt ervoor dat uw website op de 'drukke straat' van het internet staat. Voor onze tech-savvy millennials en content creators betekent dit een groter publiek en meer kansen om op te vallen.",
+        },
+        {
+            title: "Bouw vertrouwen en geloofwaardigheid",
+            body: "SEO trekt niet zomaar willekeurig verkeer aan; het trekt bezoekers aan die actief op zoek zijn naar uw diensten. Voor startup oprichters zoals Jeroen en kleine ondernemers zoals Lisa betekent dit een hogere kans op conversies en klantbetrokkenheid.",
+        },
+        {
+            title: "Vergroot uw online zichtbaarheid",
+            body: "In tegenstelling tot betaalde advertenties, waarbij u betaalt voor elke klik, is SEO een langetermijninvestering met duurzame resultaten. Voor non-profit organizers zoals Anna, die vaak met beperkte budgetten werken, biedt SEO een betaalbare oplossing om hun boodschap te verspreiden.",
+        },
+        {
+            title: "Kosteneffectieve marketing",
+            body: "Een hoge ranking in zoekmachines geeft uw merk autoriteit. Voor e-commerce managers zoals Stefan en marketing executives zoals Thomas betekent dit een versterking van het merkimago en vertrouwen bij potentiële klanten.",
+        },
+        {
+            title: "Blijf voor op de concurrentie",
+            body: "De digitale wereld is constant in beweging. Door up-to-date te blijven met SEO, blijft u een stap voor op uw concurrenten. Dit is vooral belangrijk voor tech-savvy millennials en startup oprichters die in een competitieve markt opereren. De digitale wereld is constant in beweging. Door up-to-date te blijven met SEO, blijft u een stap voor op uw concurrenten. Dit is vooral belangrijk voor tech-savvy millennials en startup oprichters die in een competitieve markt opereren.",
+        }
+    ]
+}
 
 
 const pageSpeedData = {
@@ -390,7 +415,6 @@ const pageSpeedData = {
         text: "Té mooi om waard te zijn? Dat denken wij ook! Kijk hier zelf wat Google wel niet over ons te zeggen heeft!"
     },
 }
-
 
 const dienstenData = [
     {

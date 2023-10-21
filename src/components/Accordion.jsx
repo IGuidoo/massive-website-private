@@ -2,7 +2,6 @@
 
 // components/Accordion.js
 import { useState } from 'react';
-import styles from '@/styles/styles';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const Accordion = ({ title, body, cssClass }) => {

@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef } from 'react';
 import useWindowWidth from '@/utils/useWindowWidth';
-import CircularSegment from '../CircularSegment';
 import { SpeedIndex, Toegankelijkheid } from '../icons';
 import styles from '@/styles/styles';
 
