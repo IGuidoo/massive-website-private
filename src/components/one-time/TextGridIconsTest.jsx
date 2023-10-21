@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
-import GridBackground from "@/components/backgrounds/GridBackground.svg"
+import GridBackground from "@/components/backgrounds/gridBackground.svg"
 
 // Import Utilities
 import useWindowWidth from '@/utils/useWindowWidth'
