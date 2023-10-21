@@ -15,6 +15,26 @@ import {
     Home_webwinkelOplossingen,
 } from "@/images/diensten"
 import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
+import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
+import {
+    // Social Icons
+    FacebookGray,
+    InstagramGray,
+    LinkedinGray,
+    TwitterGray,
+
+    // Onze tools Grid
+    FacebookColor,
+    InstagramColor,
+    LinkedinColor,
+    GoogleAdsColor,
+    GoogleAnalyticsColor,
+    GoogleSearchConsoleColor,
+    GoogleMybusinessColor,
+    SemRushColor,
+    ShopifyColor,
+    MassiveLogoGray,
+} from "../components/icons"
 
 // Elements
 import SubHeadingWithHeadingAndText from "@/components/heading-text/SubHeadingWithHeadingAndText";
