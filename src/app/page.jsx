@@ -1,32 +1,10 @@
 import dynamic from "next/dynamic"
-import React, { Suspense } from "react"
 import styles from "@/styles/styles.js";
 import Link from "next/link";
 import Image from "next/image";
 import RenderText from "@/lib/RenderText";
 
 import '@/styles/tailwind.css'
-import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
-import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
-import {
-    // Social Icons
-    FacebookGray,
-    InstagramGray,
-    LinkedinGray,
-    TwitterGray,
-
-    // Onze tools Grid
-    FacebookColor,
-    InstagramColor,
-    LinkedinColor,
-    GoogleAdsColor,
-    GoogleAnalyticsColor,
-    GoogleSearchConsoleColor,
-    GoogleMybusinessColor,
-    SemRushColor,
-    ShopifyColor,
-    MassiveLogoGray,
-} from "../components/icons"
 
 import {
     // Card Grod imports
@@ -36,25 +14,35 @@ import {
     Home_zakelijkeWebsite,
     Home_webwinkelOplossingen,
 } from "@/images/diensten"
+import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
 
 // Elements
 import SubHeadingWithHeadingAndText from "@/components/heading-text/SubHeadingWithHeadingAndText";
 import TagsList from "@/components/TagsList";
 import CardGrid from "@/components/sections/CardGrid";
 import TextWithIcons from "@/components/sections/TextWithIcons";
-// const AccordionSinge = React.lazy(() => import("@/components/Accordion"));
+// const AccordionSinge = dynamic(() => import("@/components/Accordion"));
 
 
 
 
-// const TextGridIcons = React.lazy(() =>import( "@/components/one-time/TextGridIcons" )) ;
+// const TextGridIcons = dynamic(() =>import( "@/components/one-time/TextGridIcons" )) ;
 // import TextGridIimportest from "@/components/one-time/TextGridIimportest";
 
 import Hero from "../components/Hero";
 import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar";
-const TextGridIconsTest = React.lazy(() => import("@/components/one-time/TextGridIconsTest"));
-const ShowContentBasedOnActiveElement = React.lazy(() => import("@/components/ShowContentBasedOnActiveElement"));
-const PageSpeedStats = React.lazy(() => import("@/components/sections/PageSpeedStats"));
+const TextGridIconsTest = dynamic(() => import("@/components/one-time/TextGridIconsTest"), {
+    ssr: false, // This will make the component skip server-side rendering.
+    loading: () => <p>Loading...</p>  // Optional loading component or text.
+});
+const ShowContentBasedOnActiveElement = dynamic(() => import("@/components/ShowContentBasedOnActiveElement"), {
+    ssr: false, // This will make the component skip server-side rendering.
+    loading: () => <p>Loading...</p>  // Optional loading component or text.
+});
+const PageSpeedStats = dynamic(() => import("@/components/sections/PageSpeedStats"), {
+    ssr: false, // This will make the component skip server-side rendering.
+    loading: () => <p>Loading...</p>  // Optional loading component or text.
+});
 import Footer from "@/components/sections/Footer";
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -95,9 +83,7 @@ export default function page() {
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
                     <SubHeadingWithHeadingAndText data={OnzeDienstenData.title} headingStyle="4xl" containerStyles="gap-3 max-w-[854px] items-center md:text-center md:mx-auto pb-12" />
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <ShowContentBasedOnActiveElement data={dienstenData} indexCardType="IconHeadingTextIndex" />
-                    </Suspense>
+                    <ShowContentBasedOnActiveElement data={dienstenData} indexCardType="IconHeadingTextIndex" />
                 </section>
 
 
@@ -137,9 +123,7 @@ export default function page() {
                 </section> */}
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <TextGridIconsTest data={newOverOns} />
-                    </Suspense>
+                    <TextGridIconsTest data={newOverOns} />
                 </section>
 
 
@@ -159,9 +143,7 @@ export default function page() {
 
                 <section className={`${styles.boxWidth} mx-auto py-15 mb:py-36 relative overflow-hidden `}>
                     <SubHeadingWithHeadingAndText data={pageSpeedData.title} headingStyle="5xl" containerStyles="gap-4 md:gap-4 w-full max-w-[800px] absolute z-10 top-[20%]  md:top-[26%] absolute-center md:text-center md:items-center px-6" />
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <PageSpeedStats />
-                    </Suspense>
+                    <PageSpeedStats />
                 </section>
 
 
