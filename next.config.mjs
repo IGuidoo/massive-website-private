@@ -1,17 +1,16 @@
 import withMarkdoc from '@markdoc/next.js';
 import { createLoader } from 'simple-functional-loader';
-
 import withSearch from './src/markdoc/search.mjs';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'ts', 'tsx'],
-  // Configure environment variables at the top level of your next.config.js
   env: {
     OPEN_AI_API: process.env.OPEN_AI_API,
     DEEPL_API: process.env.DEEPL_API,
   },
-  webpack(config) {
+  webpack(config, { isServer }) {
     config.module.rules.unshift({
       test: /\.md$/,
       use: [
@@ -23,11 +22,15 @@ const nextConfig = {
       ],
     });
 
-    // Add a new rule for SVG files using @svgr/webpack
     config.module.rules.push({
       test: /\.svg$/,
       use: [{ loader: '@svgr/webpack' }],
     });
+
+    // Conditionally add the BundleAnalyzerPlugin
+    if (!isServer) {
+      config.plugins.push(new BundleAnalyzerPlugin());
+    }
 
     return config;
   },

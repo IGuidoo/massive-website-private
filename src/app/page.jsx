@@ -1,12 +1,12 @@
-import React from "react"
-import { Suspense } from "react"
-import '@/styles/tailwind.css'
-import Link from "next/link"
-import Image from "next/image"
-import styles from "@/styles/styles.js"
+import dynamic from "next/dynamic"
+import React, { Suspence, lazy } from "react"
+import styles from "@/styles/styles.js";
+import Link from "next/link";
+import Image from "next/image";
 
-import Footer from "@/components/sections/Footer"
-import Hero from "../components/Hero"
+import '@/styles/tailwind.css'
+
+
 
 import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
 
@@ -41,26 +41,25 @@ import {
 // IconText imports
 import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
 
+const Footer = dynamic(() => import("@/components/sections/Footer"));
+const Hero = dynamic(() => import("../components/Hero"));
 
-import TagsList from "@/components/TagsList"
-import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar"
-import CardGrid from "@/components/sections/CardGrid"
-import TextWithIcons from "@/components/sections/TextWithIcons"
-import TextGridIcons from "@/components/one-time/TextGridIcons"
-import TextGridIconsTest from "@/components/one-time/TextGridIconsTest"
+const TagsList = dynamic(() => import("@/components/TagsList"));
+const ResponsiveNavbar = dynamic(() => import("@/components/navbar/ResponsiveNavbar"));
+const CardGrid = dynamic(() => import("@/components/sections/CardGrid"));
+const TextWithIcons = dynamic(() => import("@/components/sections/TextWithIcons"));
+const TextGridIcons = dynamic(() => import("@/components/one-time/TextGridIcons"));
+const TextGridIconsTest = dynamic(() => import("@/components/one-time/TextGridIconsTest"));
 
-import RenderText from "@/lib/RenderText"
-import AnnimationRef from "@/components/annimations/Animation"
-import Accordion from "@/components/SimpleAccordion"
-import PageSpeedStats from "@/components/sections/PageSpeedStats"
-import AccordionSinge from "@/components/Accordion"
-import ShowContentBasedOnActiveElement from "@/components/ShowContentBasedOnActiveElement"
+const RenderText = dynamic(() => import("@/lib/RenderText"));
+const PageSpeedStats = dynamic(() => import("@/components/sections/PageSpeedStats"));
+const AccordionSinge = dynamic(() => import("@/components/Accordion"));
+const ShowContentBasedOnActiveElement = dynamic(() => import("@/components/ShowContentBasedOnActiveElement"));
 
-import SubHeadingWithHeadingAndText from "@/components/heading-text/SubHeadingWithHeadingAndText"
+const SubHeadingWithHeadingAndText = dynamic(() => import("@/components/heading-text/SubHeadingWithHeadingAndText"));
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
-import IconHeadingTextIndex from "@/components/cards/IconHeadingTextIndex"
 
 
 export const metadata = {
@@ -75,14 +74,6 @@ export const metadata = {
 
 
 export default function page() {
-    function ShowContentBasedOnActiveElementWrapper(props) {
-        if (props.type === "IconHeadingTextIndex") {
-            return <ShowContentBasedOnActiveElement {...props} IndexCardComponent={IconHeadingTextIndex} />;
-        }
-        // You can add more conditions for other component types if needed
-    
-        return null;
-    }
     
     return (
         <div className="relative  overflow-hidden">
@@ -174,9 +165,7 @@ export default function page() {
 
 
             </main>
-            <Suspense>
                 <Footer />
-            </Suspense>
         </div>
     )
 }
