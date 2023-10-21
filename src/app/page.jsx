@@ -1,15 +1,13 @@
 import dynamic from "next/dynamic"
-import React, { Suspence, lazy } from "react"
+import React, { Suspense } from "react"
 import styles from "@/styles/styles.js";
 import Link from "next/link";
 import Image from "next/image";
+import RenderText from "@/lib/RenderText";
 
 import '@/styles/tailwind.css'
-
-
-
 import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
-
+import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
 import {
     // Social Icons
     FacebookGray,
@@ -29,6 +27,7 @@ import {
     ShopifyColor,
     MassiveLogoGray,
 } from "../components/icons"
+
 import {
     // Card Grod imports
     Home_onlineAdvertenties,
@@ -38,26 +37,25 @@ import {
     Home_webwinkelOplossingen,
 } from "@/images/diensten"
 
-// IconText imports
-import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
+// Elements
+import SubHeadingWithHeadingAndText from "@/components/heading-text/SubHeadingWithHeadingAndText";
+import TagsList from "@/components/TagsList";
+import CardGrid from "@/components/sections/CardGrid";
+import TextWithIcons from "@/components/sections/TextWithIcons";
+// const AccordionSinge = React.lazy(() => import("@/components/Accordion"));
 
-const Footer = dynamic(() => import("@/components/sections/Footer"));
-const Hero = dynamic(() => import("../components/Hero"));
 
-const TagsList = dynamic(() => import("@/components/TagsList"));
-const ResponsiveNavbar = dynamic(() => import("@/components/navbar/ResponsiveNavbar"));
-const CardGrid = dynamic(() => import("@/components/sections/CardGrid"));
-const TextWithIcons = dynamic(() => import("@/components/sections/TextWithIcons"));
-const TextGridIcons = dynamic(() => import("@/components/one-time/TextGridIcons"));
-const TextGridIconsTest = dynamic(() => import("@/components/one-time/TextGridIconsTest"));
 
-const RenderText = dynamic(() => import("@/lib/RenderText"));
-const PageSpeedStats = dynamic(() => import("@/components/sections/PageSpeedStats"));
-const AccordionSinge = dynamic(() => import("@/components/Accordion"));
-const ShowContentBasedOnActiveElement = dynamic(() => import("@/components/ShowContentBasedOnActiveElement"));
 
-const SubHeadingWithHeadingAndText = dynamic(() => import("@/components/heading-text/SubHeadingWithHeadingAndText"));
+// const TextGridIcons = React.lazy(() =>import( "@/components/one-time/TextGridIcons" )) ;
+// import TextGridIimportest from "@/components/one-time/TextGridIimportest";
 
+import Hero from "../components/Hero";
+import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar";
+const TextGridIconsTest = React.lazy(() => import("@/components/one-time/TextGridIconsTest"));
+const ShowContentBasedOnActiveElement = React.lazy(() => import("@/components/ShowContentBasedOnActiveElement"));
+const PageSpeedStats = React.lazy(() => import("@/components/sections/PageSpeedStats"));
+import Footer from "@/components/sections/Footer";
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
 
@@ -74,7 +72,7 @@ export const metadata = {
 
 
 export default function page() {
-    
+
     return (
         <div className="relative  overflow-hidden">
             <div className="relative bg-white rounded-b-4xl md:bg-transparent max-w-[1920px] mx-auto">
@@ -97,7 +95,9 @@ export default function page() {
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
                     <SubHeadingWithHeadingAndText data={OnzeDienstenData.title} headingStyle="4xl" containerStyles="gap-3 max-w-[854px] items-center md:text-center md:mx-auto pb-12" />
-                    <ShowContentBasedOnActiveElement data={dienstenData} indexCardType="IconHeadingTextIndex" />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <ShowContentBasedOnActiveElement data={dienstenData} indexCardType="IconHeadingTextIndex" />
+                    </Suspense>
                 </section>
 
 
@@ -132,32 +132,36 @@ export default function page() {
                     <TextWithIcons data={TextIconData} />
                 </section>
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
+                {/* <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
                     <TextGridIcons data={newOverOns} />
-                </section>
+                </section> */}
 
                 <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
-                    <TextGridIconsTest data={newOverOns} />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <TextGridIconsTest data={newOverOns} />
+                    </Suspense>
                 </section>
 
 
                 <section className={` mx-auto py-15 mb:py-36  relative-container`}>
                     <SubHeadingWithHeadingAndText data={faqData.title} headingPadding="px-12 py-2" containerStyles="md:mx-auto md:text-center items-center pb-16 gap-6" />
                     <div className="flex flex-col gap-2 max-w-[950px] mx-auto">
-                        {faqData.accordion.map((item, index) => (
+                        {/* {faqData.accordion.map((item, index) => (
                             <>
                                 <AccordionSinge key={index} title={item.title} body={item.body} cssClass={`md:rounded-2xl ${styles.borderInsetWhite3} shadow-sm`} />
                                 {index !== faqData.length - 1 && (
                                     <MassiveLogoGray className="hidden md:block self-center" />
                                 )}
                             </>
-                        ))}
+                        ))} */}
                     </div>
                 </section>
 
                 <section className={`${styles.boxWidth} mx-auto py-15 mb:py-36 relative overflow-hidden `}>
                     <SubHeadingWithHeadingAndText data={pageSpeedData.title} headingStyle="5xl" containerStyles="gap-4 md:gap-4 w-full max-w-[800px] absolute z-10 top-[20%]  md:top-[26%] absolute-center md:text-center md:items-center px-6" />
-                    <PageSpeedStats />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <PageSpeedStats />
+                    </Suspense>
                 </section>
 
 
@@ -165,7 +169,7 @@ export default function page() {
 
 
             </main>
-                <Footer />
+            <Footer />
         </div>
     )
 }
@@ -369,7 +373,7 @@ const faqData = {
         subHeading: "FAQ",
         heading: ["Veelgestelde Vragen"],
     },
-    accordion:[
+    accordion: [
         {
             title: 'Bereik gerichte klanten',
             body: "Stel je voor dat je een fysieke winkel hebt in een drukke straat versus een afgelegen steegje. SEO zorgt ervoor dat uw website op de 'drukke straat' van het internet staat. Voor onze tech-savvy millennials en content creators betekent dit een groter publiek en meer kansen om op te vallen.",
