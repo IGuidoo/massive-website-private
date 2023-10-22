@@ -5,32 +5,33 @@ import useWindowWidth from '@/utils/useWindowWidth';
 import { SpeedIndex, Toegankelijkheid } from '../icons';
 import styles from '@/styles/styles';
 
-const PageSpeedStats = memo(() => {
-    const windowWidth = useWindowWidth();
-    const isMobile = windowWidth <= 768; // Adjust this value as per your requirements
+const updateSpeed = 12;
+const planetSpeed = 0.25;
+const maxRadius = 500;
 
-    const updateSpeed = 12;
-    const planetSpeed = 0.25;
+let orbitOne = 150;
+let orbitTwo = 250;
+let orbitThree = 350;
+let orbitFour = 450;
+
+const orbits = [
+    { radius: orbitOne },
+    { radius: orbitTwo },
+    { radius: orbitThree },
+    { radius: orbitFour },
+];
+
+const PageSpeedStats = memo(() => {
+    PageSpeedStats.displayName = 'PageSpeedStats';
+
+    const windowWidth = useWindowWidth();
+    const isMobile = windowWidth <= 768;
 
     const divOneRef = useRef(null);
     const divTwoRef = useRef(null);
     const divThreeRef = useRef(null);
 
-    let orbitOne = 150
-    let orbitTwo = 250
-    let orbitThree = 350
-    let orbitFour = 450
-    let maxRadius = 500
-
-
-    const orbits = [
-        { radius: orbitOne },
-        { radius: orbitTwo },
-        { radius: orbitThree },
-        { radius: orbitFour },
-    ];
-
-    const planets = [
+    const planetsRef = useRef([
         {
             element: divOneRef,
             radius: orbitTwo,
@@ -49,12 +50,11 @@ const PageSpeedStats = memo(() => {
             angle: -50,
             direction: planetSpeed,
         },
-    ];
-
+    ]);
 
     useEffect(() => {
         function updatePlanetPosition() {
-            planets.forEach((planet) => {
+            planetsRef.current.forEach((planet) => {
                 const { element, radius, angle, direction } = planet;
                 if (element.current) {
                     element.current.style.left = maxRadius + radius * Math.cos(angle * (Math.PI / 180)) + "px";
@@ -65,14 +65,14 @@ const PageSpeedStats = memo(() => {
             });
             setTimeout(updatePlanetPosition, updateSpeed);
         }
-    
+
         updatePlanetPosition();
 
         console.log("test")
-    
+
         return () => clearTimeout(updatePlanetPosition);
     }, []);
-    
+
 
     return (
         <>
