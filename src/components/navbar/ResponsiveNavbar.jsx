@@ -17,7 +17,10 @@ import {
     CursorArrowRaysIcon,
     ServerIcon,
     PresentationChartLineIcon,
+    Bars3Icon,
+    XMarkIcon
 } from '@heroicons/react/24/outline'
+
 
 
 const ResponsiveNavbar = () => {
@@ -68,7 +71,7 @@ const ResponsiveNavbar = () => {
             // Select each dropdown content
             const dropdownContainer = item.querySelector('.dropdown__container')
             if (item.classList.contains('show-dropdown')) {
-                dropdownContainer.removeAttribute('style')
+                dropdownContainer.style.height = "";
                 item.classList.remove('show-dropdown')
             } else {
                 // Add the maximum height to the dropdown content and add the show-dropdown class
@@ -85,7 +88,7 @@ const ResponsiveNavbar = () => {
         const removeStyle = () => {
             // Validate if the media query reaches 1118px
             if (mediaQuery.matches) {
-                dropdownContainer.forEach((e) => e.removeAttribute('style'))
+                // dropdownContainer.forEach((e) => e.removeAttribute('style')) // apply line 79 if problems occur
                 dropdownItems.forEach((e) => e.classList.remove('show-dropdown'))
             }
         }
@@ -114,8 +117,8 @@ const ResponsiveNavbar = () => {
                     </Link>
 
                     <div className="nav__toggle" id="nav-toggle">
-                        <i className="ri-menu-line nav__toggle-menu"></i>
-                        <i className="ri-close-line nav__toggle-close"></i>
+                        <Bars3Icon className='nav__toggle-menu' />
+                        <XMarkIcon className='nav__toggle-close' />
                     </div>
                 </div>
 
@@ -123,7 +126,7 @@ const ResponsiveNavbar = () => {
                 <div className="nav__menu lg:flex lg:flex-grow lg:justify-between" id="nav-menu">
                     <ul className="nav__list">
                         {/* <!--=============== DROPDOWN 1 ===============--> */}
-                        <MegaDropdown data={discover} />
+                        {/* <MegaDropdown data={discover} /> */}
 
                         {/* <!--=============== DROPDOWN 2 ===============--> */}
                         <SmallDropdownWithIcons data={diensten} />

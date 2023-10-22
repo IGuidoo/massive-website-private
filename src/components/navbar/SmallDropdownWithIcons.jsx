@@ -3,6 +3,8 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from '@/styles/styles'
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+
 
 
 const SmallDropdownWithIcons = ({ data }) => {
@@ -11,7 +13,7 @@ const SmallDropdownWithIcons = ({ data }) => {
         <li className="dropdown__item relative flex flex-col lg:flex-row place-self-center">
             {/* Change px and py to gutter */}
             <div className={`dropdown__button flex justify-between items-center text-sm font-semibold leading-6 text-secondary-900 ${styles.gutter} py-5 `} >
-                {data.title} <i className="ri-arrow-down-s-line dropdown__arrow"></i>
+                {data.title} <ChevronDownIcon className='w-6 dropdown__arrow' />
             </div>
 
             <div className="dropdown__container  bg-white lg:rounded-3xl lg:translate-x-[-30%]" style={{width: "max-content"}}>

@@ -9,6 +9,7 @@ import AnimationRef from "@/components/animations/Animation";
 // Import Components
 import { SwipeableBase, SwipeableArrowNavigation, SwipeableHeading, SwipeableTextNavigation } from "./SwipeableTest";
 import IconHeadingTextIndex from "./cards/IconHeadingTextIndex";
+import IconLeftHeadingText from "./IconLeftHeadingText";
 
 const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
     const activeIndexShownFirst = 0;
@@ -26,7 +27,7 @@ const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
 
     return (
         <>
-            <div className={`flex flex-col md:grid grid-cols-4 gap-6`}>
+            <ul className={`flex flex-col md:grid grid-cols-4 gap-6`}>
                 {data.map((dienst, index) => (
                     <CardComponent
                         key={index}
@@ -37,7 +38,7 @@ const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
                     />
 
                 ))}
-            </div>
+            </ul>
             <div>
                 {data.map((dienst, index) => (
                     <div
@@ -56,23 +57,12 @@ const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
 
                                 {dienst.content.selection.map((item, index) => (
                                     <div key={index} className={`${activeBusinessIndex === index ? 'block' : 'hidden'}`}>
-                                        <div className="flex flex-col gap-6 md:gap-12">
+                                        <ul  className="flex flex-col gap-6 md:gap-12">
                                             {/* {isMobile && <AnnimationRef />} */}
-                                            {item.content.map((contentItem, index) => (
-                                                <div key={index}>
-                                                    <div className="flex flex-col gap-3 md:flex-row md:gap-6">
-                                                        <div className={`text-primary-500 shadow-lg flex-none ${styles.borderInsetWhite2} w-[44px] h-[44px] p-3 rounded `}>
-                                                            {contentItem.icon}
-                                                        </div>
-                                                        <div>
-                                                            <h4 className="text-xl leading-7 font-semibold text-secondary-800">{contentItem.heading}</h4>
-                                                            <p className="pt-1">{contentItem.text}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div className="h-[1px] w-full bg-green-100 md:hidden"></div>
-                                                </div>
-                                            ))}
-                                        </div>
+                                            <IconLeftHeadingText data={item.content} />
+
+                                            
+                                        </ul>
                                     </div>
                                 ))}
 

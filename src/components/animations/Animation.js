@@ -2,13 +2,13 @@
 
 // npm install --save @lottiefiles/react-lottie-player
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, memo } from "react";
 
 // import { Partytown } from '@builder.io/partytown/react';
 import bodymoving_test from './bodymoving_test.json';
 import lottie from 'lottie-web';
 
-const AnimationRef = () => {
+const AnimationRef = memo(() => {
     const animatedElRef = useRef(null);
     const lottieAnimationRef = useRef(null);
 
@@ -34,6 +34,6 @@ const AnimationRef = () => {
             <div ref={animatedElRef} className="animatedName"></div>
         </div>
     );
-};
+});
 
 export default AnimationRef;

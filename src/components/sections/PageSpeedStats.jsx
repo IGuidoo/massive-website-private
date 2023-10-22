@@ -1,11 +1,11 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import useWindowWidth from '@/utils/useWindowWidth';
 import { SpeedIndex, Toegankelijkheid } from '../icons';
 import styles from '@/styles/styles';
 
-const PageSpeedStats = () => {
+const PageSpeedStats = memo(() => {
     const windowWidth = useWindowWidth();
     const isMobile = windowWidth <= 768; // Adjust this value as per your requirements
 
@@ -67,9 +67,11 @@ const PageSpeedStats = () => {
         }
     
         updatePlanetPosition();
+
+        console.log("test")
     
         return () => clearTimeout(updatePlanetPosition);
-    }, [maxRadius, planets]);
+    }, []);
     
 
     return (
@@ -371,7 +373,7 @@ const PageSpeedStats = () => {
             </div>
         </>
     )
-}
+});
 
 export default PageSpeedStats
 

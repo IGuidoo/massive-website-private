@@ -30,6 +30,9 @@ module.exports = {
       maxWidth: {
         '8xl': '88rem',
       },
+      width: {
+        "88" : "22rem",
+      },
       padding: {
         "3.5" : "0.875rem",
         "13.5" : "3.375rem",
