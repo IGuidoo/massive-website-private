@@ -33,7 +33,6 @@ import {
     GoogleMybusinessColor,
     SemRushColor,
     ShopifyColor,
-    MassiveLogoGray,
 } from "../components/icons"
 
 // Elements
@@ -67,6 +66,7 @@ const PageSpeedStats = dynamic(() => import("@/components/sections/PageSpeedStat
     loading: () => <p>Loading...</p>  // Optional loading component or text.
 });
 import Footer from "@/components/sections/Footer";
+import Accordions from "@/components/sections/Accordions";
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
 
@@ -152,16 +152,7 @@ export default function page() {
 
                 <section className={` mx-auto py-15 mb:py-36  relative-container`}>
                     <SubHeadingWithHeadingAndText data={faqData.title} headingPadding="px-12 py-2" containerStyles="md:mx-auto md:text-center items-center pb-16 gap-6" />
-                    <div className="flex flex-col gap-2 max-w-[950px] mx-auto">
-                        {/* {faqData.accordion.map((item, index) => (
-                            <>
-                                <AccordionSinge key={index} title={item.title} body={item.body} cssClass={`md:rounded-2xl ${styles.borderInsetWhite3} shadow-sm`} />
-                                {index !== faqData.length - 1 && (
-                                    <MassiveLogoGray className="hidden md:block self-center" />
-                                )}
-                            </>
-                        ))} */}
-                    </div>
+                    <Accordions data={faqData.accordion} containerStyles="gap-2 max-w-[950px]" />
                 </section>
 
                 <section className={`${styles.boxWidth} mx-auto py-15 mb:py-36 relative overflow-hidden `}>

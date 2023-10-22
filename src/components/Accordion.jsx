@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
-const Accordion = ({ title, body, cssClass }) => {
+const Accordion = ({ title, body, containerStyles }) => {
     const [isOpen, setIsOpen] = useState(false);
     
     const handleToggle = () => {
@@ -15,7 +15,7 @@ const Accordion = ({ title, body, cssClass }) => {
 
 
     return (
-        <div className={`${cssClass}`}>
+        <div className={`${containerStyles}`}>
             <div
                 className="cursor-pointer p-8 flex justify-between items-center "
                 onClick={handleToggle}
