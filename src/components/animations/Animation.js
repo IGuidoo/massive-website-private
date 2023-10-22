@@ -3,18 +3,17 @@
 // npm install --save @lottiefiles/react-lottie-player
 
 import React, { useEffect, useRef } from "react";
-import useNearScreen from "@/utils/useNearScreen";
 
 // import { Partytown } from '@builder.io/partytown/react';
 import bodymoving_test from './bodymoving_test.json';
 import lottie from 'lottie-web';
 
 const AnimationRef = () => {
-    const [animatedElRef, isNearScreen] = useNearScreen();
+    const animatedElRef = useRef(null);
     const lottieAnimationRef = useRef(null);
 
     useEffect(() => {
-        if (isNearScreen && !lottieAnimationRef.current) {
+        if (animatedElRef.current) {
             const animation = lottie.loadAnimation({
                 container: animatedElRef.current,
                 renderer: "svg",
@@ -25,11 +24,13 @@ const AnimationRef = () => {
             });
             lottieAnimationRef.current = animation;
         }
-    }, [isNearScreen, animatedElRef]);
+    }, []);
 
     return (
         <div>
-            {isNearScreen && <script defer type="text/partytown" src="/lottie.min.js" />}
+            <script defer type="text/partytown" src="/lottie.min.js" />
+
+            {/* Canvas for Animation */}
             <div ref={animatedElRef} className="animatedName"></div>
         </div>
     );
