@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+"use client"
+
+import React from "react";
 import dynamic from 'next/dynamic';
 import SimpleForm from "@/components/SimpleForm";
 import styles from "@/styles/styles";
