@@ -65,11 +65,12 @@ const PageSpeedStats = () => {
             });
             setTimeout(updatePlanetPosition, updateSpeed);
         }
-
+    
         updatePlanetPosition();
-
+    
         return () => clearTimeout(updatePlanetPosition);
-    }, []);
+    }, [maxRadius, planets]);
+    
 
     return (
         <>
