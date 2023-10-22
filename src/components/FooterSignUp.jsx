@@ -1,19 +1,40 @@
 "use client"
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import dynamic from 'next/dynamic';
 import SimpleForm from "@/components/SimpleForm";
 import styles from "@/styles/styles";
 import useWindowWidth from '@/utils/useWindowWidth'; // adjust the path according to your folder structure
 
-const SplineRaket = dynamic(() => import('@/animations/Raket'), {
-    loading: () => <div></div>, // Optional loading component
-    ssr: false  // This will only load the component on the client side
-});
-
 const FooterSignUp = ({ data = [] }) => {
+    const [loadAnimation, setLoadAnimation] = useState(false);
     const windowWidth = useWindowWidth();
     const isXL = windowWidth >= 1280;
+    const ref = useRef(null);
+
+    useEffect(() => {
+        if (isXL) {
+            const observer = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                    // Load the animation when this element is in view
+                    setLoadAnimation(true);
+                    observer.disconnect(); // No need to keep observing once we've loaded the animation
+                }
+            });
+
+            observer.observe(ref.current);
+
+            // Clean up on component unmount
+            return () => {
+                observer.disconnect();
+            };
+        }
+    }, [isXL]);
+
+    const SplineRaket = loadAnimation && dynamic(() => import('@/animations/Raket'), {
+        loading: () => <div></div>, // Optional loading component
+        ssr: false  // This will only load the component on the client side
+    });
 
     return (
         <>
@@ -34,9 +55,12 @@ const FooterSignUp = ({ data = [] }) => {
                     </div>
                 </div>
             </div>
-            {isXL && <SplineRaket className=" top-10 right-[10%] -z-10 hidden xl:block" />}
+            <div ref={ref}>
+                {SplineRaket && <SplineRaket className="top-10 right-[10%] -z-10 hidden xl:block" />}
+            </div>
         </>
-    )
+    );
 }
+
 
 export default FooterSignUp;
