@@ -13,7 +13,7 @@ const FooterSignUp = ({ data = [] }) => {
 
     const [ref, isNearScreen] = useNearScreen();
 
-    const SplineRaket = isXL && isNearScreen && dynamic(() => import('@/animations/Raket'), {
+    const SplineRaket = dynamic(() => import('@/animations/Raket'), {
         loading: () => <div></div>,
         ssr: false
     });
@@ -38,7 +38,7 @@ const FooterSignUp = ({ data = [] }) => {
                 </div>
             </div>
             <div ref={ref}>
-                {SplineRaket && <SplineRaket className="top-10 right-[10%] -z-10 hidden xl:block" />}
+                <SplineRaket className="top-10 right-[10%] -z-10 hidden xl:block" />
             </div>
         </>
     );
