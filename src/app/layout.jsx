@@ -18,13 +18,6 @@ export default function RootLayout({ children }) {
       className={clsx('h-full antialiased')}
       suppressHydrationWarning
     >
-
-
-
-
-
-
-
       <body className="min-h-full bg-secondary-50 dark:bg-slate-900">
         <Script
           type="application/javascript"
@@ -33,7 +26,26 @@ export default function RootLayout({ children }) {
 
 
         {/* <!-- WIDGET CONFIGURATION --> */}
-        <script type='application/javascript' src='/klaro-config.js'></script>
+        <Script
+          id="my-script"
+          strategy="afterInteractive"
+        >
+          {`
+            var klaroConfig = {
+                privacyPolicy: '/privacy.html',
+                apps: [
+                    {
+                        name: 'google-analytics',
+                        default: true,
+                        title: 'Google Analytics',
+                        purposes: ['statistics'],
+                        cookies: [/^ga/i]
+                    }
+                    // ... potentially other apps or settings ...
+                ]
+            };
+          `}
+        </Script>
         {/* <!-- Google tag (gtag.js) --> */}
         <Script
           type="application/javascript"
