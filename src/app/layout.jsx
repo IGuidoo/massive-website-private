@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import clsx from 'clsx';
+import KlaroConsent from '@/components/KlaroConsent';
+import "@/config/klaro-config.js"
 
 export const metadata = {
   title: {
@@ -17,10 +19,10 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="min-h-full bg-secondary-50 dark:bg-slate-900">
+      <KlaroConsent />
           {/* <Providers> */}
             {children}
           {/* </Providers> */}
-          {/* <script src="./lib/responsiveNavbarJS.js"></script> */}
       </body>
     </html>
   )
