@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
           type="application/javascript"
           data-type="application/javascript"
           data-name="google-analytics"
-          src="https://www.googletagmanager.com/gtag/js?id=G-BNZ6YBWJVS"
+          src="https://www.googletagmanager.com/gtag/js?id=G-02HETLDJ1G"
         />
         <Script
           type="application/javascript"
