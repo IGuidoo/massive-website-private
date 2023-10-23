@@ -169,7 +169,7 @@ const discover = {
     "title": "Discover",
     "dropdown": [
         {
-            "icon": "ri-flashlight-line",
+            "icon": "",
             "title": "Most viewed courses",
             "list": [
                 { "name": "HTML for beginers", "href": "#" },
@@ -179,7 +179,7 @@ const discover = {
 
         },
         {
-            "icon": "ri-heart-3-line",
+            "icon": "",
             "title": "Popular cources",
             "list": [
                 { "name": "Development with Flutter", "href": "#" },
@@ -189,7 +189,7 @@ const discover = {
 
         },
         {
-            "icon": "ri-book-mark-line",
+            "icon": "",
             "title": "Careers",
             "list": [
                 { "name": "Web development", "href": "#" },
@@ -200,7 +200,7 @@ const discover = {
 
         },
         {
-            "icon": "ri-file-paper-2-line",
+            "icon": "",
             "title": "Certifications",
             "list": [
                 { "name": "Course certificates", "href": "#" },
