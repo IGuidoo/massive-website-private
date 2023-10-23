@@ -4,7 +4,7 @@
 
 import React, { useEffect, useRef, memo } from "react";
 
-// import { Partytown } from '@builder.io/partytown/react';
+import { Partytown } from '@builder.io/partytown/react';
 import bodymoving_test from './bodymoving_test.json';
 import lottie from 'lottie-web';
 

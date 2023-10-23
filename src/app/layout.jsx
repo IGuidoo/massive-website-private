@@ -1,5 +1,7 @@
-import Head from 'next/head';
+
+import Script from 'next/script';
 import clsx from 'clsx';
+
 
 export const metadata = {
   title: {
@@ -16,11 +18,39 @@ export default function RootLayout({ children }) {
       className={clsx('h-full antialiased')}
       suppressHydrationWarning
     >
+
+
+
+
+
+
+
       <body className="min-h-full bg-secondary-50 dark:bg-slate-900">
-          {/* <Providers> */}
-            {children}
-          {/* </Providers> */}
-          {/* <script src="./lib/responsiveNavbarJS.js"></script> */}
+        <Script
+          type="application/javascript"
+          src="/klaro.min.js"
+        />
+
+
+        {/* <!-- WIDGET CONFIGURATION --> */}
+        <script type='application/javascript' src='/klaro-config.js'></script>
+        {/* <!-- Google tag (gtag.js) --> */}
+        <Script
+          type="application/javascript"
+          data-type="application/javascript"
+          data-name="google-analytics"
+          src="https://www.googletagmanager.com/gtag/js?id=G-BNZ6YBWJVS"
+        />
+        <Script
+          type="application/javascript"
+          data-type="application/javascript"
+          data-name="google-analytics"
+          src="/google-analytics.js"
+        />
+        {/* <Providers> */}
+        {children}
+        {/* </Providers> */}
+        {/* <script src="./lib/responsiveNavbarJS.js"></script> */}
       </body>
     </html>
   )

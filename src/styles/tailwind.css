@@ -442,7 +442,7 @@ summary::-webkit-details-marker {
   position: relative;
   width: 100%; /* Set the width and height of the container as needed */
   height: 100%; /* Set the width and height of the container as needed */
-  background-image: url('/src/components/backgrounds/gridBackground.svg'); /* Replace 'your-background.svg' with the path to your SVG image */
+  /* background-image: url('/src/components/backgrounds/gridBackground.svg'); Replace 'your-background.svg' with the path to your SVG image */
   background-size: contain; /* You can use 'contain' or 'cover' based on your needs */
   background-repeat: no-repeat;
   background-position: center center; /* This centers the background both horizontally and vertically */
