@@ -15,7 +15,14 @@ import {
     Home_webwinkelOplossingen,
 } from "@/images/diensten"
 import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
-import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon } from '@heroicons/react/20/solid'
+import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon, 
+    ComputerDesktopIcon as CompoterDesktopIconSolid, 
+    BuildingStorefrontIcon as BuildingStorefrontIconSolid,
+    SwatchIcon as SwatchIconSolid,
+    MagnifyingGlassIcon as MagnifyingGlassIconSolid,
+    CursorArrowRaysIcon as CursorArrowRaysIconSolid,
+    PresentationChartLineIcon as PresentationChartLineIconSolid,
+} from '@heroicons/react/20/solid'
 import {
     // Social Icons
     FacebookGray,
@@ -51,19 +58,21 @@ import TextWithIcons from "@/components/sections/TextWithIcons";
 import Hero from "../components/Hero";
 import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar";
 const TextGridIconsTest = dynamic(() => import("@/components/one-time/TextGridIconsTest"), {
-    ssr: false, // This will make the component skip server-side rendering.
-    loading: () => <p>Loading...</p>  // Optional loading component or text.
+    ssr: false,
+    loading: () => <p>Loading...</p>
 });
 const ShowContentBasedOnActiveElement = dynamic(() => import("@/components/ShowContentBasedOnActiveElement"), {
-    ssr: false, // This will make the component skip server-side rendering.
-    loading: () => <p>Loading...</p>  // Optional loading component or text.
+    ssr: false,
+    loading: () => <p>Loading...</p>
 });
 const PageSpeedStats = dynamic(() => import("@/components/sections/PageSpeedStats"), {
-    ssr: false, // This will make the component skip server-side rendering.
-    loading: () => <p>Loading...</p>  // Optional loading component or text.
+    ssr: false,
+    loading: () => <p>Loading...</p>
 });
 import Footer from "@/components/sections/Footer";
 import Accordions from "@/components/sections/Accordions";
+import SimpleIconHeadingText from "@/components/cards/SimpleIconHeadingText";
+
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
 
@@ -81,6 +90,8 @@ export const metadata = {
 
 export default function page() {
 
+
+
     return (
         <div className="relative  overflow-hidden">
             <div className="relative bg-white rounded-b-4xl md:bg-transparent max-w-[1920px] mx-auto">
@@ -94,14 +105,23 @@ export default function page() {
             </div>
             <main>
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+                <section className={`${styles.section}`}>
                     <SubHeadingWithHeadingAndText data={dienstenGridData.title} headingStyle="5xl" containerStyles="gap-4 md:gap-4 max-w-[680px]" />
                     <div className="mt-[79px] lg:mt-[47px]">
                         <CardGrid data={dienstenGridData.cards} />
                     </div>
                 </section>
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+
+                <section className={`${styles.section}`}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 ">
+                        {secondFoldData.map((item, index) => (
+                            <SimpleIconHeadingText key={index} data={item} />
+                        ))}
+                    </div>
+                </section>
+
+                <section className={`${styles.section}`}>
                     <SubHeadingWithHeadingAndText data={OnzeDienstenData.title} headingStyle="4xl" containerStyles="gap-3 max-w-[854px] items-center md:text-center md:mx-auto pb-12" />
                     <ShowContentBasedOnActiveElement data={dienstenData} indexCardType="IconHeadingTextIndex" />
                 </section>
@@ -109,7 +129,7 @@ export default function page() {
 
 
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+                <section className={`${styles.section}`}>
                     <div className="banner-container">
                         <div className="w-full max-w-[590px] lg:m-8 lg:p-5 rounded-2xl flex flex-col justify-between desktop-banner__text-container">
                             <h2 className={`${styles.heading4xl}`}>
@@ -134,25 +154,25 @@ export default function page() {
                     </div>
                 </section>
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36`}>
+                <section className={`${styles.section}`}>
                     <TextWithIcons data={TextIconData} />
                 </section>
 
-                {/* <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
+                {/* <section className={`${styles.section} lg:grid lg:grid-cols-12 `}>
                     <TextGridIcons data={newOverOns} />
                 </section> */}
 
-                <section className={`${styles.gutterPadding} ${styles.boxWidth} mx-auto py-15 mb:py-36 lg:grid lg:grid-cols-12 `}>
+                <section className={`${styles.section} lg:grid lg:grid-cols-12 `}>
                     <TextGridIconsTest data={newOverOns} />
                 </section>
 
 
-                <section className={` mx-auto py-15 mb:py-36  relative-container`}>
+                <section className={` mx-auto ${styles.sectionPadding}  relative-container`}>
                     <SubHeadingWithHeadingAndText data={faqData.title} headingPadding="px-12 py-2" containerStyles="md:mx-auto md:text-center items-center pb-16 gap-6" />
                     <Accordions data={faqData.accordion} containerStyles="gap-2 max-w-[950px]" />
                 </section>
 
-                <section className={`${styles.boxWidth} mx-auto py-15 mb:py-36 relative overflow-hidden `}>
+                <section className={`${styles.boxWidth} mx-auto ${styles.sectionPadding} relative overflow-hidden `}>
                     <SubHeadingWithHeadingAndText data={pageSpeedData.title} headingStyle="5xl" containerStyles="gap-4 md:gap-4 w-full max-w-[800px] absolute z-10 top-[20%]  md:top-[26%] absolute-center md:text-center md:items-center px-6" />
                     <PageSpeedStats />
                 </section>
@@ -193,7 +213,7 @@ const OnzeDienstenData = {
         subHeading: "Digital Marketing Bureau",
         heading: [
             "Uw marketing partner voor ",
-            { type: "span", content: "Online Succes", className: "text-primary-500" }
+            { type: "span", content: "Online Succes", className: "text-gradient-primary" }
         ],
         text: "Bij Massive Online Marketing zetten wij zakelijke visies om in opmerkelijke successen. Door nauw samen te werken met ondernemers voorzien wij hen van Internet marketing oplossingen."
     },
@@ -624,4 +644,20 @@ const dienstenData = [
         }
 
     }
+]
+
+const testData = {
+    icon: <CompoterDesktopIconSolid />,
+    iconStyles: "bg-green-100 text-green-500",
+    heading: "Zakelijke Website laten Maken",
+    text: "Transformeer uw zakelijke visie, laat nu een professionele, op maat gemaakte website bouwen die even indrukwekkend is als uw bedrijf!"
+}
+
+const secondFoldData = [
+    { icon: <CompoterDesktopIconSolid />, iconStyles: "bg-primary-100 text-primary-500", heading: "Zakelijke Website laten Maken", text: "Transformeer uw zakelijke visie, laat nu een professionele, op maat gemaakte website bouwen die even indrukwekkend is als uw bedrijf!" },
+    { icon: <BuildingStorefrontIconSolid />, iconStyles: "bg-green-100 text-green-400", heading: "Ecommerce & Webwinkel Oplossingen", text: "Geintreseerd in een webshop laten maken? Breng je bedrijfs visie tot leven met een online marketing bureau dat naar u luistert." },
+    { icon: <SwatchIconSolid />, iconStyles: "bg-orange-100 text-orange-500", heading: "Branding", text: "Wordt hoger gevonden in google met onze SEO diensten, voor een breeder bereik en vertrouwen.diensten, voor een breeder bereik" },
+    { icon: <MagnifyingGlassIconSolid />, iconStyles: "bg-blue-100 text-blue-600", heading: "Zoekmachineoptimalizatie", text: "Wordt hoger gevonden in google met onze SEO diensten, voor een breeder bereik en vertrouwen." },
+    { icon: <CursorArrowRaysIconSolid />, iconStyles: "bg-blue-100 text-blue-500", heading: "Online Advertenties", text: "Ontdek nieuwe lead generatie met onze (SEA) digital marketing campagnes." },
+    { icon: <PresentationChartLineIconSolid />, iconStyles: "bg-red-100 text-red-400", heading: "Online Marketing Strategie", text: "Krijg inzagen op bedrijfs statestieken en optimeer via data gedreven besluiten." },
 ]

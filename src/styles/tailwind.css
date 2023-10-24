@@ -119,6 +119,14 @@ body {
   background-color: rgba(209, 213, 219, 0);
 }
 
+
+/* .gradient-primary-500{
+  background: var(--Cool, linear-gradient(90deg, #6366F1 0%, #9756FF 100%, #8B5CF6 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
 /* .radial-img-gradient{
   background: radial-gradient(53.8% 46.4% at 50% 50%, rgba(249, 250, 251, 0.00) 48.98%, #F9FAFB 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
 } */
@@ -423,20 +431,17 @@ summary::-webkit-details-marker {
 }
 /* END PageSpeedStats */
 
+.perfect-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-
-.perfect-center{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    z-index: -1;
+  z-index: -1;
 }
 .svg-background {
-  width: 100;   /* or you can use something like 120vw if it's bigger than the grid */
-  height: auto;  /* to maintain the aspect ratio */
+  width: 100; /* or you can use something like 120vw if it's bigger than the grid */
+  height: auto; /* to maintain the aspect ratio */
 }
-
 
 .relative-container {
   position: relative;

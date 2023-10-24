@@ -48,7 +48,7 @@ const SwipeableBase = ({ children, activeIndex, setActiveIndex, useClone = false
     //         }
     //     }
     // });
-    
+
 
     // specify the type of component to render
     if (useClone) {
@@ -129,15 +129,18 @@ const SwipeableTextNavigation = ({ children, activeIndex, setActiveIndex }) => {
     }, [activeIndex]);
 
     return (
-        <div ref={containerRef} className={`flex justify-between rounded-4xl px-5 py-3 bg-secondary-50 my-8 overflow-hidden ${styles.borderInsetWhite3}`}>
+        <div ref={containerRef} className={`flex gap-3 md:gap-6 py-3 bg-secondary-50 my-8 overflow-hidden `}>
             {React.Children.map(children, (child, index) => (
                 <span
                     key={index}
                     onClick={() => setActiveIndex(index)}
-                    className={`whitespace-nowrap rounded-3xl cursor-pointer text-sm leading-5 font-medium px-6 py-2 
-          ${activeIndex === index ? "text-secondary-50 bg-primary-500 shadow-inner" : ""}`}
+                    className={`whitespace-nowrap rounded-xl cursor-pointer 
+          ${activeIndex === index ? " gradient-primary-100 " : "border border-secondary-100 "}`}
                 >
-                    {child}
+                    <h4 className={`whitespace-nowrap rounded-3xl cursor-pointer text-sm leading-5 font-semibold px-6 py-2 
+          ${activeIndex === index ? "text-gradient-primary " : "text-secondary-500"}`}>
+                        {child}
+                    </h4>
                 </span>
             ))}
         </div>

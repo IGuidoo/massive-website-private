@@ -3,8 +3,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 
 // Import Utilities
-import useWindowWidth from "@/utils/useWindowWidth";
-import styles from "@/styles/styles.js";
+// import useWindowWidth from "@/hooks/useWindowWidth";
 import AnimationRef from "@/components/animations/Animation";
 // Import Components
 import { SwipeableBase, SwipeableArrowNavigation, SwipeableHeading, SwipeableTextNavigation } from "./SwipeableTest";
@@ -20,8 +19,8 @@ const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
         setActiveBusinessIndex(0);  // Reset inner index when service changes
     }, [activeServiceIndex]);
 
-    const windowWidth = useWindowWidth();
-    const isMobile = windowWidth <= 768;
+    // const windowWidth = useWindowWidth();
+    // const isMobile = windowWidth <= 768;
 
     const CardComponent = useMemo(() => getIndexCardComponent(indexCardType), [indexCardType]);
 

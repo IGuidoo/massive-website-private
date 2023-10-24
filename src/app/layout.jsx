@@ -1,6 +1,10 @@
 
+
 import Script from 'next/script';
 import clsx from 'clsx';
+
+import CookieConsentBanner from '@/components/cookies/CookieConsentBanner';
+import LoadCookies from '@/components/cookies/LoadCookies';
 
 
 export const metadata = {
@@ -12,6 +16,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html
       lang="en"
@@ -19,50 +24,13 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="min-h-full bg-secondary-50 dark:bg-slate-900">
-        <Script
-          type="application/javascript"
-          src="/klaro.min.js"
-        />
+        <CookieConsentBanner />
+        <LoadCookies />
 
-
-        {/* <!-- WIDGET CONFIGURATION --> */}
-        <Script
-          id="my-script"
-          strategy="afterInteractive"
-        >
-          {`
-            var klaroConfig = {
-                privacyPolicy: '/privacy.html',
-                apps: [
-                    {
-                        name: 'google-analytics',
-                        default: true,
-                        title: 'Google Analytics',
-                        purposes: ['statistics'],
-                        cookies: [/^ga/i]
-                    }
-                    // ... potentially other apps or settings ...
-                ]
-            };
-          `}
-        </Script>
-        {/* <!-- Google tag (gtag.js) --> */}
-        <Script
-          type="application/javascript"
-          data-type="application/javascript"
-          data-name="google-analytics"
-          src="https://www.googletagmanager.com/gtag/js?id=G-GXSX5LS62D"
-        />
-        <Script
-          type="application/javascript"
-          data-type="application/javascript"
-          data-name="google-analytics"
-          src="/google-analytics.js"
-        />
         {/* <Providers> */}
-        {children}
+          {children}
         {/* </Providers> */}
-        {/* <script src="./lib/responsiveNavbarJS.js"></script> */}
+
       </body>
     </html>
   )

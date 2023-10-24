@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useRef, memo } from 'react';
-import useWindowWidth from '@/utils/useWindowWidth';
+// import useWindowWidth from '@/hooks/useWindowWidth';
 import { SpeedIndex, Toegankelijkheid } from '../icons';
 import styles from '@/styles/styles';
 
@@ -24,8 +24,8 @@ const orbits = [
 const PageSpeedStats = memo(() => {
     PageSpeedStats.displayName = 'PageSpeedStats';
 
-    const windowWidth = useWindowWidth();
-    const isMobile = windowWidth <= 768;
+    // const windowWidth = useWindowWidth();
+    // const isMobile = windowWidth <= 768;
 
     const divOneRef = useRef(null);
     const divTwoRef = useRef(null);
