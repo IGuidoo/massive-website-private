@@ -3,9 +3,8 @@
 import React, { useEffect, useState, useMemo } from "react";
 
 // Import Utilities
-import useWindowWidth from "@/utils/useWindowWidth";
-import styles from "@/styles/styles.js";
-import AnimationRef from "@/components/animations/Animation";
+// import useWindowWidth from "@/hooks/useWindowWidth";
+import AnimationRef from "@/components/animations/LottieAnimation";
 // Import Components
 import { SwipeableBase, SwipeableArrowNavigation, SwipeableHeading, SwipeableTextNavigation } from "./SwipeableTest";
 import IconHeadingTextIndex from "./cards/IconHeadingTextIndex";
