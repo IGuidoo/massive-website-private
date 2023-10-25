@@ -1,5 +1,9 @@
 ---
 title: Getting started
+nextjs:
+  metadata:
+    title: The butterfly effect
+    description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 
 Learn how to get CacheAdvance set up in your project in under thirty minutes or it's free. {% .lead %}
