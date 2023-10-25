@@ -1,4 +1,6 @@
 const styles = {
+    section: "px-6 md:px-12 [1632px]:px-0     xl:max-w-[1536px] w-full       mx-auto py-15 mb:py-36 ",
+    sectionPadding: "py-15 mb:py-36 ",
     
 
     flexCenter: "flex justify-center items-center",
@@ -54,6 +56,7 @@ const styles = {
     heading4xl: "text-3xl leading-9 font-bold md:text-4xl md:leading-10 text-secondary-800",
     heading5xl: "text-4xl leading-10 font-bold md:text-5xl md:leading-none text-secondary-800",
     subHeadingRounded: "text-sm leading-5 font-semibold text-secondary-500 px-4 py-2 rounded-full bg-secondary-50 shadow-sm border border-2 broder-white w-fit",
+    subHeadingSm: "text-sm leading-5 font-semibold",
     
     text: "text-base leading-6 font-medium text-secondary-600 md:text-lg md:leading-7",
     

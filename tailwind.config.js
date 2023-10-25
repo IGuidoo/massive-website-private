@@ -88,6 +88,9 @@ module.exports = {
           950: "#030712"
         },      
       },
+      backgroundImage: {
+        
+      },
       transitionProperty: {
         'opacity-transform': 'opacity, transform',
       },
@@ -100,5 +103,21 @@ module.exports = {
       },
     },
   },
-  plugins: [typographyPlugin],
+  plugins: [
+    typographyPlugin,
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.text-gradient-primary': {
+          background: 'var(--Cool, linear-gradient(90deg, #6366F1 0%, #9756FF 100%, #8B5CF6 100%))',
+          'background-clip': 'text',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+        },
+        '.gradient-primary-100': {
+          background: 'linear-gradient(90deg, rgba(99, 102, 241, 0.15) 0%, rgba(151, 86, 255, 0.15) 100%, rgba(139, 92, 246, 0.15) 100%)',
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover', 'group-hover'])
+    }
+  ],
 }

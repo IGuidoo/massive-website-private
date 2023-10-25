@@ -6,7 +6,7 @@ import styles from '@/styles/styles';
 import  "@/components/navbar/ResponsiveNavbar.css"
 // import "@/styles/icons.css"
 
-import MegaDropdown from '@/components/navbar/MegaDropdown.jsx';
+// import MegaDropdown from '@/components/navbar/MegaDropdown.jsx';
 import SmallDropdownWithIcons from './SmallDropdownWithIcons';
 import { MenuLogo, OutlineMail } from "@/components/icons"
 
@@ -123,7 +123,7 @@ const ResponsiveNavbar = () => {
                 </div>
 
                 {/* <!--=============== NAV MENU ===============--> */}
-                <div className="nav__menu lg:flex lg:flex-grow lg:justify-between" id="nav-menu">
+                <div className="nav__menu lg:flex lg:flex-grow lg:justify-between bg-white" id="nav-menu">
                     <ul className="nav__list">
                         {/* <!--=============== DROPDOWN 1 ===============--> */}
                         {/* <MegaDropdown data={discover} /> */}
@@ -169,7 +169,7 @@ const discover = {
     "title": "Discover",
     "dropdown": [
         {
-            "icon": "ri-flashlight-line",
+            "icon": "",
             "title": "Most viewed courses",
             "list": [
                 { "name": "HTML for beginers", "href": "#" },
@@ -179,7 +179,7 @@ const discover = {
 
         },
         {
-            "icon": "ri-heart-3-line",
+            "icon": "",
             "title": "Popular cources",
             "list": [
                 { "name": "Development with Flutter", "href": "#" },
@@ -189,7 +189,7 @@ const discover = {
 
         },
         {
-            "icon": "ri-book-mark-line",
+            "icon": "",
             "title": "Careers",
             "list": [
                 { "name": "Web development", "href": "#" },
@@ -200,7 +200,7 @@ const discover = {
 
         },
         {
-            "icon": "ri-file-paper-2-line",
+            "icon": "",
             "title": "Certifications",
             "list": [
                 { "name": "Course certificates", "href": "#" },

@@ -9,6 +9,8 @@ import bodymoving_test from './bodymoving_test.json';
 import lottie from 'lottie-web';
 
 const AnimationRef = memo(() => {
+    AnimationRef.displayName = 'AnimationRef';
+
     const animatedElRef = useRef(null);
     const lottieAnimationRef = useRef(null);
 

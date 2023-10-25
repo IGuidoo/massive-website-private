@@ -1,5 +1,11 @@
-import Head from 'next/head';
+
+
+import Script from 'next/script';
 import clsx from 'clsx';
+
+import CookieConsentBanner from '@/components/cookies/CookieConsentBanner';
+import LoadCookies from '@/components/cookies/LoadCookies';
+
 
 export const metadata = {
   title: {
@@ -10,6 +16,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html
       lang="en"
@@ -17,10 +24,13 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="min-h-full bg-secondary-50 dark:bg-slate-900">
-          {/* <Providers> */}
-            {children}
-          {/* </Providers> */}
-          {/* <script src="./lib/responsiveNavbarJS.js"></script> */}
+        <CookieConsentBanner />
+        <LoadCookies />
+
+        {/* <Providers> */}
+          {children}
+        {/* </Providers> */}
+
       </body>
     </html>
   )

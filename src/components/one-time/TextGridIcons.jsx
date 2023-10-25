@@ -4,7 +4,7 @@ import React from 'react'
 // import GridBackground from "@/components/backgrounds/gridBackground.svg"
 
 // Import Utilities
-import useWindowWidth from '@/utils/useWindowWidth'
+import useWindowWidth from '@/hooks/useWindowWidth'
 
 // Import Comopnents
 import BrandedContentBlockWithLogo from '../heading-text/BrandedContentBlockWithLogo'
