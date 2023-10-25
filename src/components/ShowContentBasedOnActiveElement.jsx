@@ -3,7 +3,8 @@
 import React, { useEffect, useState, useMemo } from "react";
 
 // Import Utilities
-// import useWindowWidth from "@/hooks/useWindowWidth";
+import useWindowWidth from "@/utils/useWindowWidth";
+import styles from "@/styles/styles.js";
 import AnimationRef from "@/components/animations/Animation";
 // Import Components
 import { SwipeableBase, SwipeableArrowNavigation, SwipeableHeading, SwipeableTextNavigation } from "./SwipeableTest";

@@ -6,7 +6,7 @@ import styles from '@/styles/styles';
 import  "@/components/navbar/ResponsiveNavbar.css"
 // import "@/styles/icons.css"
 
-import MegaDropdown from '@/components/navbar/MegaDropdown.jsx';
+// import MegaDropdown from '@/components/navbar/MegaDropdown.jsx';
 import SmallDropdownWithIcons from './SmallDropdownWithIcons';
 import { MenuLogo, OutlineMail } from "@/components/icons"
 
@@ -123,7 +123,7 @@ const ResponsiveNavbar = () => {
                 </div>
 
                 {/* <!--=============== NAV MENU ===============--> */}
-                <div className="nav__menu lg:flex lg:flex-grow lg:justify-between" id="nav-menu">
+                <div className="nav__menu lg:flex lg:flex-grow lg:justify-between bg-white" id="nav-menu">
                     <ul className="nav__list">
                         {/* <!--=============== DROPDOWN 1 ===============--> */}
                         {/* <MegaDropdown data={discover} /> */}
