@@ -116,6 +116,10 @@ module.exports = {
         '.gradient-primary-100': {
           background: 'linear-gradient(90deg, rgba(99, 102, 241, 0.15) 0%, rgba(151, 86, 255, 0.15) 100%, rgba(139, 92, 246, 0.15) 100%)',
         },
+        // werkt niet?
+        'gradient-primary' : {
+          background: 'linear-gradient(90deg, #6366F1 0%, #9756FF 100%, #8B5CF6 100%))'
+        },
       }
       addUtilities(newUtilities, ['responsive', 'hover', 'group-hover'])
     }

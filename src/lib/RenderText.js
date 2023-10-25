@@ -17,13 +17,14 @@ const RenderText = ({ content }) => {
             return <span key={index} className={item.className}>{item.content}</span>;
         }
 
-        // if (item.type === "button") {
-        //   return <button key={index} className={item.className}>{item.content}</button>;
-        // }
+        if (item.type === "button") {
+          return <button key={index} className={item.className} onClick={item.function}>{item.content}</button>;
+        }
         
         else if (item.type === "link") {
           return <a key={index} href={item.href} className={item.className}>{item.content}</a>;
         }
+        
         return null;
       })}
     </>

@@ -1,0 +1,47 @@
+.diensten-h2 {
+  color: var(--secondary-800);
+  padding-top: 32px;
+
+  /* text-3xl/leading-9/font-semibold */
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px; /* 120% */
+}
+
+.diensten-h3 {
+  color: var(--secondary-700);
+  padding-top: 32px;
+
+  /* text-2xl/leading-8/font-semibold */
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 133.333% */
+}
+
+.diensten-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  padding-top: 16px;
+}
+
+.diensten-list_item {
+  color: var(--secondary-600);
+
+  /* text-lg/leading-7/font-medium */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+}
+
+.diesnten-sub-title {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.5rem /* 24px */;
+  font-weight: 600;
+  color: var(--primary-600);
+}

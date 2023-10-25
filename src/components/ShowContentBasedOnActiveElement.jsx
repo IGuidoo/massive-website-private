@@ -2,13 +2,11 @@
 
 import React, { useEffect, useState, useMemo } from "react";
 
-// Import Utilities
-// import useWindowWidth from "@/hooks/useWindowWidth";
-import AnimationRef from "@/components/animations/LottieAnimation";
 // Import Components
 import { SwipeableBase, SwipeableArrowNavigation, SwipeableHeading, SwipeableTextNavigation } from "./SwipeableTest";
 import IconHeadingTextIndex from "./cards/IconHeadingTextIndex";
-import IconLeftHeadingText from "./IconLeftHeadingText";
+import IconLeftHeadingText from "./cards/IconLeftHeadingText";
+import { HomeEcommerce } from "@/assets/images";
 
 const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
     const activeIndexShownFirst = 0;
@@ -18,9 +16,6 @@ const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
     useEffect(() => {
         setActiveBusinessIndex(0);  // Reset inner index when service changes
     }, [activeServiceIndex]);
-
-    // const windowWidth = useWindowWidth();
-    // const isMobile = windowWidth <= 768;
 
     const CardComponent = useMemo(() => getIndexCardComponent(indexCardType), [indexCardType]);
 
@@ -42,46 +37,31 @@ const ShowContentBasedOnActiveElement = ({ data = [], indexCardType }) => {
                 {data.map((dienst, index) => (
                     <div
                         key={index}
-                        className={`grid grid-cols-1 gap-8 xl:gap-16
-                                                    xl:grid-cols-2 mt-12 xl:mt-24 ${activeServiceIndex === index ? "block" : "hidden"
-                            }`}
+                        className={`grid grid-cols-1 gap-8 xl:gap-16 xl:grid-cols-2 mt-8 xl:mt-12 ${activeServiceIndex === index ? "block" : "hidden"}`}
                     >
-                        <div>
-                            <SwipeableBase activeIndex={activeBusinessIndex} setActiveIndex={setActiveBusinessIndex} useClone={true} itemsCount={dienst.content.selection.length}>
-                                <SwipeableHeading headings={dienst.content.selection.map(item => item.heading)} />
+                        <SwipeableBase activeIndex={activeBusinessIndex} setActiveIndex={setActiveBusinessIndex} useClone={true} itemsCount={dienst.content.selection.length}>
+                            <SwipeableHeading headings={dienst.content.selection.map(item => item.heading)} />
 
-                                <SwipeableTextNavigation>
-                                    {dienst.content.selection.map(item => item.typeOfBusiness)}
-                                </SwipeableTextNavigation>
+                            <SwipeableTextNavigation>
+                                {dienst.content.selection.map(item => item.typeOfBusiness)}
+                            </SwipeableTextNavigation>
 
-                                {dienst.content.selection.map((item, index) => (
-                                    <div key={index} className={`${activeBusinessIndex === index ? 'block' : 'hidden'}`}>
-                                        <ul  className="flex flex-col gap-6 md:gap-12">
-                                            {/* {isMobile && <AnnimationRef />} */}
-                                            <IconLeftHeadingText data={item.content} />
+                            {dienst.content.selection.map((item, index) => (
+                                <div key={index} className={`${activeBusinessIndex === index ? 'block' : 'hidden'}`}>
+                                    <ul className="flex flex-col gap-6 md:gap-12">
+                                        {item.content.map((data, index) => (
+                                            <IconLeftHeadingText key={index} data={data} />
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </SwipeableBase>
 
-                                            
-                                        </ul>
-                                    </div>
-                                ))}
-
-
-                                <SwipeableArrowNavigation />
-                            </SwipeableBase>
-
-
-
-
-                        </div>
-                        <div className="my-auto">
-                            {/* {!isMobile &&  */}
-                            <AnimationRef />
-                            {/* // } */}
+                        <div className="my-auto p-20 m-12 bg-primary-100 rounded-3xl">
+                            <HomeEcommerce />
                         </div>
                     </div>
                 ))}
-
-
             </div>
         </>
     )

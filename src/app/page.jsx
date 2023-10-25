@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import RenderText from "@/lib/RenderText";
 
+import "@/styles/styles.css"
 import '@/styles/tailwind.css'
 
 import {
@@ -15,8 +16,9 @@ import {
     Home_webwinkelOplossingen,
 } from "@/images/diensten"
 import { ComputerDesktopIcon, ShoppingCartIcon, ChartBarIcon, CursorArrowRaysIcon } from "@heroicons/react/24/outline"
-import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon, 
-    ComputerDesktopIcon as CompoterDesktopIconSolid, 
+import {
+    UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon,
+    ComputerDesktopIcon as CompoterDesktopIconSolid,
     BuildingStorefrontIcon as BuildingStorefrontIconSolid,
     SwatchIcon as SwatchIconSolid,
     MagnifyingGlassIcon as MagnifyingGlassIconSolid,
@@ -45,7 +47,6 @@ import {
 // Elements
 import SubHeadingWithHeadingAndText from "@/components/heading-text/SubHeadingWithHeadingAndText";
 import TagsList from "@/components/TagsList";
-import CardGrid from "@/components/sections/CardGrid";
 import TextWithIcons from "@/components/sections/TextWithIcons";
 // const AccordionSinge = dynamic(() => import("@/components/Accordion"));
 
@@ -56,7 +57,6 @@ import TextWithIcons from "@/components/sections/TextWithIcons";
 // import TextGridIimportest from "@/components/one-time/TextGridIimportest";
 
 import Hero from "../components/Hero";
-import ResponsiveNavbar from "@/components/navbar/ResponsiveNavbar";
 const TextGridIconsTest = dynamic(() => import("@/components/one-time/TextGridIconsTest"), {
     ssr: false,
     loading: () => <p>Loading...</p>
@@ -72,6 +72,9 @@ const PageSpeedStats = dynamic(() => import("@/components/sections/PageSpeedStat
 import Footer from "@/components/sections/Footer";
 import Accordions from "@/components/sections/Accordions";
 import SimpleIconHeadingText from "@/components/cards/SimpleIconHeadingText";
+import SimpleNavbar from "@/components/navbar/SimpleNavbar";
+import { HomeBannerBackground } from "@/assets/backgrounds";
+import EmailSignupBar from "@/components/EmailSignupBar";
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -94,65 +97,39 @@ export default function page() {
 
     return (
         <div className="relative  overflow-hidden">
-            <div className="relative bg-white rounded-b-4xl md:bg-transparent max-w-[1920px] mx-auto">
-                <ResponsiveNavbar />
 
-                {/* <Navbar /> */}
+            <header className={` ${styles.boxWidth} ${styles.gutterPadding} mx-auto`}>
+                <SimpleNavbar />
+            </header>
+
+            <section className={` ${styles.section}`}>
                 <Hero data={HeroData} />
-                <div className="absolute md:w-[97%] 2xl:w-[93%] md:left-[1.5%] 2xl:left-[3.5%] top-0 -z-10 md:h-full bg-white rounded-b-4xl border-solid border-white border-3 shadow-lg"></div>
-                <div className="absolute bottom-[-16px] w-full h-[50%] -z-20 rounded-b-4xl custom-bg-gradient 2xl:w-[90%] 2xl:left-[5%] 2xl:h-[130%]"></div>
-                <div className={`absolute bottom-[-34px] w-full h-full -z-30 bg-secondary-100 rounded-b-4xl 2xl:bottom-[-49px] 2xl:w-[97%] 2xl:left-[1.5%]  2xl:h-[230%] 2xl:border-solid 2xl:border-white 2xl:border-3`}></div>
-            </div>
+            </section>
+
             <main>
 
                 <section className={`${styles.section}`}>
                     <SubHeadingWithHeadingAndText data={dienstenGridData.title} headingStyle="5xl" containerStyles="gap-4 md:gap-4 max-w-[680px]" />
-                    <div className="mt-[79px] lg:mt-[47px]">
-                        <CardGrid data={dienstenGridData.cards} />
-                    </div>
-                </section>
-
-
-                <section className={`${styles.section}`}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 ">
+                    <ul className=" mt-[79px] lg:mt-[47px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 ">
                         {secondFoldData.map((item, index) => (
                             <SimpleIconHeadingText key={index} data={item} />
                         ))}
-                    </div>
+                    </ul>
                 </section>
+
 
                 <section className={`${styles.section}`}>
                     <SubHeadingWithHeadingAndText data={OnzeDienstenData.title} headingStyle="4xl" containerStyles="gap-3 max-w-[854px] items-center md:text-center md:mx-auto pb-12" />
                     <ShowContentBasedOnActiveElement data={dienstenData} indexCardType="IconHeadingTextIndex" />
                 </section>
 
-
-
-
-                <section className={`${styles.section}`}>
-                    <div className="banner-container">
-                        <div className="w-full max-w-[590px] lg:m-8 lg:p-5 rounded-2xl flex flex-col justify-between desktop-banner__text-container">
-                            <h2 className={`${styles.heading4xl}`}>
-                                <RenderText content={medischeBannerData.heading} />
-                            </h2>
-                            <TagsList tagsData={medischeBannerData} tagBG="bg-white" cssClass=" mt-2 lg:mt-0" />
-                            <Link href={medischeBannerData.button.link} className={`${styles.secondaryCTA} hidden lg:block `}>
-                                {medischeBannerData.button.content}
-                            </Link>
-                        </div>
-                        <div className="mobile-banner-container ml-auto " >
-                            <Image
-                                className="ml-auto overflow-hidden pt-[27px] rounded-br-2xl w-[80%] lg:w-full "
-                                src={"/images/medische-gezondheidszorg-website-mockup.png"}
-                                width={737}
-                                height={391}
-                                alt="Mockup van een medische website met een mannelijke arts"
-                            />
-
-                        </div>
-
+                <section className={` ${styles.boxWidth} my-15 mb:my-36 mx-auto home-banner h-fit rounded-[50px] overflow-hidden`}>
+                    <div className="max-w-[570px] my-20 ml-28">
+                        <h3 className={` ${styles.heading4xl} text-white pb-10`}>Ontdek hoe wij ondernemers helpen met het vinden van nieuwe leads.</h3>
+                        <EmailSignupBar />
                     </div>
                 </section>
+
 
                 <section className={`${styles.section}`}>
                     <TextWithIcons data={TextIconData} />
@@ -186,6 +163,26 @@ export default function page() {
         </div>
     )
 }
+
+const HeroData = {
+    subHeading: "Massive",
+    heading: ["Online", "Marketing"],
+    text: "Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren",
+    buttons: [
+        {
+            type: "button",
+            content: "Neem Contact op",
+            function: "/#",
+            className: "mt-10 w-full md:w-fit gradient-primary-css px-6 py-3 rounded-lg justify-center flex    text-base leading-6 font-semibold text-secondary-50"
+        },
+    ],
+}
+
+
+
+
+
+
 
 
 const dienstenGridData = {
@@ -339,47 +336,8 @@ const newOverOns = {
 }
 
 
-const HeroData = [
-    {
-        subHeading: ["Massive"],
-        heading: ["Online", "Marketing"],
-        text: ["Zet uw zakelijke visie om in tastbare sucessen met strategieën die ondernemerschap en resultaatgerichtheid combineren"],
-        cta1: {
-            text: ["Ontdek onze Diensten"],
-            link: ["/#"]
-        },
-        cta2: {
-            text: ["Start uw Groeireis"],
-            link: ["/#"]
-        },
-        cta3: {
-            text: ["Of neem contact op -->"],
-            link: ["/#"]
-        },
-        social: [
-            {
-                name: 'Facebook',
-                href: '#',
-                icon: <FacebookGray />
-            },
-            {
-                name: 'Twitter',
-                href: '#',
-                icon: <TwitterGray />
-            },
-            {
-                name: 'Instagram',
-                href: '#',
-                icon: <InstagramGray />
-            },
-            {
-                name: 'LinkedIn',
-                href: '#',
-                icon: <LinkedinGray />
-            }
-        ],
-    }
-]
+
+
 
 const faqData = {
     title: {
@@ -437,7 +395,7 @@ const dienstenData = [
                     heading: "Laat uw website op maat ontwerpen.",
                     typeOfBusiness: "Start-Up",
                     content: [
-                        { icon: <ComputerDesktopIcon />, heading: "Website laten maken", text: "Ons webdesign bureau ontwerpt websites op maat en houd rekening met uw lokale SEO, zodat uw bedrijf opvalt in deb buurt en omstreken." },
+                        { icon: <ComputerDesktopIcon className="svg-white" />, heading: "Website laten maken", text: "Ons webdesign bureau ontwerpt websites op maat en houd rekening met uw lokale SEO, zodat uw bedrijf opvalt in deb buurt en omstreken." },
                         { icon: <ComputerDesktopIcon />, heading: "Goedkoop Website Laten Maken", text: "Ontvang goedkope website ontwerpen die aansluiten op uw bedrijfsbudget en behoeften." },
                         { icon: <ComputerDesktopIcon />, heading: "Zelfbeheer Mogelijkheden", text: "Onze gebruiksvriendelijke CMS systeem stelt u in staat om eenvoudige updates zelf te doen, zonder extra kosten." },
                     ]

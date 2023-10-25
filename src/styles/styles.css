@@ -1,0 +1,9 @@
+.home-banner{
+    position: relative;
+    width: 1400px;
+    height: 305px;
+    background-image: url("/images/HomeBannerBackground.svg") ;
+    background-size: cover;
+    background-position: center;
+  }
+  

@@ -10,37 +10,37 @@
   @font-face {
     font-family: 'Inter';
     font-weight: 400;
-    src: url(../fonts/Inter-Regular.ttf) format('trueType');
+    src: url(../assets/fonts/Inter-Regular.ttf) format('trueType');
     font-display: swap;
   }
   @font-face {
     font-family: 'Inter';
     font-weight: 500;
-    src: url(../fonts/Inter-Medium.ttf) format('trueType');
+    src: url(../assets/fonts/Inter-Medium.ttf) format('trueType');
     font-display: swap;
   }
   @font-face {
     font-family: 'Inter';
     font-weight: 600;
-    src: url(../fonts/Inter-SemiBold.ttf) format('trueType');
+    src: url(../assets/fonts/Inter-SemiBold.ttf) format('trueType');
     font-display: swap;
   }
   @font-face {
     font-family: 'Inter';
     font-weight: 700;
-    src: url(../fonts/Inter-Bold.ttf) format('trueType');
+    src: url(../assets/fonts/Inter-Bold.ttf) format('trueType');
     font-display: swap;
   }
   @font-face {
     font-family: 'Inter';
     font-weight: 800;
-    src: url(../fonts/Inter-ExtraBold.ttf) format('trueType');
+    src: url(../assets/fonts/Inter-ExtraBold.ttf) format('trueType');
     font-display: swap;
   }
   @font-face {
     font-family: 'Inter';
     font-weight: 900;
-    src: url(../fonts/Inter-Black.ttf) format('trueType');
+    src: url(../assets/fonts/Inter-Black.ttf) format('trueType');
     font-display: swap;
   }
 }
@@ -119,13 +119,68 @@ body {
   background-color: rgba(209, 213, 219, 0);
 }
 
-
 /* .gradient-primary-500{
   background: var(--Cool, linear-gradient(90deg, #6366F1 0%, #9756FF 100%, #8B5CF6 100%));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 } */
+
+.text-gradient-primary-css {
+  background: var(
+    --Cool,
+    linear-gradient(90deg, #6366f1 0%, #9756ff 100%, #8b5cf6 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* <svg
+width="24"
+height="24"
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+className="text-gradient-icon"
+>
+<path
+  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+  stroke="url(#gradient)"
+  strokeWidth="2"
+/>
+<defs>
+
+  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:#6366f1" />
+    <stop offset="100%" style="stop-color:#9756ff" />
+  </linearGradient>
+  
+</defs>
+</svg> */
+
+.gradient-primary-100-css {
+  background: linear-gradient(
+    90deg,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(151, 86, 255, 0.15) 100%,
+    rgba(139, 92, 246, 0.15) 100%
+  );
+}
+.gradient-primary-css {
+  background: linear-gradient(90deg, #6366f1 0%, #9756ff 100%, #8b5cf6 100%);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* .radial-img-gradient{
   background: radial-gradient(53.8% 46.4% at 50% 50%, rgba(249, 250, 251, 0.00) 48.98%, #F9FAFB 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
@@ -177,7 +232,14 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.gekkegradient {
+  fill: linear-gradient(37deg, #ff0000 26.68%, rgba(255, 3, 3, 0) 33.12%);
+}
 
+
+
+
+/* simple accordion */
 .simple-accordion {
   box-sizing: border-box;
   background: white;
@@ -230,83 +292,16 @@ body {
 summary::-webkit-details-marker {
   display: none;
 }
+/* accordion end */
 
-.test {
-  box-shadow:
-    0px 0px 4px 3px rgba(124, 58, 237, 0.06),
-    0px 0px 16px 0px rgba(124, 58, 237, 0.1);
-}
 
-.diensten-h2 {
-  color: var(--secondary-800);
-  padding-top: 32px;
 
-  /* text-3xl/leading-9/font-semibold */
-  font-family: Inter;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 36px; /* 120% */
-}
 
-.diensten-h3 {
-  color: var(--secondary-700);
-  padding-top: 32px;
 
-  /* text-2xl/leading-8/font-semibold */
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 32px; /* 133.333% */
-}
 
-.diensten-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  padding-top: 16px;
-}
 
-.diensten-list_item {
-  color: var(--secondary-600);
 
-  /* text-lg/leading-7/font-medium */
-  font-family: Inter;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 28px; /* 155.556% */
-}
 
-.diesnten-sub-title {
-  font-size: 0.875rem /* 14px */;
-  line-height: 1.5rem /* 24px */;
-  font-weight: 600;
-  color: var(--primary-600);
-}
-
-.content-wrapper::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
-  );
-  pointer-events: none;
-}
-
-.content-wrapper.expanded::after {
-  display: none;
-}
-
-.gekkegradient {
-  fill: linear-gradient(37deg, #ff0000 26.68%, rgba(255, 3, 3, 0) 33.12%);
-}
 
 /* Snap Carousel */
 .snap-container {
@@ -321,47 +316,12 @@ summary::-webkit-details-marker {
 }
 /* END Snap Carousel  */
 
-/* Banner Home */
-@media (min-width: 1240px) {
-  .banner-container {
-    display: flex;
-    flex-direction: row;
-    border-radius: 2rem;
-    margin-left: auto;
 
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    box-shadow:
-      0px 1px 2px 0px rgba(0, 0, 0, 0.06),
-      0px 1px 3px 0px rgba(0, 0, 0, 0.1);
 
-    background: linear-gradient(180deg, #c8c9f6 0%, #7763f1 100%);
-  }
-  .desktop-banner__text-container {
-    background: linear-gradient(
-      180deg,
-      #fff 0%,
-      rgba(255, 255, 255, 0.85) 100%
-    );
-  }
-}
-@media (max-width: 1240px) {
-  .mobile-banner-container {
-    margin-top: 22px;
 
-    border-radius: 0.5rem;
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    box-shadow:
-      0px 1px 2px 0px rgba(0, 0, 0, 0.06),
-      0px 1px 3px 0px rgba(0, 0, 0, 0.1);
 
-    background: linear-gradient(180deg, #c8c9f6 0%, #7763f1 100%);
-  }
-}
-/* END Home Banner */
+
+
 
 /* Page Speed Stats */
 .pageSpeedAnnimationContainer {
@@ -437,18 +397,4 @@ summary::-webkit-details-marker {
   transform: translate(-50%, -50%);
 
   z-index: -1;
-}
-.svg-background {
-  width: 100; /* or you can use something like 120vw if it's bigger than the grid */
-  height: auto; /* to maintain the aspect ratio */
-}
-
-.relative-container {
-  position: relative;
-  width: 100%; /* Set the width and height of the container as needed */
-  height: 100%; /* Set the width and height of the container as needed */
-  background-image: url('/src/components/backgrounds/gridBackground.svg'); /* Replace 'your-background.svg' with the path to your SVG image */
-  background-size: contain; /* You can use 'contain' or 'cover' based on your needs */
-  background-repeat: no-repeat;
-  background-position: center center; /* This centers the background both horizontally and vertically */
 }
