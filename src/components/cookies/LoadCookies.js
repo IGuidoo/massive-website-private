@@ -30,7 +30,7 @@ function LoadCookies() {
 
     const loadScript = (src) => {
         const script = document.createElement('script');
-        script.type = 'text/partytown';
+        // script.type = 'text/partytown';
         script.src = src;
         script.async = true;
         document.head.appendChild(script);
