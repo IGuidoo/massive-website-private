@@ -16,7 +16,7 @@ import {
 // import { footerData } from "../../constants/footerData";
 import styles from "@/styles/styles";
 import RenderText from "@/lib/RenderText";
-import Test from "../FooterSignUp";
+import Test from "./FooterSignUp";
 
 
 

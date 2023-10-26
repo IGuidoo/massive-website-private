@@ -11,8 +11,8 @@ import { ChartBarIcon } from '@heroicons/react/20/solid'
 import Massive_Header_SVG_Website_page from "@/images/hero/SVG_Website_page.svg"
 
 //Links Rechts
-import LTRI from "@/components/LTRI"
-import LIRT from "@/components/LIRT"
+import LTRI from "@/components/layouts/LTRI"
+import LIRT from "@/components/layouts/LIRT"
 
 // Accordion
 import { UserGroupIcon, ShieldCheckIcon, MegaphoneIcon, PresentationChartLineIcon, ArrowTrendingUpIcon} from '@heroicons/react/20/solid'

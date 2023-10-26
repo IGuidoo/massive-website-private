@@ -2,7 +2,7 @@
 
 import React from "react";
 import dynamic from 'next/dynamic';
-import SimpleForm from "@/components/SimpleForm";
+import SimpleForm from "@/components/forms/SimpleForm";
 import styles from "@/styles/styles";
 import useWindowWidth from '@/hooks/useWindowWidth';
 import useNearScreen from "@/hooks/useNearScreen";

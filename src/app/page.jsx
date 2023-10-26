@@ -74,7 +74,8 @@ import Accordions from "@/components/sections/Accordions";
 import SimpleIconHeadingText from "@/components/cards/SimpleIconHeadingText";
 import SimpleNavbar from "@/components/navbar/SimpleNavbar";
 import { HomeBannerBackground } from "@/assets/backgrounds";
-import EmailSignupBar from "@/components/EmailSignupBar";
+import EmailSignupBar from "@/components/forms/EmailSignupBar";
+import GeneralMultiStepContactForm from "@/components/forms/GeneralMultiStepContactForm";
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -106,6 +107,10 @@ export default function page() {
                 <Hero data={HeroData} />
             </section>
 
+            <section>
+                <GeneralMultiStepContactForm />
+            </section>
+
             <main>
 
                 <section className={`${styles.section}`}>
@@ -122,6 +127,7 @@ export default function page() {
                     <SubHeadingWithHeadingAndText data={OnzeDienstenData.title} headingStyle="4xl" containerStyles="gap-3 max-w-[854px] items-center md:text-center md:mx-auto pb-12" />
                     <ShowContentBasedOnActiveElement data={dienstenData} indexCardType="IconHeadingTextIndex" />
                 </section>
+
 
                 <section className={` ${styles.boxWidth} my-15 mb:my-36 mx-auto home-banner h-fit rounded-[50px] overflow-hidden`}>
                     <div className="max-w-[570px] my-20 ml-28">

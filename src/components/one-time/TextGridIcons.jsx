@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react'
-// import GridBackground from "@/components/backgrounds/gridBackground.svg"
 
 // Import Utilities
 import useWindowWidth from '@/hooks/useWindowWidth'
@@ -43,10 +42,6 @@ const TextGridIcons = ({ data = [] }) => {
                         <SwipeGridIconsText key={index} data={chunk} cssClass="grid-cols-2  md:grid-cols-3 lg:grid-rows-4 gap-4" />
                     ))}
                 </SwipeableContainer>
-                <div className='absolute perfect-center'>
-                        {/* use scale for mb */}
-                        {/* <GridBackground /> */}
-                    </div>
             </div>
         </>
     )

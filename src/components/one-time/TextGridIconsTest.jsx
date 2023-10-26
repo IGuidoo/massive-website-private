@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from 'react'
-// import GridBackground from "@/components/backgrounds/gridBackground.svg"
 
 // Import Utilities
 import useWindowWidth from '@/hooks/useWindowWidth'
@@ -43,10 +42,7 @@ const TextGridIcons = ({ data = [] }) => {
                     ))}
                 </SwipeableBase>
                 <SwipeableArrowNavigation activeIndex={activeIndex} itemsCount={chunks.length} setActiveIndex={setActiveIndex} />
-                <div className='absolute perfect-center'>
-                    {/* use scale for mb */}
-                    {/* <GridBackground /> */}
-                </div>
+
             </div>
         </>
     );
