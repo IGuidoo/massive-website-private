@@ -2,7 +2,7 @@ import styles from "@/styles/styles";
 
 const IconHeadingTextIndex = ({ cardData, index, activeIndex, setactiveindex }) => {
     return (
-        <li
+        <button
             className={`p-3 gap-4 md:gap-0 md:p-6 flex md:flex-col rounded-lg cursor-pointer transition duration-300
                 ${activeIndex === index ? "bg-white shadow-sm" : ""}
             `}
@@ -18,7 +18,7 @@ const IconHeadingTextIndex = ({ cardData, index, activeIndex, setactiveindex }) 
                 <p className={`text-sm leading-5 font-medium md:text-base md:leading-6 md:font-semibold text-secondary-500 md:pt-3 transition
                                 ${activeIndex === index ? 'text-gradient-primary' : '' }`}>{cardData.indexCard.subHeading}</p>
             </div>
-        </li>
+        </button>
     );
 }
 

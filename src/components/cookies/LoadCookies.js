@@ -21,23 +21,16 @@ function LoadCookies() {
             // loadScript('path-to-statistics-script.js')
         }
         else {
-            <Script
-                id="Clarity"
-            >
-            {`
-                    (function(c,l,a,r,i,t,y){
-                        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-                    })(window, document, "clarity", "script", "jg7avbatlf");
-            `}
-            </Script>
-
+            console.log('Statistics cookies not accepted');
+            loadScript('/loadClarity.js');
         }
     }, [cookies]);
 
+
+
     const loadScript = (src) => {
         const script = document.createElement('script');
+        script.type = 'text/partytown';
         script.src = src;
         script.async = true;
         document.head.appendChild(script);
