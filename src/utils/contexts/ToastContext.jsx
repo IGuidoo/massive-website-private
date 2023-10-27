@@ -9,10 +9,22 @@ export const useToast = () => {
 };
 
 export const ToastProvider = ({ children }) => {
-  const [showToast, setShowToast] = useState(false);
+  const [showToast, setShowToast] = useState(() => false);
+  const [toastType, setToastType] = useState();  // Add this state
+  const [toastMessage, setToastMessage] = useState();  // And this one
+  const [showToastContactForm, setShowToastContactForm] = useState();
 
   return (
-    <ToastContext.Provider value={{ showToast, setShowToast }}>
+    <ToastContext.Provider value={{ 
+      showToast, 
+      setShowToast, 
+      toastType, 
+      setToastType, 
+      toastMessage, 
+      setToastMessage,
+      showToastContactForm,
+      setShowToastContactForm,
+    }}>
       {children}
     </ToastContext.Provider>
   );

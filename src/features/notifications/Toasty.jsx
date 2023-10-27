@@ -2,20 +2,29 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/solid';
+import { useToast } from '@/utils/contexts/ToastContext';
 
 const Toast = ({ onClose, message, type = "success" }) => {
+  const { toastType, setToastType, toastMessage, setToastMessage } = useToast(); 
   const [visible, setVisible] = useState(true);
   const timerRef = useRef(null);
 
+  const resetToast = () => {
+    setToastType(null);
+    setToastMessage(null);
+    // console.log('Toast reset');
+  }
+
   useEffect(() => {
-    console.log('Toast mounted with type:', type);
+    // console.log('Toast mounted with type:', type);
     timerRef.current = setTimeout(() => {
       setVisible(false);
       setTimeout(onClose, 500);
     }, 3000);
 
     return () => {
-      console.log('Toast unmounting with type:', type);
+      // console.log('Toast unmounting with type:', type);
+      resetToast();
       clearTimeout(timerRef.current);
     }
   }, [onClose]);
@@ -23,8 +32,12 @@ const Toast = ({ onClose, message, type = "success" }) => {
   const handleButtonClick = () => {
     clearTimeout(timerRef.current);
     setVisible(false);
-    setTimeout(onClose, 500);
-  };
+    resetToast();
+    console.log(toastType)
+    setTimeout(() => {
+        onClose();
+    }, 500);
+};
 
   // Define styles for each toast type
   const toastStyles = {

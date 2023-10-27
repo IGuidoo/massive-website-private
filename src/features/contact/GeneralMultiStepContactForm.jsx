@@ -6,7 +6,7 @@ import styles from "@/styles/styles";
 
 // Toast
 import Toast from '@/features/notifications/Toasty';
-import { useToast } from '@/utils/contexts/ToastContext'; 
+import { useToast } from '@/utils/contexts/ToastContext';
 
 const INITIAL_ANSWERS = {
     selectedService: '',
@@ -39,12 +39,13 @@ const INITIAL_ANSWERS = {
     // OnlineMarketingStrategie
     huidigeMarketingsKanalen: [],
     onlineMarkeingUitdagingen: '',
-    zakelijkeDoelen: '',   
+    zakelijkeDoelen: '',
     AndereOnlineMarketingKanalen: '',
 };
 
 const GeneralMultiStepContactForm = () => {
-    const { showToast, setShowToast } = useToast();
+    const { showToastContactForm, setShowToastContactForm, toastType, setToastType, toastMessage, setToastMessage } = useToast();
+
 
     const [isOpen, setIsOpen] = useState(false);
     const [currentStep, setCurrentStep] = useState("step1");
@@ -67,17 +68,16 @@ const GeneralMultiStepContactForm = () => {
         );
         // console.log("Filtered Answers: " + filteredAnswers);
 
-
-        // alert('Email sent successfully!');
-        setShowToast(true)
-        
-
+        setToastType("success");
+        setToastMessage("Email is verstuurd!");
+        setShowToastContactForm(true);
 
         // Reset form and states
         setCurrentStep("step1");
-        setAnswers( INITIAL_ANSWERS );
+        setAnswers(INITIAL_ANSWERS);
         setIsOpen(false);
-                // try {
+
+        // try {
         //     const response = await fetch('/api/send-email', {
         //         method: 'POST',
         //         headers: {
@@ -93,21 +93,26 @@ const GeneralMultiStepContactForm = () => {
         //     const responseData = await response.json();
 
         //     if (responseData.success) {
-        //         alert('Email sent successfully!');
+        //         setToastType("success");
+        //         setToastMessage("Email is verstuurd!");
+        //         setShowToastContactForm(true);
+
         //         // Reset form and states
         //         setCurrentStep("step1");
-        //         setAnswers({
-        //             selectedService: '',
-        //             // ... other answers reset to their initial states ...
-        //         });
+        //         setAnswers(INITIAL_ANSWERS);
         //         setIsOpen(false);
         //     } else {
-        //         alert('Failed to send email. Please try again later.');
+        //         setToastType("alert");
+        //         setToastMessage("Oeps er is iets mis gegaan");
+        //         setShowToastContactForm(true);
         //     }
         // } catch (error) {
         //     console.error('Error sending email:', error);
-        //     alert('An error occurred. Please try again later.');
+        //     setToastType("alert");
+        //     setToastMessage("Oeps er is iets mis gegaan");
+        //     setShowToastContactForm(true);
         // }
+
     };
 
     const nextStep = () => {
@@ -168,9 +173,8 @@ const GeneralMultiStepContactForm = () => {
     return (
         <>
             <button onClick={() => setIsOpen(true)}>Contact</button>
-            
-            {showToast && <Toast onClose={() => setShowToast(false)} />}
 
+            {showToastContactForm && <Toast type={toastType} message={toastMessage} onClose={() => setShowToastContactForm(false)} />}
 
             <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
                 {currentStep === "step1" &&
