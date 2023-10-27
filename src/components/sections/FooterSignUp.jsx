@@ -2,10 +2,10 @@
 
 import React from "react";
 import dynamic from 'next/dynamic';
-import SimpleForm from "@/components/forms/SimpleForm";
+import SimpleForm from "@/features/contact/SimpleForm";
 import styles from "@/styles/styles";
-import useWindowWidth from '@/hooks/useWindowWidth';
-import useNearScreen from "@/hooks/useNearScreen";
+import useWindowWidth from '@/utils/hooks/useWindowWidth';
+import useNearScreen from "@/utils/hooks/useNearScreen";
 
 const FooterSignUp = ({ data = [] }) => {
     const windowWidth = useWindowWidth();

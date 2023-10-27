@@ -101,6 +101,26 @@ module.exports = {
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
       },
+      keyframes: {
+        toastSlideIn: {
+          '0%': { top: '-100%' },
+          '100%': { top: '20px' },
+        },
+        toastSlideOut: {
+          '0%': { top: '20px' },
+          '100%': { top: '-100%' },
+        },
+        toastTimebar: {
+          '0%': { width: '100%' },
+          '100%': { width: '0' },
+        },
+      },
+      animation: {
+        toastSlideIn: 'toastSlideIn 0.5s ease forwards',
+        toastSlideOut: 'toastSlideOut 0.5s ease forwards',
+        toastTimebar: 'toastTimebar 3s linear forwards'
+      },
+
     },
   },
   plugins: [

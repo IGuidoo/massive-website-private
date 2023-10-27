@@ -7,7 +7,7 @@ import Boek from '@/images/Boek.png'
 import Image from "next/image";
 
 
-import useWindowWidth from "@/hooks/useWindowWidth";
+import useWindowWidth from "@/utils/hooks/useWindowWidth";
 
 const Diensten = ({ data = [] }) => {
     // states

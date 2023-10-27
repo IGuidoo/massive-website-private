@@ -3,7 +3,14 @@
 import React, { useEffect, useState, useMemo } from "react";
 
 // Import Components
-import { SwipeableBase, SwipeableArrowNavigation, SwipeableHeading, SwipeableTextNavigation } from "./SwipeableTest";
+// import { SwipeableBase, SwipeableArrowNavigation, SwipeableHeading, SwipeableTextNavigation } from "../features/swipe/SwipeableTest";
+import {
+    SwipeableBase,
+    SwipeableArrowNavigation,
+    SwipeableTextNavigation,
+    SwipeableHeading,
+} from "@/features/swipe";
+
 import IconHeadingTextIndex from "./cards/IconHeadingTextIndex";
 import IconLeftHeadingText from "./cards/IconLeftHeadingText";
 import { HomeEcommerce } from "@/assets/images";

@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from '@/styles/styles'
-import useWindowWidth from '@/hooks/useWindowWidth'
+import useWindowWidth from '@/utils/hooks/useWindowWidth'
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 

@@ -53,11 +53,9 @@ import TextWithIcons from "@/components/sections/TextWithIcons";
 
 
 
-// const TextGridIcons = dynamic(() =>import( "@/components/one-time/TextGridIcons" )) ;
-// import TextGridIimportest from "@/components/one-time/TextGridIimportest";
 
 import Hero from "../components/Hero";
-const TextGridIconsTest = dynamic(() => import("@/components/one-time/TextGridIconsTest"), {
+const TextGridIcons = dynamic(() => import("@/components/one-time/TextGridIcons"), {
     ssr: false,
     loading: () => <p>Loading...</p>
 });
@@ -74,8 +72,10 @@ import Accordions from "@/components/sections/Accordions";
 import SimpleIconHeadingText from "@/components/cards/SimpleIconHeadingText";
 import SimpleNavbar from "@/components/navbar/SimpleNavbar";
 import { HomeBannerBackground } from "@/assets/backgrounds";
-import EmailSignupBar from "@/components/forms/EmailSignupBar";
-import GeneralMultiStepContactForm from "@/components/forms/GeneralMultiStepContactForm";
+import EmailSignupBar from "@/features/contact/EmailSignupBar";
+import GeneralMultiStepContactForm from "@/features/contact/GeneralMultiStepContactForm";
+import AnimatedBox from "@/components/BoxAnimation";
+import CallToasty from "@/features/notifications/CallToasty";
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
 // import test from "@/components/icons/test.svg"
@@ -111,6 +111,12 @@ export default function page() {
                 <GeneralMultiStepContactForm />
             </section>
 
+            <section className={`${styles.boxWidth} mx-auto ${styles.sectionPadding} relative overflow-hidden `}>
+
+                <AnimatedBox />
+                <CallToasty />
+            </section>
+
             <main>
 
                 <section className={`${styles.section}`}>
@@ -140,13 +146,10 @@ export default function page() {
                 <section className={`${styles.section}`}>
                     <TextWithIcons data={TextIconData} />
                 </section>
-
-                {/* <section className={`${styles.section} lg:grid lg:grid-cols-12 `}>
-                    <TextGridIcons data={newOverOns} />
-                </section> */}
+                
 
                 <section className={`${styles.section} lg:grid lg:grid-cols-12 `}>
-                    <TextGridIconsTest data={newOverOns} />
+                    <TextGridIcons data={newOverOns} />
                 </section>
 
 

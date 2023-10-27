@@ -1,10 +1,11 @@
-
+"use client"
 
 import Script from 'next/script';
 import clsx from 'clsx';
 
-import CookieConsentBanner from '@/components/cookies/CookieConsentBanner';
-import LoadCookies from '@/components/cookies/LoadCookies';
+import CookieConsentBanner from '@/features/cookieConsent/CookieConsentBanner';
+import LoadCookies from '@/features/cookieConsent/LoadCookies';
+import { Providers } from "@/app/providers"
 
 
 export const metadata = {
@@ -27,9 +28,9 @@ export default function RootLayout({ children }) {
         <CookieConsentBanner />
         <LoadCookies />
 
-        {/* <Providers> */}
+        <Providers>
           {children}
-        {/* </Providers> */}
+        </Providers>
 
       </body>
     </html>
