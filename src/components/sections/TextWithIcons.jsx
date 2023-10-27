@@ -1,14 +1,14 @@
 import React from 'react'
 
 import styles from '@/styles/styles'
-import { LogoSmall } from '../icons'
+import { MassiveLogoColor } from "@/assets/massiveBranding"
 
 const TextWithIcons = ({ data = [] }) => {
     return (
         <>
             <div className='flex flex-col gap-4 items-center pb-12 md:pb-11'>
                 <div className="flex text-xs leading-4">
-                    <LogoSmall />
+                    <MassiveLogoColor className="w-5 h-3" />
                     {data.title.topText.map((textObj, textIndex) => (
                         <p key={textIndex} className={`${textObj.className}`}>
                             {textObj.content}

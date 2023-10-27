@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Link from 'next/link'
-import { PurpleCheckmark } from '@/components/icons'
+import { PurpleCheckmark } from '@/assets/icons'
 
 
 const TagsList = ({ tagsData = [], tagBG, cssClass }) => {

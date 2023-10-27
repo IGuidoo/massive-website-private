@@ -26,23 +26,17 @@ import {
     PresentationChartLineIcon as PresentationChartLineIconSolid,
 } from '@heroicons/react/20/solid'
 import {
-    // Social Icons
-    FacebookGray,
-    InstagramGray,
-    LinkedinGray,
-    TwitterGray,
-
     // Onze tools Grid
     FacebookColor,
-    InstagramColor,
-    LinkedinColor,
     GoogleAdsColor,
     GoogleAnalyticsColor,
+    GoogleMyBusinessColor,
     GoogleSearchConsoleColor,
-    GoogleMybusinessColor,
+    InstagramColor,
+    LinkedinColor,
     SemRushColor,
     ShopifyColor,
-} from "../components/icons"
+} from "@/assets/icons"
 
 // Elements
 import SubHeadingWithHeadingAndText from "@/components/heading-text/SubHeadingWithHeadingAndText";
@@ -324,7 +318,7 @@ const newOverOns = {
     img: [
         { icon: <GoogleAnalyticsColor />, text: "Analytics 4" },
         { icon: <GoogleSearchConsoleColor />, text: "Search Console" },
-        { icon: <GoogleMybusinessColor />, text: "My Business" },
+        { icon: <GoogleMyBusinessColor />, text: "My Business" },
         { icon: <FacebookColor />, text: "Facebook" },
         { icon: <InstagramColor />, text: "Instagram" },
         { icon: <LinkedinColor />, text: "Linkedin" },
@@ -333,7 +327,7 @@ const newOverOns = {
         { icon: <GoogleAdsColor />, text: "Google Ads" },
         { icon: <GoogleAnalyticsColor />, text: "Analytics 4" },
         { icon: <GoogleSearchConsoleColor />, text: "Search Console" },
-        { icon: <GoogleMybusinessColor />, text: "My Business" },
+        { icon: <GoogleMyBusinessColor />, text: "My Business" },
         { icon: <FacebookColor />, text: "Facebook" },
         { icon: <InstagramColor />, text: "Instagram" },
         { icon: <LinkedinColor />, text: "Linkedin" },

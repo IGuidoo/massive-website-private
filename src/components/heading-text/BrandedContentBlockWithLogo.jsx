@@ -6,14 +6,14 @@ import styles from '@/styles/styles'
 import RenderText from '@/lib/RenderText'
 
 // Import Assets
-import { LogoSmall } from '@/components/icons'
+import { MassiveLogoColor } from '@/assets/massiveBranding'
 
 
 const BrandedContentBlockWithLogo = ({ data = [], containerStyles, hideMbButtons }) => {
     return (
         <div className={`flex flex-col gap-6 xl:max-w-lg ${containerStyles}`}>
             <div className="flex gap-3 items-center">
-                <LogoSmall />
+                <MassiveLogoColor className="w-5 h-3" />
                 <p className="text-[12px] sm:text-sm leading-4">
                     {data.subHeading.map((textObj, textIndex) => (
                         <span key={textIndex} className={`${textObj.className}`}>

@@ -8,8 +8,7 @@ import  "@/components/navbar/ResponsiveNavbar.css"
 
 // import MegaDropdown from '@/components/navbar/MegaDropdown.jsx';
 import SmallDropdownWithIcons from './SmallDropdownWithIcons';
-import { MenuLogo, OutlineMail } from "@/components/icons"
-
+import { MassiveLogoColor } from "@/assets/massiveBranding"
 import {
     ComputerDesktopIcon,
     ShoppingCartIcon,
@@ -18,7 +17,8 @@ import {
     ServerIcon,
     PresentationChartLineIcon,
     Bars3Icon,
-    XMarkIcon
+    XMarkIcon,
+    EnvelopeIcon
 } from '@heroicons/react/24/outline'
 
 
@@ -113,7 +113,7 @@ const ResponsiveNavbar = () => {
             <nav className={` p-6 lg:h-20 lg:flex ${styles.gutterPadding} ${styles.boxWidth} mx-auto `} >
                 <div className=" h-full flex justify-between items-center" style={{ flexGrow: "1.8" }}>
                     <Link href="/" className=''>
-                        <MenuLogo />
+                        <MassiveLogoColor />
                     </Link>
 
                     <div className="nav__toggle" id="nav-toggle">
@@ -147,7 +147,7 @@ const ResponsiveNavbar = () => {
                         </li>
                         <li className={` flex flex-col lg:flex-row px-4 lg:px-0 self-center`}>
                             <Link href="/contact" className={`contact-home text-sm leading-6 font-semibold text-primary-100 py-2`}>
-                                <OutlineMail />
+                                <EnvelopeIcon />
                                 Contact
                             </Link>
                         </li>

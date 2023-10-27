@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, memo } from 'react';
 // import useWindowWidth from '@/hooks/useWindowWidth';
-import { SpeedIndex, Toegankelijkheid } from '../icons';
+import { SpeedIndex, Toegankelijkheid } from '@/assets/icons';
 import styles from '@/styles/styles';
 
 const updateSpeed = 12;

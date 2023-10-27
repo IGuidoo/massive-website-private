@@ -4,6 +4,10 @@ import Modal from "@/shared/modals/Modal";
 import React, { useState } from "react";
 import styles from "@/styles/styles";
 
+// Toast
+import Toast from '@/features/notifications/Toasty';
+import { useToast } from '@/utils/contexts/ToastContext'; 
+
 const INITIAL_ANSWERS = {
     selectedService: '',
     websiteURL: '',
@@ -32,9 +36,16 @@ const INITIAL_ANSWERS = {
     AndereOnlineAdvertentiePladform: '',
     budget: '',
 
+    // OnlineMarketingStrategie
+    huidigeMarketingsKanalen: [],
+    onlineMarkeingUitdagingen: '',
+    zakelijkeDoelen: '',   
+    AndereOnlineMarketingKanalen: '',
 };
 
 const GeneralMultiStepContactForm = () => {
+    const { showToast, setShowToast } = useToast();
+
     const [isOpen, setIsOpen] = useState(false);
     const [currentStep, setCurrentStep] = useState("step1");
     const [stepHistory, setStepHistory] = useState([]);
@@ -58,15 +69,8 @@ const GeneralMultiStepContactForm = () => {
 
 
         // alert('Email sent successfully!');
-
-        // Display the popup
-        setShowPopup(true);
-
-        // Hide the popup after 3 seconds (3000ms)
-        setTimeout(() => {
-            setShowPopup(false);
-        }, 3000);
-
+        setShowToast(true)
+        
 
 
         // Reset form and states
@@ -104,8 +108,6 @@ const GeneralMultiStepContactForm = () => {
         //     console.error('Error sending email:', error);
         //     alert('An error occurred. Please try again later.');
         // }
-
-
     };
 
     const nextStep = () => {
@@ -166,6 +168,9 @@ const GeneralMultiStepContactForm = () => {
     return (
         <>
             <button onClick={() => setIsOpen(true)}>Contact</button>
+            
+            {showToast && <Toast onClose={() => setShowToast(false)} />}
+
 
             <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
                 {currentStep === "step1" &&
@@ -244,14 +249,6 @@ const GeneralMultiStepContactForm = () => {
 
                 {currentStep === "contactDetails" && <ContactDetails onBack={prevStep} onSubmit={submitForm} />}
             </Modal>
-
-            {showPopup && (
-                <div
-                    className={`fixed bottom-0 left-0 right-0 mb-4 mx-4 p-4 bg-green-500 text-white rounded-md shadow-md transform transition-transform ease-out duration-1000 ${showPopup ? 'translate-y-0' : 'translate-y-full'}`}>
-                    Email sent successfully!
-                </div>
-
-            )}
         </>
     );
 };
@@ -393,7 +390,6 @@ const ONLINE_MARKETING_KANALEN = [
     { value: "Contentmarketing", label: "Contentmarketing" },
     { value: "AndereOnlineMarketingKanalen", label: "Anders (specificeer)" },
 ];
-
 
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import AccordionSinge from '@/components/Accordion'
 import styles from '@/styles/styles'
 
-import { MassiveLogoGray } from "@/components/icons"
+import { MassiveLogoGray } from "@/assets/massiveBranding"
 
 const Accordions = ({ data = [], containerStyles }) => {
     return (

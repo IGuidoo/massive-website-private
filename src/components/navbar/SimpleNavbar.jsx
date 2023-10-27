@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { MassiveLogoColor } from '@/assets/logos'
+import { MassiveLogoColor } from "@/assets/massiveBranding"
 import { EnvelopeIcon }  from "@heroicons/react/24/outline"
 
 

@@ -1,15 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
-import { MenuLogo, OutlineMail } from "../icons"
+import { MassiveLogoColor } from "@/assets/massiveBranding"
 
 import {
     FacebookGray,
     InstagramGray,
     LinkedinGray,
     TwitterGray,
-} from "../icons"
+} from "@/assets/icons";
 
 
 
@@ -108,7 +107,7 @@ const Footer = () => {
                         <div className="flex flex-col justify-between gap-12  xl:gap-[160px]  ">
                             <div>
                                 <div className="space-y-12 xl:space-y-8">
-                                    <MenuLogo />
+                                    <MassiveLogoColor />
                                     <p className={`max-w-[330px] text-sm leading-5 font-normal text-secondary-600 `}> {/*${styles.paragraafSmall}*/}
                                         <RenderText content={footerData.slogan} />
                                     </p>

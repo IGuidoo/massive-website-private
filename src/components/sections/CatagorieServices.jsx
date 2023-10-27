@@ -7,10 +7,10 @@ import { useSwipeable } from "react-swipeable";
 // Import Utilities
 import styles from "@/styles/styles.js"
 import RenderText from "@/lib/RenderText";
-import Image from "next/image";
 
 // Import Assets
-import { LogoSmall } from "../icons";
+import { MassiveLogoColor } from "@/assets/massiveBranding"
+
 
 const CatagoriesServices = ({ data = [] }) => {
   const activeDienstIndexShownFirst = 0;
@@ -79,8 +79,7 @@ const CatagoriesServices = ({ data = [] }) => {
 
               <div className="flex flex-col gap-6 xl:max-w-lg grid-pos-row-1">
                 <div className="flex gap-3">
-                  {/* <img src={logoSmall} alt="logo" /> */}
-                  <LogoSmall />
+                  <MassiveLogoColor className="w-6 h-3" />
                   <p className="text-[12px] sm:text-sm leading-4">
                     {dienst.topText.map((textObj, textIndex) => (
                       <span key={textIndex} className={`${textObj.className}`}>

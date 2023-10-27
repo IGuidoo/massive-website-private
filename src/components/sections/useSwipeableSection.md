@@ -122,3 +122,31 @@ If you want to provide arrow navigation to users, use the `SwipeableArrowNavigat
 
 By following the above steps, you can achieve a swipeable display with the `TextGridIcons` component. Remember, each swipeable "page" or "view" should be rendered conditionally based on the `activeIndex`, rather than stacking them in a list. This ensures that the user sees only one chunk of data at a time and can swipe left or right to navigate between them.
 
+
+
+
+
+
+
+src/
+|-- utilities/
+|   |-- helpers/
+|   |   |-- formatDate.js
+|   |   |-- validateInput.js
+|   |   |-- api.js
+|   |   |-- ...
+|   |
+|   |-- hooks/
+|   |   |-- useWindowSize.js
+|   |   |-- useLocalStorage.js
+|   |   |-- ...
+|   |
+|   |-- context/
+|   |   |-- ThemeContext.js
+|   |   |-- UserContext.js
+|   |   |-- ...
+|   |
+|   |-- config/
+|   |   |-- apiEndpoints.js
+|   |   |-- themeConfig.js
+|   |   |-- ...

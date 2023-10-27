@@ -1,5 +1,5 @@
 import { ArchiveBoxXMarkIcon, ArrowDownLeftIcon, LinkIcon  } from '@heroicons/react/24/outline';
-import { WordpressGray, ShopifyGray } from '@/components/icons';
+import { WordpressGray, ShopifyGray } from '@/assets/icons';
 
 export const navigation = [
 
