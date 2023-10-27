@@ -68,7 +68,6 @@ import SimpleNavbar from "@/components/navbar/SimpleNavbar";
 import { HomeBannerBackground } from "@/assets/backgrounds";
 import EmailSignupBar from "@/features/contact/EmailSignupBar";
 import GeneralMultiStepContactForm from "@/features/contact/GeneralMultiStepContactForm";
-import AnimatedBox from "@/components/BoxAnimation";
 import CallToasty from "@/features/notifications/CallToasty";
 
 // import homeMobileBackgroundPNG from "../../public/images/homeMobileBackgroundPNG.png
@@ -106,8 +105,6 @@ export default function page() {
             </section>
 
             <section className={`${styles.boxWidth} mx-auto ${styles.sectionPadding} relative overflow-hidden `}>
-
-                <AnimatedBox />
                 <CallToasty />
             </section>
 

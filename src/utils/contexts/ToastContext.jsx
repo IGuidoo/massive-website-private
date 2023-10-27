@@ -12,7 +12,6 @@ export const ToastProvider = ({ children }) => {
   const [showToast, setShowToast] = useState(() => false);
   const [toastType, setToastType] = useState();  // Add this state
   const [toastMessage, setToastMessage] = useState();  // And this one
-  const [showToastContactForm, setShowToastContactForm] = useState();
 
   return (
     <ToastContext.Provider value={{ 
@@ -22,8 +21,6 @@ export const ToastProvider = ({ children }) => {
       setToastType, 
       toastMessage, 
       setToastMessage,
-      showToastContactForm,
-      setShowToastContactForm,
     }}>
       {children}
     </ToastContext.Provider>

@@ -44,20 +44,18 @@ const INITIAL_ANSWERS = {
 };
 
 const GeneralMultiStepContactForm = () => {
-    const { showToastContactForm, setShowToastContactForm, toastType, setToastType, toastMessage, setToastMessage } = useToast();
-
+    const { toastType, setToastType, toastMessage, setToastMessage } = useToast();
+    const [showToastContactForm, setShowToastContactForm] = useState(false);
 
     const [isOpen, setIsOpen] = useState(false);
     const [currentStep, setCurrentStep] = useState("step1");
     const [stepHistory, setStepHistory] = useState([]);
-    const [showPopup, setShowPopup] = useState(false);
 
     const [budget, setBudget] = useState(500);
 
     const [answers, setAnswers] = useState(
         INITIAL_ANSWERS
     );
-
 
     // Handle form submission here
     const submitForm = async () => {
@@ -140,7 +138,7 @@ const GeneralMultiStepContactForm = () => {
                         setCurrentStep("GeenVanDeBovenstaande");
                         break;
                     default:
-                        setCurrentStep("step2");
+                        setCurrentStep("contactDetails");
                         break;
                 }
                 break;
@@ -168,6 +166,9 @@ const GeneralMultiStepContactForm = () => {
         // Set the last step as the current step
         setCurrentStep(lastStep);
     };
+    // Handle form submission here
+
+
 
 
     return (
@@ -261,10 +262,7 @@ function RadioGroup({ options, selectedValue, onChange }) {
     return (
         <div className="flex flex-col">
             {options.map(option => (
-                <label
-                    key={option.value}
-                    className=" flex items-center gap-1"
-                >
+                <label key={option.value} className="flex items-center gap-1">
                     <input
                         type="radio"
                         className="h-4 w-4 rounded border-gray-300 accent-primary-500 focus:accent-primary-500"
@@ -400,314 +398,363 @@ const ONLINE_MARKETING_KANALEN = [
 
 
 // Different steps
-
-function Step1({ onNext, selectedService, setService }) {
-    const handleNextClick = () => {
-        console.log(selectedService);
-        onNext();
-    }
-
+function Step1({ onNext, selectedService, setService, showErrorMessage, setShowErrorMessage }) {
     return (
-        <div className="flex flex-col items-start">
-            <h2 className=" text-2xl font-bold">Wat Leuk dat u Contact met ons wilt zoeken</h2>
-            <p>Om een zo goed mogelijk beeld van uw situatie te krijgen willen we u graag een paar vragen stellen</p>
+        <>
+            <div className="flex flex-col items-start">
+                <h2 className="text-2xl font-bold">Wat Leuk dat u Contact met ons wilt zoeken</h2>
+                <p>Om een zo goed mogelijk beeld van uw situatie te krijgen willen we u graag een paar vragen stellen</p>
 
-            <h3 className="pt-4">In welke Dienst bent u geintereseerd</h3>
-            <RadioGroup options={SERVICE_OPTIONS} selectedValue={selectedService} onChange={setService} />
+                <h3 className="pt-4">In welke Dienst bent u geïnteresseerd</h3>
+                <RadioGroup
+                    options={SERVICE_OPTIONS}
+                    selectedValue={selectedService}
+                    onChange={setService}
+                    isRequired={true}
+                    showErrorMessage={showErrorMessage}
+                />
+            </div>
 
-            <button className="px-4 py-2 bg-primary-500 text-white rounded-md ml-auto mt-4" onClick={handleNextClick}>Volgende</button>
-        </div>
+            <div className="mt-auto pt-4 flex flex-row justify-between">
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
+            </div>
+        </>
     );
 }
 
 function WebDesignAndDevelopment({ onNext, onBack, heeftWebsite, setHeeftWebsite, redenHerontwerpen, setRedenHerontwerpen, websiteFuncties, setWebsiteFuncties, answers, setAnswers }) {
+
     return (
-        <div className="grid grid-cols-5">
-            <div className=" col-span-3">
-                <h2 className={` text-2xl`}>Web Design & Development</h2>
+        <>
+            <div className="grid grid-cols-5">
+                <div className=" col-span-3">
+                    <h2 className={` text-2xl`}>Web Design & Development</h2>
 
-                <h3 className="pt-4">Heeft u op dit moment al een website?</h3>
-                <RadioGroup options={JANEE_OPTIONS} selectedValue={heeftWebsite} onChange={setHeeftWebsite} />
-                {heeftWebsite.includes("ja") && (
-                    <textarea
-                        className="w-full"
-                        placeholder="Website URL"
-                        rows="1"
-                        value={answers.websiteURL}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, websiteURL: e.target.value }))}
-                    ></textarea>
-                )}
-
-
-                {/* reden herontwerpen */}
-                <h3 className="pt-4">Zo ja, wat zijn de belangrijkste rendenen voor het herontwerpen/upgraden?</h3>
-                <CheckboxGroup options={REDESIGN_REASONS} selectedValues={redenHerontwerpen} onChange={setRedenHerontwerpen} />
-                {/* Add a textarea for users to provide a text answer */}
-                {redenHerontwerpen.includes("AndereRedenHerontwerpen") && (
-                    <textarea
-                        className="w-full"
-                        placeholder="Gelieve uw reden te specificeren..."
-                        rows="4"
-                        value={answers.andereRedenHerontwerpen}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, andereRedenHerontwerpen: e.target.value }))}
-                    ></textarea>
-                )}
+                    <h3 className="pt-4">Heeft u op dit moment al een website?</h3>
+                    <RadioGroup options={JANEE_OPTIONS} selectedValue={heeftWebsite} onChange={setHeeftWebsite} />
+                    {heeftWebsite.includes("ja") && (
+                        <textarea
+                            className="w-full"
+                            placeholder="Website URL"
+                            rows="1"
+                            value={answers.websiteURL}
+                            onChange={(e) => setAnswers(prev => ({ ...prev, websiteURL: e.target.value }))}
+                        ></textarea>
+                    )}
 
 
-                <h3 className="pt-4">Welke functies zoekt u?</h3>
-                <CheckboxGroup options={WEBSITE_FUNCTIES} selectedValues={websiteFuncties} onChange={setWebsiteFuncties} />
-                {/* Add a textarea for users to provide a text answer */}
-                {websiteFuncties.includes("AndereRedenWebsiteFuncties") && (
-                    <textarea
-                        className="w-full"
-                        placeholder="Gelieve uw reden te specificeren..."
-                        rows="4"
-                        value={answers.AndereRedenWebsiteFuncties}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, AndereRedenWebsiteFuncties: e.target.value }))}
-                    ></textarea>
-                )}
+                    {/* reden herontwerpen */}
+                    <h3 className="pt-4">Zo ja, wat zijn de belangrijkste rendenen voor het herontwerpen/upgraden?</h3>
+                    <CheckboxGroup options={REDESIGN_REASONS} selectedValues={redenHerontwerpen} onChange={setRedenHerontwerpen} />
+                    {/* Add a textarea for users to provide a text answer */}
+                    {redenHerontwerpen.includes("AndereRedenHerontwerpen") && (
+                        <textarea
+                            className="w-full"
+                            placeholder="Gelieve uw reden te specificeren..."
+                            rows="4"
+                            value={answers.andereRedenHerontwerpen}
+                            onChange={(e) => setAnswers(prev => ({ ...prev, andereRedenHerontwerpen: e.target.value }))}
+                        ></textarea>
+                    )}
 
 
-                <div className="pt-4 flex flex-row justify-between">
-
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
+                    <h3 className="pt-4">Welke functies zoekt u?</h3>
+                    <CheckboxGroup options={WEBSITE_FUNCTIES} selectedValues={websiteFuncties} onChange={setWebsiteFuncties} />
+                    {/* Add a textarea for users to provide a text answer */}
+                    {websiteFuncties.includes("AndereRedenWebsiteFuncties") && (
+                        <textarea
+                            className="w-full"
+                            placeholder="Gelieve uw reden te specificeren..."
+                            rows="4"
+                            value={answers.AndereRedenWebsiteFuncties}
+                            onChange={(e) => setAnswers(prev => ({ ...prev, AndereRedenWebsiteFuncties: e.target.value }))}
+                        ></textarea>
+                    )}
+                </div>
+                <div>
+                    rechter kant
                 </div>
             </div>
-            <div>
-                rechter kant
+            <div className="mt-auto pt-4 flex flex-row justify-between">
+
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
             </div>
-        </div>
+        </>
     )
 }
 
 function EcommerceAndWebWinkel({ onNext, onBack, heeftWebsite, setHeeftWebsite, ecommercePlatform, setEcommercePlatform, hoeveelheidEcommerceProducten, setHoeveelheidEcommerceProducten, answers, setAnswers }) {
     return (
-        <div className="grid grid-cols-5">
-            <div className=" col-span-3">
-                <h2 className={` ${styles.heading4xl}`}>Ecommerce & Webwinkel Oplossingen</h2>
+        <>
+            <div className="grid grid-cols-5">
+                <div className=" col-span-3">
+                    <h2 className={` ${styles.heading4xl}`}>Ecommerce & Webwinkel Oplossingen</h2>
 
-                <h3 className="pt-4">Heeft u op dit moment al een website?</h3>
-                <RadioGroup options={JANEE_OPTIONS} selectedValue={heeftWebsite} onChange={setHeeftWebsite} />
-                {heeftWebsite.includes("ja") && (
-                    <textarea
-                        className="w-full"
-                        placeholder="Website URL"
-                        rows="1"
-                        value={answers.websiteURL}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, websiteURL: e.target.value }))}
-                    ></textarea>
-                )}
+                    <h3 className="pt-4">Heeft u op dit moment al een website?</h3>
+                    <RadioGroup options={JANEE_OPTIONS} selectedValue={heeftWebsite} onChange={setHeeftWebsite} />
+                    {heeftWebsite.includes("ja") && (
+                        <textarea
+                            className="w-full"
+                            placeholder="Website URL"
+                            rows="1"
+                            value={answers.websiteURL}
+                            onChange={(e) => setAnswers(prev => ({ ...prev, websiteURL: e.target.value }))}
+                        ></textarea>
+                    )}
 
-                <h3 className="pt-4">Welk platform gebruikt u of heeft u interesse in?</h3>
-                <CheckboxGroup options={ECOMMERCE_PLATFORM} selectedValues={ecommercePlatform} onChange={setEcommercePlatform} />
-                {ecommercePlatform.includes("AndereRedenEcommerce") && (
-                    <textarea
-                        className="w-full"
-                        placeholder="Specificeer uw platform..."
-                        rows="2"
-                        value={answers.AndereRedenEcommerce}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, AndereRedenEcommerce: e.target.value }))}
-                    ></textarea>
-                )}
+                    <h3 className="pt-4">Welk platform gebruikt u of heeft u interesse in?</h3>
+                    <CheckboxGroup options={ECOMMERCE_PLATFORM} selectedValues={ecommercePlatform} onChange={setEcommercePlatform} />
+                    {ecommercePlatform.includes("AndereRedenEcommerce") && (
+                        <textarea
+                            className="w-full"
+                            placeholder="Specificeer uw platform..."
+                            rows="2"
+                            value={answers.AndereRedenEcommerce}
+                            onChange={(e) => setAnswers(prev => ({ ...prev, AndereRedenEcommerce: e.target.value }))}
+                        ></textarea>
+                    )}
 
-                <h3 className="pt-4">Hoeveel producten wilt u verkopen?</h3>
-                <RadioGroup options={ECOMMERCE_PRODUCTS} selectedValue={hoeveelheidEcommerceProducten} onChange={setHoeveelheidEcommerceProducten} />
+                    <h3 className="pt-4">Hoeveel producten wilt u verkopen?</h3>
+                    <RadioGroup options={ECOMMERCE_PRODUCTS} selectedValue={hoeveelheidEcommerceProducten} onChange={setHoeveelheidEcommerceProducten} />
 
-                <div className="pt-4 flex flex-row justify-between">
-
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
+                </div>
+                <div>
+                    rechter kant
                 </div>
             </div>
-            <div>
-                rechter kant
+            <div className="mt-auto pt-4 flex flex-row justify-between">
+
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
             </div>
-        </div>
+        </>
     )
 }
 
 function Zoekmachineoptimalizatie({ onNext, onBack, eerderGeinvesteerdSEO, setEerderGeinvesteerdSEO, doelenSEO, setDoelenSEO, answers, setAnswers }) {
     return (
-        <div className="grid grid-cols-5">
-            <div className=" col-span-3">
-                <h2 className={`text-green-500 ${styles.heading4xl}`}>Zoekmachineoptimalizatie</h2>
+        <>
+            <div className="grid grid-cols-5">
+                <div className=" col-span-3">
+                    <h2 className={`text-green-500 ${styles.heading4xl}`}>Zoekmachineoptimalizatie</h2>
 
 
-                <h3 className="pt-4">Heeft u eerder geïnvesteerd in SEO?</h3>
-                <RadioGroup options={JANEE_OPTIONS} selectedValue={eerderGeinvesteerdSEO} onChange={setEerderGeinvesteerdSEO} />
+                    <h3 className="pt-4">Heeft u eerder geïnvesteerd in SEO?</h3>
+                    <RadioGroup options={JANEE_OPTIONS} selectedValue={eerderGeinvesteerdSEO} onChange={setEerderGeinvesteerdSEO} />
 
-                <h3 className="pt-4">Wat zijn uw belangrijkste doelen voor SEO?</h3>
-                <CheckboxGroup options={ZOEKMACHINEOPTIMALIZATIE_OPTIONS} selectedValues={doelenSEO} onChange={setDoelenSEO} />
-                {doelenSEO.includes("AndereRedenZoekmachineoptimalizatie") && (
+                    <h3 className="pt-4">Wat zijn uw belangrijkste doelen voor SEO?</h3>
+                    <CheckboxGroup options={ZOEKMACHINEOPTIMALIZATIE_OPTIONS} selectedValues={doelenSEO} onChange={setDoelenSEO} />
+                    {doelenSEO.includes("AndereRedenZoekmachineoptimalizatie") && (
+                        <textarea
+                            className="w-full"
+                            placeholder="Geef uw specifieke doelen op..."
+                            rows="4"
+                            value={answers.AndereRedenZoekmachineoptimalizatie}
+                            onChange={(e) => setAnswers(prev => ({ ...prev, AndereRedenZoekmachineoptimalizatie: e.target.value }))}
+                        ></textarea>
+                    )}
+
+                    <h3 className="pt-4">Zijn er specifieke trefwoorden of zinnen die u target?</h3>
                     <textarea
                         className="w-full"
-                        placeholder="Geef uw specifieke doelen op..."
+                        placeholder="Geef uw specifieke trefwoorden of zinnen op..."
                         rows="4"
-                        value={answers.AndereRedenZoekmachineoptimalizatie}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, AndereRedenZoekmachineoptimalizatie: e.target.value }))}
+                        value={answers.targetKeywords}
+                        onChange={(e) => setAnswers(prev => ({ ...prev, targetKeywords: e.target.value }))}
                     ></textarea>
-                )}
-
-                <h3 className="pt-4">Zijn er specifieke trefwoorden of zinnen die u target?</h3>
-                <textarea
-                    className="w-full"
-                    placeholder="Geef uw specifieke trefwoorden of zinnen op..."
-                    rows="4"
-                    value={answers.targetKeywords}
-                    onChange={(e) => setAnswers(prev => ({ ...prev, targetKeywords: e.target.value }))}
-                ></textarea>
-
-
-
-                <div className="pt-4 flex flex-row justify-between">
-
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
+                </div>
+                <div>
+                    rechter kant
                 </div>
             </div>
-            <div>
-                rechter kant
+            <div className="mt-auto pt-4 flex flex-row justify-between">
+
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
             </div>
-        </div>
+        </>
     )
 }
 
 function OnlineAdvertenties({ onNext, onBack, eerderGeinvesteerdSEA, setEerderGeinvesteerdSEA, genintereseerdeSEAPlatformen, setGenintereseerdeSEAPlatformen, budget, setBudget, answers, setAnswers }) {
     return (
-        <div className="grid grid-cols-5">
-            <div className=" col-span-3">
-                <h2 className={` ${styles.heading4xl}`}>Online Advertenties</h2>
+        <>
+            <div className="grid grid-cols-5">
+                <div className=" col-span-3">
+                    <h2 className={` ${styles.heading4xl}`}>Online Advertenties</h2>
 
-                <h3 className="pt-4">Heeft u eerder geïnvesteerd in online adverteren?</h3>
-                <RadioGroup options={JANEE_OPTIONS} selectedValue={eerderGeinvesteerdSEA} onChange={setEerderGeinvesteerdSEA} />
+                    <h3 className="pt-4">Heeft u eerder geïnvesteerd in online adverteren?</h3>
+                    <RadioGroup options={JANEE_OPTIONS} selectedValue={eerderGeinvesteerdSEA} onChange={setEerderGeinvesteerdSEA} />
 
-                <h3 className="pt-4">Welke platformen gebruikt u of heeft u interesse in?</h3>
-                <CheckboxGroup options={ONLINE_ADVERTENTIES_PLADFORMS} selectedValues={genintereseerdeSEAPlatformen} onChange={setGenintereseerdeSEAPlatformen} />
-                {genintereseerdeSEAPlatformen.includes("AndereOnlineAdvertentiePladform") && (
-                    <textarea
-                        className="w-full"
-                        placeholder="Geef uw specifieke doelen op..."
-                        rows="4"
-                        value={answers.AndereOnlineAdvertentiePladform}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, AndereOnlineAdvertentiePladform: e.target.value }))}
-                    ></textarea>
-                )}
+                    <h3 className="pt-4">Welke platformen gebruikt u of heeft u interesse in?</h3>
+                    <CheckboxGroup options={ONLINE_ADVERTENTIES_PLADFORMS} selectedValues={genintereseerdeSEAPlatformen} onChange={setGenintereseerdeSEAPlatformen} />
+                    {genintereseerdeSEAPlatformen.includes("AndereOnlineAdvertentiePladform") && (
+                        <textarea
+                            className="w-full"
+                            placeholder="Geef uw specifieke doelen op..."
+                            rows="4"
+                            value={answers.AndereOnlineAdvertentiePladform}
+                            onChange={(e) => setAnswers(prev => ({ ...prev, AndereOnlineAdvertentiePladform: e.target.value }))}
+                        ></textarea>
+                    )}
 
-                <h3 className="pt-4">Wat is uw geschatte maandelijkse advertentiebudget?</h3>
-                <label>
-                    <input
-                        type="range"
-                        min={500}
-                        max={100000}
-                        step={500}   // Increment by 500 for each step
-                        value={budget}
-                        onChange={e => setBudget(e.target.value)}
-                    />
-                </label>
+                    <h3 className="pt-4">Wat is uw geschatte maandelijkse advertentiebudget?</h3>
+                    <label>
+                        <input
+                            type="range"
+                            min={500}
+                            max={100000}
+                            step={500}   // Increment by 500 for each step
+                            value={budget}
+                            onChange={e => setBudget(e.target.value)}
+                        />
+                    </label>
 
-                <div className="pt-4 flex flex-row justify-between">
-
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
+                </div>
+                <div>
+                    rechter kant
                 </div>
             </div>
-            <div>
-                rechter kant
+            <div className="mt-auto pt-4 flex flex-row justify-between">
+
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
             </div>
-        </div>
+        </>
     )
 }
 
 function OnlineMarketingStrategie({ onNext, onBack, huidigeMarketingsKanalen, setHuidigeMarketingsKanalen, setAnswers, answers }) {
     return (
-        <div className="grid grid-cols-5">
-            <div className=" col-span-3">
-                <h2 className={` ${styles.heading4xl}`}>Online Marketingstrategie</h2>
+        <>
+            <div className="grid grid-cols-5">
+                <div className=" col-span-3">
+                    <h2 className={` ${styles.heading4xl}`}>Online Marketingstrategie</h2>
 
-                <h3 className="pt-4">Met welke uitdagingen wordt u geconfronteerd met uw huidige online marketingstrategie?</h3>
-                <textarea
-                    className="w-full"
-                    placeholder="Laat ons meer weten over uw uitdaging..."
-                    rows="4"
-                    value={answers.OnlineMarkeingUitdagingen}
-                    onChange={(e) => setAnswers(prev => ({ ...prev, onlineMarkeingUitdagingen: e.target.value }))}
-                ></textarea>
+                    <h3 className="pt-4">Met welke uitdagingen wordt u geconfronteerd met uw huidige online marketingstrategie?</h3>
+                    <textarea
+                        className="w-full"
+                        placeholder="Laat ons meer weten over uw uitdaging..."
+                        rows="4"
+                        value={answers.OnlineMarkeingUitdagingen}
+                        onChange={(e) => setAnswers(prev => ({ ...prev, onlineMarkeingUitdagingen: e.target.value }))}
+                    ></textarea>
 
-                <h3 className="pt-4">Welke online marketingkanalen gebruikt u momenteel?</h3>
-                <CheckboxGroup options={ONLINE_MARKETING_KANALEN} selectedValues={huidigeMarketingsKanalen} onChange={setHuidigeMarketingsKanalen} />
-                {huidigeMarketingsKanalen.includes("AndereOnlineMarketingKanalen") && (
+                    <h3 className="pt-4">Welke online marketingkanalen gebruikt u momenteel?</h3>
+                    <CheckboxGroup options={ONLINE_MARKETING_KANALEN} selectedValues={huidigeMarketingsKanalen} onChange={setHuidigeMarketingsKanalen} />
+                    {huidigeMarketingsKanalen.includes("AndereOnlineMarketingKanalen") && (
+                        <textarea
+                            className="w-full"
+                            placeholder="Geef uw specifieke doelen op..."
+                            rows="4"
+                            value={answers.AndereOnlineMarketingKanalen}
+                            onChange={(e) => setAnswers(prev => ({ ...prev, AndereOnlineMarketingKanalen: e.target.value }))}
+                        ></textarea>
+                    )}
+
+
+                    <h3 className="pt-4">Wat zijn uw top 3 zakelijke doelen voor het komende jaar?</h3>
                     <textarea
                         className="w-full"
                         placeholder="Geef uw specifieke doelen op..."
                         rows="4"
-                        value={answers.AndereOnlineMarketingKanalen}
-                        onChange={(e) => setAnswers(prev => ({ ...prev, AndereOnlineMarketingKanalen: e.target.value }))}
+                        value={answers.ZakelijkeDoelen}
+                        onChange={(e) => setAnswers(prev => ({ ...prev, zakelijkeDoelen: e.target.value }))}
                     ></textarea>
-                )}
 
-
-                <h3 className="pt-4">Wat zijn uw top 3 zakelijke doelen voor het komende jaar?</h3>
-                <textarea
-                    className="w-full"
-                    placeholder="Geef uw specifieke doelen op..."
-                    rows="4"
-                    value={answers.ZakelijkeDoelen}
-                    onChange={(e) => setAnswers(prev => ({ ...prev, zakelijkeDoelen: e.target.value }))}
-                ></textarea>
-
-
-                <div className="pt-4 flex flex-row justify-between">
-
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
+                </div>
+                <div>
+                    rechter kant
                 </div>
             </div>
-            <div>
-                rechter kant
+            <div className="mt-auto pt-4 flex flex-row justify-between">
+
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
             </div>
-        </div>
+        </>
     )
 }
 
 function GeenVanDeBovenstaande({ onNext, onBack }) {
     return (
-        <div className="grid grid-cols-5">
-            <div className=" col-span-3">
-                <h2 className={` ${styles.heading4xl}`}>GeenVanDeBovenstaande</h2>
+        <>
+            <div className="grid grid-cols-5">
+                <div className=" col-span-3">
+                    <h2 className={` ${styles.heading4xl}`}>GeenVanDeBovenstaande</h2>
+                </div>
 
-
-                <div className="pt-4 flex flex-row justify-between">
-
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
+                <div>
+                    rechter kant
                 </div>
             </div>
-            <div>
-                rechter kant
+            <div className="mt-auto pt-4 flex flex-row justify-between">
+
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onNext}>Volgende</button>
             </div>
-        </div>
+        </>
     )
 }
 
 function ContactDetails({ onBack, onSubmit }) {
     return (
-        <div className="grid grid-cols-5">
-            <div className=" col-span-3">
-                <h2 className={` ${styles.heading4xl}`}>Enter Email and Message</h2>
-                {/* Email and Message Input go here */}
-                <div className="pt-4 flex flex-row justify-between">
-
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
-                    <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onSubmit}>Versturen</button>
+        <>
+            <div className="grid grid-cols-2">
+                <div className=" ">
+                    <h2 className={` ${styles.heading4xl}`}>Doelen</h2>
+                    {/* Email and Message Input go here */}
+                </div>
+                <div>
+                    rechter kant
                 </div>
             </div>
-            <div>
-                rechter kant
+            <div className="mt-auto pt-4 flex flex-row justify-between">
+
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onBack}>Terug</button>
+                <button className="px-4 py-2 bg-primary-500 text-white rounded-md " onClick={onSubmit}>Versturen</button>
             </div>
-        </div>
+        </>
     );
 }
+
+const GOALS = [
+    { label: "DoelgroepBereiken", value: "Doelgroep bereiken" },
+    { label: "VertrouwenEnGeloofwaardigheidOpbouwen", value: "Vertrouwen en geloofwaardigheid opbouwen" },
+    { label: "OnlineZichtbaarheidVergroten", value: "Online zichtbaarheid vergroten" },
+    { label: "KosteneffectieveMarketing", value: "Kosteneffectieve marketing" },
+    { label: "BeterPresterenDanConcurrentie", value: "Beter presteren dan concurrentie" },
+    { label: "AndereRedenGoals", value: "Anderes" },
+];
+
+const GESCHATTE_BUDGET = [
+    { label: "MinderDan1000", value: "Minder dan €1000" },
+    { label: "1000Tot3000", value: "€1000 tot €3000" },
+    { label: "3000Tot5000", value: "€3000 tot €5000" },
+    { label: "5000Tot7000", value: "€5000 tot €7000" },
+    { label: "7000Tot10000", value: "€7000 tot €10000" },
+    { label: "MeerDan10000", value: "Meer dan €10000" },
+]
+
+const GEWENSTE_TIJDLIJN = [
+    { label: "ZoSnelMogelijk", value: "Zo snel mogelijk" },
+    { label: "Binnen1Maand", value: "Binnen 1 maand" },
+    { label: "Binnen3Maanden", value: "Binnen 3 maanden" },
+    { label: "Binnen6Maanden", value: "Binnen 6 maanden" },
+    { label: "Binnen1Jaar", value: "Binnen 1 jaar" },
+    { label: "NietZeker", value: "Niet zeker" },
+]
+
+
+const CONTACT_DETAILS = [
+    { label: "Naam", type: "text" },
+    { label: "Email", type: "email" },
+    { label: "Telefoonnummer", type: "tel" },
+    { label: "Bedrijfsnaam", type: "text" },
+    { label: "Website", type: "text" },
+    { label: "Bericht", type: "textarea" },
+];
 
 
 export default GeneralMultiStepContactForm;

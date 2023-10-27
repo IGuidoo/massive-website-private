@@ -106,6 +106,14 @@ module.exports = {
           '0%': { top: '-100%' },
           '100%': { top: '20px' },
         },
+        modalSlideIn: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' },
+      },
+      modalOpacityIn: {
+        '0%': { opacity: '0' },
+        '100%': { opacity: '1' },
+    },
         toastSlideOut: {
           '0%': { top: '20px' },
           '100%': { top: '-100%' },
@@ -117,6 +125,9 @@ module.exports = {
       },
       animation: {
         toastSlideIn: 'toastSlideIn 0.5s ease forwards',
+        modalSlideIn: 'modalSlideIn 0.3s cubic-bezier(.08,.77,.63,.97) forwards',
+        modalOpacityIn: 'modalOpacityIn 0.5s ease forwards',
+        modalBackgroundOpacityIn: 'modalOpacityIn 0.7s ease forwards',
         toastSlideOut: 'toastSlideOut 0.5s ease forwards',
         toastTimebar: 'toastTimebar 3s linear forwards'
       },
