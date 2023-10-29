@@ -222,7 +222,6 @@ const threeColItems = [
     { icon: <ThirdIcon className="mr-[35px]" />, heading: "Lancering en Onderhoud", text: "Na de lancering, optimaliseren we de site voor zoekmachines en bieden aanvullende ondersteuning." }
 ]
 
-
 const secondFoldData = [
     { icon: <CompoterDesktopIconSolid />, iconColors: "bg-primary-100 text-primary-500", heading: "Zakelijke Website laten Maken", text: "Transformeer uw zakelijke visie, laat nu een professionele, op maat gemaakte website bouwen die even indrukwekkend is als uw bedrijf!" },
     { icon: <BuildingStorefrontIconSolid />, iconColors: "bg-green-100 text-green-400", heading: "Ecommerce & Webwinkel Oplossingen", text: "Geintreseerd in een webshop laten maken? Breng je bedrijfs visie tot leven met een online marketing bureau dat naar u luistert." },
@@ -231,7 +230,6 @@ const secondFoldData = [
     { icon: <CursorArrowRaysIconSolid />, iconColors: "bg-blue-100 text-blue-500", heading: "Online Advertenties", text: "Ontdek nieuwe lead generatie met onze (SEA) digital marketing campagnes." },
     { icon: <PresentationChartLineIconSolid />, iconColors: "bg-red-100 text-red-400", heading: "Online Marketing Strategie", text: "Krijg inzagen op bedrijfs statestieken en optimeer via data gedreven besluiten." },
 ]
-
 
 const titelTwo = {
     subHeading: "Website webwinkel laten maken?",
