@@ -39,7 +39,7 @@ const TextGridIcons = ({ data = [] }) => {
 
     return (
         <>
-            <BrandedContentBlockWithLogo data={data.content} hideMbButtons={true} containerStyles="col-span-5 my-auto" />
+            <BrandedContentBlockWithLogo data={data.content} hideMbButtons={true} containerStyles="col-span-5 my-auto xl:max-w-lg " />
             <div className="col-span-7 relative">
                 <SwipeableBase activeIndex={activeIndex} setActiveIndex={setActiveIndex} itemsCount={chunks.length}>
                     {chunks.map((chunk, index) => (

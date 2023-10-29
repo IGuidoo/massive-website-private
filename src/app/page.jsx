@@ -5,7 +5,7 @@ import Image from "next/image";
 import RenderText from "@/lib/RenderText";
 
 import "@/styles/styles.css"
-import '@/styles/tailwind.css'
+
 
 import {
     // Card Grod imports

@@ -7,6 +7,7 @@ import CookieConsentBanner from '@/features/cookieConsent/CookieConsentBanner';
 import LoadCookies from '@/features/cookieConsent/LoadCookies';
 import { Providers } from "@/app/providers"
 
+import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
